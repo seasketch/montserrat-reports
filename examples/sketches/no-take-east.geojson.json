@@ -1,0 +1,52 @@
+{
+    "id": 21284,
+    "bbox": [
+        -62.136555,
+        16.725668,
+        -62.107986,
+        16.771383
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -62.136555841,
+                    16.770662597
+                ],
+                [
+                    -62.134676329,
+                    16.726028001
+                ],
+                [
+                    -62.107987264,
+                    16.725668002
+                ],
+                [
+                    -62.110242678,
+                    16.771382424
+                ],
+                [
+                    -62.136555841,
+                    16.770662597
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "5153": "no-take-east",
+        "id": "21284",
+        "name": "no-take-east",
+        "postId": null,
+        "userId": "128",
+        "userSlug": "Peter",
+        "createdAt": "2023-10-20T18:42:26.362348+00:00",
+        "updatedAt": "2023-10-20T18:42:59.553331+00:00",
+        "collectionId": "21285",
+        "isCollection": false,
+        "sharedInForum": false,
+        "sketchClassId": "582",
+        "userAttributes": null
+    }
+}
