@@ -1,0 +1,195 @@
+{
+  "metrics": [
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21337",
+      "classId": "3nm_jurisdiction",
+      "groupId": null,
+      "geographyId": null,
+      "value": 23201406.583954666,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21337",
+      "classId": "3nm_jurisdiction",
+      "groupId": "No-Take",
+      "geographyId": null,
+      "value": 23201406.583954666,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21338",
+      "classId": "3nm_jurisdiction",
+      "groupId": null,
+      "geographyId": null,
+      "value": 8239912.644738134,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21338",
+      "classId": "3nm_jurisdiction",
+      "groupId": "Partial-Take",
+      "geographyId": null,
+      "value": 8239912.644738134,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21339",
+      "classId": "3nm_jurisdiction",
+      "groupId": null,
+      "geographyId": null,
+      "value": 24322897.8118408,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21339",
+      "classId": "3nm_jurisdiction",
+      "groupId": "No-Take",
+      "geographyId": null,
+      "value": 23201406.583954666,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21339",
+      "classId": "3nm_jurisdiction",
+      "groupId": "Partial-Take",
+      "geographyId": null,
+      "value": 1121488.2032876497,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    }
+  ],
+  "sketch": {
+    "id": 21339,
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": 21338,
+        "bbox": [
+          -62.16693,
+          16.638992,
+          -62.13357,
+          16.66424
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "partial-take-south",
+          "5204": [
+            "Partial-Take"
+          ],
+          "id": "21338",
+          "name": "partial-take-south",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Partial-Take"
+          ],
+          "createdAt": "2023-10-24T18:40:26.897142+00:00",
+          "updatedAt": "2023-10-24T18:40:42.464757+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Partial-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Partial-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      },
+      {
+        "id": 21337,
+        "bbox": [
+          -62.2123,
+          16.638033,
+          -62.138245,
+          16.665838
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "no-take-south",
+          "5204": [
+            "No-Take"
+          ],
+          "id": "21337",
+          "name": "no-take-south",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "No-Take"
+          ],
+          "createdAt": "2023-10-24T18:39:54.47259+00:00",
+          "updatedAt": "2023-10-24T20:28:06.35355+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "No-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "No-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      }
+    ],
+    "properties": {
+      "5155": "zone-collection",
+      "id": "21339",
+      "name": "zone-collection",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "createdAt": "2023-10-24T18:40:40.51977+00:00",
+      "updatedAt": "2023-10-24T20:28:06.35355+00:00",
+      "collectionId": null,
+      "isCollection": true,
+      "sharedInForum": false,
+      "sketchClassId": "584",
+      "userAttributes": null
+    }
+  }
+}

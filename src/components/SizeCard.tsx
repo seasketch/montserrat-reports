@@ -1,36 +1,425 @@
 import React from "react";
-import { Trans, useTranslation } from "react-i18next";
-import { ResultsCard, Skeleton } from "@seasketch/geoprocessing/client-ui";
-// Import the results type definition from your functions to type-check your
-// component render functions
-import { AreaResults } from "../functions/area";
+import {
+  ReportResult,
+  percentWithEdge,
+  keyBy,
+  toNullSketchArray,
+  nestMetrics,
+  valueFormatter,
+  toPercentMetric,
+  sortMetricsDisplayOrder,
+  isSketchCollection,
+  MetricGroup,
+  getUserAttribute,
+} from "@seasketch/geoprocessing/client-core";
+import {
+  ClassTable,
+  Collapse,
+  Column,
+  ReportTableStyled,
+  ResultsCard,
+  Table,
+  useSketchProperties,
+  ToolbarCard,
+  DataDownload,
+  InfoStatus,
+  KeySection,
+} from "@seasketch/geoprocessing/client-ui";
+import styled from "styled-components";
+import project from "../../project";
+import {
+  Metric,
+  dataClassSchema,
+  squareMeterToKilometer,
+} from "@seasketch/geoprocessing";
 import Translator from "../components/TranslatorAsync";
+import { Trans, useTranslation } from "react-i18next";
+import { TFunction } from "i18next";
+
+// Hard code total area of 3nm boundary
+const boundaryTotalMetrics: Metric[] = [
+  {
+    classId: "3nm_jurisdiction",
+    metricId: "boundaryAreaOverlap",
+    sketchId: null,
+    groupId: null,
+    geographyId: null,
+    value: 373298362.032,
+  },
+];
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-/**
- * SizeCard component
- */
+const TableStyled = styled(ReportTableStyled)`
+  font-size: 12px;
+  border-collapse: collapse;
+
+  td {
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  tr:nth-child(1) > th:nth-child(n + 1) {
+    text-align: center;
+  }
+
+  tr:nth-child(2) > th:nth-child(n + 1) {
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  tr > td:nth-child(3),
+  tr > th:nth-child(3) {
+  }
+  tr > td:nth-child(5),
+  tr > th:nth-child(5) {
+    border-right: 3px solid #ddd;
+  }
+`;
+
 export const SizeCard = () => {
+  const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
+  const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
+
+  const notFoundString = t("Results not found");
+
+  /* i18next-extract-disable-next-line */
+  const planningUnitName = t(project.basic.planningAreaName);
+  return (
+    <ResultsCard
+      title={t("Size")}
+      functionName="boundaryAreaOverlap"
+      useChildCard
+    >
+      {(data: ReportResult) => {
+        if (Object.keys(data).length === 0) throw new Error(notFoundString);
+
+        return (
+          <>
+            <ToolbarCard
+              title={t(" ")}
+              items={
+                <>
+                  <InfoStatus
+                    size={30}
+                    msg={
+                      <span>
+                        <Trans i18nKey="Report info status">
+                          These are <b>draft</b> reports. Further changes or
+                          corrections may be made. Please report any issues.
+                          <br></br>
+                          <br></br>
+                        </Trans>
+                      </span>
+                    }
+                  />
+                </>
+              }
+            >
+              {genSingleSizeTable(data, metricGroup, t)}
+              {isCollection && (
+                <Collapse title={t("Show by MPA")}>
+                  {genNetworkSizeTable(data, metricGroup, t)}
+                </Collapse>
+              )}
+              {isCollection && (
+                <Collapse title={t("Show by Zone Type")}>
+                  {genClassSizeTable(data, metricGroup, t)}
+                </Collapse>
+              )}
+              <Collapse title={t("Learn more")}>
+                <Trans i18nKey="SizeCard - learn more">
+                  <p>
+                    {" "}
+                    This report summarizes the size and proportion of this plan
+                    within these boundaries.
+                  </p>
+                  <p>
+                    If sketch boundaries within a plan overlap with each other,
+                    the overlap is only counted once.
+                  </p>
+                </Trans>
+              </Collapse>
+            </ToolbarCard>
+          </>
+        );
+      }}
+    </ResultsCard>
+  );
+};
+
+const genSingleSizeTable = (
+  data: ReportResult,
+  mg: MetricGroup,
+  t: TFunction
+) => {
+  const boundaryLabel = t("Boundary");
+  const foundWithinLabel = t("Found Within Plan");
+  const areaWithinLabel = t("Area Within Plan");
+  const areaPercWithinLabel = `% ${t("Area Within Plan")}`;
+  const mapLabel = t("Map");
+  const sqKmLabel = t("km²");
+
+  const classesById = keyBy(mg.classes, (c) => c.classId);
+  let singleMetrics = data.metrics.filter(
+    (m) => m.sketchId === data.sketch.properties.id
+  );
+
+  const finalMetrics = sortMetricsDisplayOrder(
+    [
+      ...singleMetrics,
+      ...toPercentMetric(
+        singleMetrics,
+        boundaryTotalMetrics,
+        project.getMetricGroupPercId(mg)
+      ),
+    ],
+    "classId",
+    ["eez", "offshore", "contiguous"]
+  );
+
   return (
     <>
-      <ResultsCard
-        title={t("SizeCard title", "Zone Size")}
-        functionName="calculateArea"
-      >
-        {(data: AreaResults) => (
-          <p>
-            📐
-            <Trans i18nKey="SizeCard sketch size message">
-              This sketch is{" "}
-              <b>{{ area: Number.format(Math.round(data.area * 1e-6)) }}</b>{" "}
-              square kilometers
-            </Trans>
-          </p>
-        )}
-      </ResultsCard>
+      <ClassTable
+        rows={finalMetrics}
+        metricGroup={mg}
+        objective={project.getMetricGroupObjectives(mg, t)}
+        // objective={null}
+        columnConfig={[
+          {
+            columnLabel: boundaryLabel,
+            type: "class",
+            width: 25,
+          },
+          {
+            columnLabel: areaWithinLabel,
+            type: "metricValue",
+            metricId: mg.metricId,
+            valueFormatter: (val: string | number) =>
+              Number.format(
+                Math.round(
+                  squareMeterToKilometer(
+                    typeof val === "string" ? parseInt(val) : val
+                  )
+                )
+              ),
+            valueLabel: sqKmLabel,
+            width: 20,
+          },
+          {
+            columnLabel: areaPercWithinLabel,
+            type: "metricChart",
+            metricId: project.getMetricGroupPercId(mg),
+            valueFormatter: "percent",
+            chartOptions: {
+              showTitle: true,
+              showTargetLabel: true,
+              targetLabelPosition: "bottom",
+              targetLabelStyle: "tight",
+              barHeight: 11,
+            },
+            width: 40,
+            targetValueFormatter: (
+              value: number,
+              row: number,
+              numRows: number
+            ) => {
+              if (row === 0) {
+                return (value: number) =>
+                  `${valueFormatter(value / 100, "percent0dig")} ${t(
+                    "Target"
+                  )}`;
+              } else {
+                return (value: number) =>
+                  `${valueFormatter(value / 100, "percent0dig")}`;
+              }
+            },
+          },
+        ]}
+      />
     </>
+  );
+};
+
+const genNetworkSizeTable = (
+  data: ReportResult,
+  mg: MetricGroup,
+  t: TFunction
+) => {
+  const sketches = toNullSketchArray(data.sketch);
+
+  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
+  const sketchIds = sketches.map((sk) => sk.properties.id);
+  const sketchMetrics = data.metrics.filter(
+    (m) => m.sketchId && sketchIds.includes(m.sketchId)
+  );
+  const finalMetrics = [
+    ...sketchMetrics,
+    ...toPercentMetric(
+      sketchMetrics,
+      boundaryTotalMetrics,
+      project.getMetricGroupPercId(mg)
+    ),
+  ];
+
+  const aggMetrics = nestMetrics(finalMetrics, [
+    "sketchId",
+    "classId",
+    "metricId",
+  ]);
+  // Use sketch ID for each table row, index into aggMetrics
+  const rows = Object.keys(aggMetrics).map((sketchId) => ({
+    sketchId,
+  }));
+
+  const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
+    (curClass, index) => {
+      /* i18next-extract-disable-next-line */
+      const transString = t(curClass.display);
+      return {
+        Header: " ",
+        style: { color: "#777" },
+        columns: [
+          {
+            Header: t("Area") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+              return (
+                Number.format(Math.round(squareMeterToKilometer(value))) +
+                " " +
+                t("km²")
+              );
+            },
+          },
+          {
+            Header: t("% Area") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  project.getMetricGroupPercId(mg)
+                ][0].value;
+              return percentWithEdge(value);
+            },
+          },
+        ],
+      };
+    }
+  );
+
+  const columns: Column<any>[] = [
+    {
+      Header: " ",
+      accessor: (row) => <b>{sketchesById[row.sketchId].properties.name}</b>,
+    },
+    ...classColumns,
+  ];
+
+  return (
+    <TableStyled>
+      <Table columns={columns} data={rows} />
+    </TableStyled>
+  );
+};
+
+const genClassSizeTable = (
+  data: ReportResult,
+  mg: MetricGroup,
+  t: TFunction
+) => {
+  const sketches = toNullSketchArray(data.sketch);
+
+  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
+  const sketchesByGroup = keyBy(sketches, (sk) => sk.properties.zoneType[0]);
+  const sketchIds = sketches.map((sk) => sk.properties.id);
+  const sketchGroupIds = sketches.reduce((groupIds: string[], curSketch) => {
+    const zoneType: string = curSketch.properties.zoneType;
+    return [...groupIds, ...zoneType];
+  }, []);
+  const sketchMetrics = data.metrics.filter(
+    (m) => m.groupId && sketchGroupIds.includes(m.groupId)
+  );
+
+  const finalMetrics = [
+    ...sketchMetrics,
+    ...toPercentMetric(
+      sketchMetrics,
+      boundaryTotalMetrics,
+      project.getMetricGroupPercId(mg)
+    ),
+  ];
+
+  const aggMetrics = nestMetrics(finalMetrics, [
+    "groupId",
+    "classId",
+    "metricId",
+  ]);
+
+  // Use group ID for each table row, index into aggMetrics
+  const rows = Object.keys(aggMetrics).map((groupId) => ({
+    groupId,
+  }));
+
+  const classColumns: Column<{ groupId: string }>[] = mg.classes.map(
+    (curClass, index) => {
+      /* i18next-extract-disable-next-line */
+      const transString = t(curClass.display);
+      return {
+        Header: " ",
+        style: { color: "#777" },
+        columns: [
+          {
+            Header: t("Area") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.groupId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+              return (
+                Number.format(Math.round(squareMeterToKilometer(value))) +
+                " " +
+                t("km²")
+              );
+            },
+          },
+          {
+            Header: t("% Area") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.groupId][curClass.classId as string][
+                  project.getMetricGroupPercId(mg)
+                ][0].value;
+              return percentWithEdge(value);
+            },
+          },
+        ],
+      };
+    }
+  );
+
+  const columns: Column<any>[] = [
+    {
+      Header: " ",
+      accessor: (row) => <b>{row.groupId}</b>,
+    },
+    ...classColumns,
+  ];
+
+  return (
+    <TableStyled>
+      <Table columns={columns} data={rows} />
+    </TableStyled>
   );
 };
 

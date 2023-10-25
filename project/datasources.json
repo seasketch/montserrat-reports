@@ -18,7 +18,7 @@
     "url": "https://d3muy0hbwp5qkl.cloudfront.net"
   },
   {
-    "src": "data/src/Montserrat_Blue_Halo/next_reports/3nm-jurisdiction.fgb",
+    "src": "data/src/Montserrat_Blue_Halo/next_reports/3nm-jurisdiction.geojson",
     "layerName": "3nm-jurisdiction",
     "geo_type": "vector",
     "datasourceId": "3nm_jurisdiction",
@@ -26,8 +26,8 @@
       "fgb"
     ],
     "classKeys": [],
-    "created": "2023-10-20T18:24:45.765Z",
-    "lastUpdated": "2023-10-20T18:24:45.765Z",
+    "created": "2023-10-20T20:40:19.162Z",
+    "lastUpdated": "2023-10-20T20:40:19.162Z",
     "keyStats": {
       "total": {
         "total": {

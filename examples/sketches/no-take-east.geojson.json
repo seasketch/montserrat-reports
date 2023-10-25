@@ -1,10 +1,10 @@
 {
-    "id": 21284,
+    "id": 21364,
     "bbox": [
-        -62.136555,
-        16.725668,
-        -62.107986,
-        16.771383
+        -62.141247,
+        16.728144,
+        -62.104885,
+        16.773823
     ],
     "type": "Feature",
     "geometry": {
@@ -12,41 +12,61 @@
         "coordinates": [
             [
                 [
-                    -62.136555841,
-                    16.770662597
+                    -62.141245219,
+                    16.771905941
                 ],
                 [
-                    -62.134676329,
-                    16.726028001
+                    -62.13724222,
+                    16.728144066
                 ],
                 [
-                    -62.107987264,
-                    16.725668002
+                    -62.104884641,
+                    16.730380318
                 ],
                 [
-                    -62.110242678,
-                    16.771382424
+                    -62.10988839,
+                    16.77382229
                 ],
                 [
-                    -62.136555841,
-                    16.770662597
+                    -62.141245219,
+                    16.771905941
                 ]
             ]
         ]
     },
     "properties": {
-        "5153": "no-take-east",
-        "id": "21284",
+        "5203": "no-take-east",
+        "5204": [
+            "No-Take"
+        ],
+        "id": "21364",
         "name": "no-take-east",
         "postId": null,
         "userId": "128",
         "userSlug": "Peter",
-        "createdAt": "2023-10-20T18:42:26.362348+00:00",
-        "updatedAt": "2023-10-20T18:42:59.553331+00:00",
-        "collectionId": "21285",
+        "zoneType": [
+            "No-Take"
+        ],
+        "createdAt": "2023-10-25T17:27:47.99718+00:00",
+        "updatedAt": "2023-10-25T17:27:47.99718+00:00",
+        "collectionId": null,
         "isCollection": false,
         "sharedInForum": false,
-        "sketchClassId": "582",
-        "userAttributes": null
+        "sketchClassId": "597",
+        "userAttributes": [
+            {
+                "label": "Zone Type",
+                "value": [
+                    "No-Take"
+                ],
+                "exportId": "zoneType",
+                "fieldType": "MultipleChoice",
+                "valueLabel": [
+                    "No-Take"
+                ],
+                "formElementId": 5204,
+                "alternateLanguages": {}
+            }
+        ]
     }
 }

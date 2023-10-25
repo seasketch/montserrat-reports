@@ -3,9 +3,9 @@
   "type": "areaOverlap",
   "classes": [
       {
-          "classId": "eez",
-          "display": "EEZ",
-          "datasourceId": "global-clipping-eez-land-union",
+          "classId": "3nm_jurisdiction",
+          "display": "3 nautical miles",
+          "datasourceId": "3nm_jurisdiction",
           "objectiveId": "eez",
           "layerId": ""
       }
