@@ -24,10 +24,13 @@ import {
   DataDownload,
   InfoStatus,
   KeySection,
+  GroupCircleRow,
+  GroupPill,
 } from "@seasketch/geoprocessing/client-ui";
 import styled from "styled-components";
 import project from "../../project";
 import {
+  GroupMetricAgg,
   Metric,
   dataClassSchema,
   squareMeterToKilometer,
@@ -50,38 +53,25 @@ const boundaryTotalMetrics: Metric[] = [
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-const TableStyled = styled(ReportTableStyled)`
-  font-size: 12px;
-  border-collapse: collapse;
+// Mapping groupIds to colors
+const groupColorMap: Record<string, string> = {
+  "No-Take": "#BEE4BE",
+  "Partial-Take": "#FFE1A3",
+};
 
-  td {
-    text-align: center;
-    border: 1px solid #ddd;
+export const SmallReportTableStyled = styled(ReportTableStyled)`
+  font-size: 13px;
+
+  th:first-child {
+    text-align: left;
   }
 
   th {
     text-align: center;
   }
 
-  tr:hover {
-    background-color: #f5f5f5;
-  }
-
-  tr:nth-child(1) > th:nth-child(n + 1) {
+  td {
     text-align: center;
-  }
-
-  tr:nth-child(2) > th:nth-child(n + 1) {
-    text-align: center;
-    border: 1px solid #ddd;
-  }
-
-  tr > td:nth-child(3),
-  tr > th:nth-child(3) {
-  }
-  tr > td:nth-child(5),
-  tr > th:nth-child(5) {
-    border-right: 3px solid #ddd;
   }
 `;
 
@@ -133,7 +123,7 @@ export const SizeCard = () => {
               )}
               {isCollection && (
                 <Collapse title={t("Show by Zone Type")}>
-                  {genClassSizeTable(data, metricGroup, t)}
+                  {genZoneSizeTable(data, metricGroup, t)}
                 </Collapse>
               )}
               <Collapse title={t("Learn more")}>
@@ -327,22 +317,30 @@ const genNetworkSizeTable = (
   ];
 
   return (
-    <TableStyled>
+    <SmallReportTableStyled>
       <Table columns={columns} data={rows} />
-    </TableStyled>
+    </SmallReportTableStyled>
   );
 };
 
-const genClassSizeTable = (
+const genZoneSizeTable = (
   data: ReportResult,
   mg: MetricGroup,
   t: TFunction
 ) => {
   const sketches = toNullSketchArray(data.sketch);
-
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchesByGroup = keyBy(sketches, (sk) => sk.properties.zoneType[0]);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
+  const numSketches = sketches.reduce(
+    (groupCounts: Record<string, number>, curSketch) => {
+      const zoneType: string = curSketch.properties.zoneType;
+      if (groupCounts[zoneType]) {
+        groupCounts[zoneType] += 1;
+      } else {
+        groupCounts[zoneType] = 1;
+      }
+      return groupCounts;
+    },
+    {}
+  );
   const sketchGroupIds = sketches.reduce((groupIds: string[], curSketch) => {
     const zoneType: string = curSketch.properties.zoneType;
     return [...groupIds, ...zoneType];
@@ -371,21 +369,45 @@ const genClassSizeTable = (
     groupId,
   }));
 
-  const classColumns: Column<{ groupId: string }>[] = mg.classes.map(
+  const columns: Column<{ groupId: string }>[] = mg.classes.map(
     (curClass, index) => {
       /* i18next-extract-disable-next-line */
       const transString = t(curClass.display);
       return {
         Header: " ",
+        id: "zoneTableHeader",
         style: { color: "#777" },
         columns: [
           {
+            Header: "This plan includes:",
+            accessor: (row) => {
+              return (
+                <GroupCircleRow
+                  group={row.groupId}
+                  groupColorMap={groupColorMap}
+                  circleText={numSketches[row.groupId]}
+                  rowText={
+                    <>
+                      <b>{`${row.groupId + " Zone(s)"}`}</b>
+                    </>
+                  }
+                />
+              );
+            },
+          },
+          {
             Header: t("Area") + " ".repeat(index),
             accessor: (row) => {
-              const value =
-                aggMetrics[row.groupId][curClass.classId as string][
-                  mg.metricId
-                ][0].value;
+              const value = aggMetrics[row.groupId][curClass.classId as string][
+                mg.metricId
+                // sum all area values for each zone type, excluding the collection itself
+              ].reduce((value: number, curMetric: Metric) => {
+                const curValue =
+                  curMetric.extra && curMetric.extra.isCollection === true
+                    ? 0
+                    : curMetric.value;
+                return value + curValue;
+              }, 0);
               return (
                 Number.format(Math.round(squareMeterToKilometer(value))) +
                 " " +
@@ -394,13 +416,22 @@ const genClassSizeTable = (
             },
           },
           {
-            Header: t("% Area") + " ".repeat(index),
+            Header: t("% 3 nautical miles") + " ".repeat(index),
             accessor: (row) => {
-              const value =
-                aggMetrics[row.groupId][curClass.classId as string][
-                  project.getMetricGroupPercId(mg)
-                ][0].value;
-              return percentWithEdge(value);
+              const value = aggMetrics[row.groupId][curClass.classId as string][
+                project.getMetricGroupPercId(mg)
+              ].reduce((value: number, curMetric: Metric) => {
+                const curValue =
+                  curMetric.extra && curMetric.extra.isCollection === true
+                    ? 0
+                    : curMetric.value;
+                return value + curValue;
+              }, 0);
+              return (
+                <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
+                  {percentWithEdge(value)}
+                </GroupPill>
+              );
             },
           },
         ],
@@ -408,18 +439,10 @@ const genClassSizeTable = (
     }
   );
 
-  const columns: Column<any>[] = [
-    {
-      Header: " ",
-      accessor: (row) => <b>{row.groupId}</b>,
-    },
-    ...classColumns,
-  ];
-
   return (
-    <TableStyled>
+    <SmallReportTableStyled>
       <Table columns={columns} data={rows} />
-    </TableStyled>
+    </SmallReportTableStyled>
   );
 };
 

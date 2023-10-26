@@ -50,7 +50,7 @@
       "classId": "3nm_jurisdiction",
       "groupId": null,
       "geographyId": null,
-      "value": 24322897.8118408,
+      "value": 35874001.5093876,
       "extra": {
         "sketchName": "zone-collection",
         "isCollection": true
@@ -62,7 +62,7 @@
       "classId": "3nm_jurisdiction",
       "groupId": "No-Take",
       "geographyId": null,
-      "value": 23201406.583954666,
+      "value": 34752510.281501465,
       "extra": {
         "sketchName": "zone-collection",
         "isCollection": true
@@ -78,6 +78,28 @@
       "extra": {
         "sketchName": "zone-collection",
         "isCollection": true
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21568",
+      "classId": "3nm_jurisdiction",
+      "groupId": null,
+      "geographyId": null,
+      "value": 11551103.697546799,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "sketchId": "21568",
+      "classId": "3nm_jurisdiction",
+      "groupId": "No-Take",
+      "geographyId": null,
+      "value": 11551103.697546799,
+      "extra": {
+        "sketchName": "no-take-north"
       }
     }
   ],
@@ -174,6 +196,51 @@
             }
           ]
         }
+      },
+      {
+        "id": 21568,
+        "bbox": [
+          -62.216652,
+          16.829824,
+          -62.171997,
+          16.852596
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "no-take-north",
+          "5204": [
+            "No-Take"
+          ],
+          "id": "21568",
+          "name": "no-take-north",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "No-Take"
+          ],
+          "createdAt": "2023-10-26T17:42:29.683258+00:00",
+          "updatedAt": "2023-10-26T17:44:55.197083+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "No-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "No-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
       }
     ],
     "properties": {
@@ -184,7 +251,7 @@
       "userId": "128",
       "userSlug": "Peter",
       "createdAt": "2023-10-24T18:40:40.51977+00:00",
-      "updatedAt": "2023-10-24T20:28:06.35355+00:00",
+      "updatedAt": "2023-10-26T17:44:55.197083+00:00",
       "collectionId": null,
       "isCollection": true,
       "sharedInForum": false,

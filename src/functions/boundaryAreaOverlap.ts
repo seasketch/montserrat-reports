@@ -71,9 +71,6 @@ export async function boundaryAreaOverlap(
     outerArea: totalAreaMetric.value,
   });
 
-  const isCollection = isSketchCollection(sketch);
-  const test = "test";
-
   return {
     metrics: sortMetrics(rekeyMetrics([...areaMetrics, ...levelMetrics])),
     sketch: toNullSketch(sketch),
