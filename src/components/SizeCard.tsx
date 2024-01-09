@@ -75,6 +75,30 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
   }
 `;
 
+export const NetworkTableStyled = styled(ReportTableStyled)`
+  font-size: 13px;
+
+  th:first-child {
+    text-align: left;
+  }
+
+  th:nth-child(3) {
+    text-align: center;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    text-align: left;
+  }
+
+  td:nth-child(3) {
+    text-align: center;
+  }
+`;
+
 export const SizeCard = () => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
@@ -116,14 +140,10 @@ export const SizeCard = () => {
               }
             >
               {genSingleSizeTable(data, metricGroup, t)}
+              {genZoneSizeTable(data, metricGroup, t)}
               {isCollection && (
                 <Collapse title={t("Show by MPA")}>
                   {genNetworkSizeTable(data, metricGroup, t)}
-                </Collapse>
-              )}
-              {isCollection && (
-                <Collapse title={t("Show by Zone Type")}>
-                  {genZoneSizeTable(data, metricGroup, t)}
                 </Collapse>
               )}
               <Collapse title={t("Learn more")}>
@@ -277,7 +297,6 @@ const genNetworkSizeTable = (
       const transString = t(curClass.display);
       return {
         Header: " ",
-        style: { color: "#777" },
         columns: [
           {
             Header: t("Area") + " ".repeat(index),
@@ -294,7 +313,7 @@ const genNetworkSizeTable = (
             },
           },
           {
-            Header: t("% Area") + " ".repeat(index),
+            Header: t("% 3 nautical miles") + " ".repeat(index),
             accessor: (row) => {
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
@@ -310,16 +329,23 @@ const genNetworkSizeTable = (
 
   const columns: Column<any>[] = [
     {
-      Header: " ",
-      accessor: (row) => <b>{sketchesById[row.sketchId].properties.name}</b>,
+      Header: "Zone",
+      accessor: (row) => (
+        <GroupPill
+          groupColorMap={groupColorMap}
+          group={sketchesById[row.sketchId!].properties.zoneType}
+        >
+          {sketchesById[row.sketchId!].properties.name}
+        </GroupPill>
+      ),
     },
     ...classColumns,
   ];
 
   return (
-    <SmallReportTableStyled>
+    <NetworkTableStyled>
       <Table columns={columns} data={rows} />
-    </SmallReportTableStyled>
+    </NetworkTableStyled>
   );
 };
 
