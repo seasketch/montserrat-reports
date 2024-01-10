@@ -1,0 +1,61 @@
+{
+  "metrics": [
+    {
+      "metricId": "fishingValueOverlap",
+      "sketchId": "21364",
+      "classId": "fishing_value",
+      "groupId": null,
+      "geographyId": null,
+      "value": 20423.181385159492,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 21364,
+    "bbox": [
+      -62.141247,
+      16.728144,
+      -62.104885,
+      16.773823
+    ],
+    "type": "Feature",
+    "properties": {
+      "5203": "no-take-east",
+      "5204": [
+        "No-Take"
+      ],
+      "id": "21364",
+      "name": "no-take-east",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "zoneType": [
+        "No-Take"
+      ],
+      "createdAt": "2023-10-25T17:27:47.99718+00:00",
+      "updatedAt": "2023-10-25T17:27:47.99718+00:00",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "597",
+      "userAttributes": [
+        {
+          "label": "Zone Type",
+          "value": [
+            "No-Take"
+          ],
+          "exportId": "zoneType",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "No-Take"
+          ],
+          "formElementId": 5204,
+          "alternateLanguages": {}
+        }
+      ]
+    },
+    "geometry": null
+  }
+}

@@ -10,4 +10,17 @@
           "layerId": ""
       }
   ]
+},
+{
+  "metricId": "fishingValueOverlap",
+  "type": "valueOverlap",
+  "classes": [
+      {
+          "classId": "fishing_value",
+          "display": "Fishing Value",
+          "datasourceId": "fishing_value",
+          "objectiveId": "",
+          "layerId": ""
+      }
+  ]
 }]
