@@ -10,6 +10,17 @@
       "extra": {
         "sketchName": "no-take-east"
       }
+    },
+    {
+      "metricId": "fishingValueOverlap",
+      "sketchId": "21364",
+      "classId": "fishing_value",
+      "groupId": "No-Take",
+      "geographyId": null,
+      "value": 20423.181385159492,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
     }
   ],
   "sketch": {

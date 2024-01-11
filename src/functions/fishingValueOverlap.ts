@@ -10,12 +10,20 @@ import {
   sortMetrics,
   overlapRaster,
   getCogFilename,
+  rasterDatasourceSchema,
+  NullSketchCollection,
+  NullSketch,
+  getSketchFeatures,
+  getUserAttribute,
+  overlapGroupMetrics,
 } from "@seasketch/geoprocessing";
 import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
 
 const metricGroup = project.getMetricGroup("fishingValueOverlap");
+
+const groupIds = ["No-Take", "Partial-Take"];
 
 export async function fishingValueOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -39,7 +47,21 @@ export async function fishingValueOverlap(
           raster,
           sketch
         );
-        return overlapResult.map(
+
+        const sketchToZoneType = getZoneType(sketch);
+        const metricToZoneType = (sketchMetric: Metric) => {
+          return sketchToZoneType[sketchMetric.sketchId!];
+        };
+
+        // add respective groupId to each metric and combine with overlapResult
+        const overlapGroupResult = overlapResult.map((result) => ({
+          ...result,
+          groupId: metricToZoneType(result),
+        }));
+
+        const combinedResults = [...overlapResult, ...overlapGroupResult];
+
+        return combinedResults.map(
           (metrics): Metric => ({
             ...metrics,
             classId: curClass.classId,
@@ -57,6 +79,26 @@ export async function fishingValueOverlap(
     metrics: sortMetrics(rekeyMetrics(metrics)),
     sketch: toNullSketch(sketch, true),
   };
+}
+
+/**
+ * Gets zone type for all sketches in a sketch collection from user attributes
+ * @param sketch User-created Sketch | SketchCollection
+ * @returns <string, string> mapping of sketchId to zone type
+ */
+export function getZoneType(
+  sketch: Sketch | SketchCollection | NullSketchCollection | NullSketch
+): Record<string, string> {
+  const sketchFeatures = getSketchFeatures(sketch);
+  const zoneTypes = sketchFeatures.reduce<Record<string, string>>(
+    (types, sketch) => {
+      const zoneType = getUserAttribute(sketch.properties, "zoneType", "")[0];
+      types[sketch.properties.id] = zoneType;
+      return types;
+    },
+    {}
+  );
+  return zoneTypes;
 }
 
 export default new GeoprocessingHandler(fishingValueOverlap, {

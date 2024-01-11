@@ -11,6 +11,7 @@ import {
   GroupPill,
   ReportTableStyled,
   Table,
+  GroupCircleRow,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -34,6 +35,30 @@ import Translator from "./TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
 import { TFunction } from "i18next";
 import styled from "styled-components";
+
+export const SmallReportTableStyled = styled(ReportTableStyled)`
+  font-size: 13px;
+
+  th {
+    padding-bottom: 0.9rem !important;
+  }
+
+  th:first-child {
+    text-align: left;
+  }
+
+  th:nth-child(2) {
+    text-align: center;
+  }
+
+  td {
+    text-align: left;
+  }
+
+  td:nth-child(2) {
+    text-align: center;
+  }
+`;
 
 export const NetworkTableStyled = styled(ReportTableStyled)`
   font-size: 13px;
@@ -168,7 +193,7 @@ export const FishingCard = () => {
                   ]}
                 />
               </Translator>
-
+              {genZoneTable(data, metricGroup, t)}
               {isCollection && (
                 <Collapse title={t("Show by MPA")}>
                   {genSketchTable(data)}
@@ -183,10 +208,6 @@ export const FishingCard = () => {
                     within this plan. Fishing value was estimated via an Ocean
                     Use Survey which asked local fishers to identify the areas
                     they value most for fishing.
-                  </p>
-                  <p>
-                    If zone boundaries overlap with each other, the overlap is
-                    only counted once.
                   </p>
                 </Trans>
               </Collapse>
@@ -216,5 +237,99 @@ const genSketchTable = (data: ReportResult) => {
   );
   return (
     <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
+  );
+};
+
+const genZoneTable = (data: ReportResult, mg: MetricGroup, t: TFunction) => {
+  const sketches = toNullSketchArray(data.sketch);
+  const numSketches = sketches.reduce(
+    (groupCounts: Record<string, number>, curSketch) => {
+      const zoneType: string = curSketch.properties.zoneType;
+      if (groupCounts[zoneType]) {
+        groupCounts[zoneType] += 1;
+      } else {
+        groupCounts[zoneType] = 1;
+      }
+      return groupCounts;
+    },
+    {}
+  );
+  const sketchGroupIds = sketches.reduce((groupIds: string[], curSketch) => {
+    const zoneType: string = curSketch.properties.zoneType;
+    return [...groupIds, ...zoneType];
+  }, []);
+  const sketchMetrics = data.metrics.filter(
+    (m) => m.groupId && sketchGroupIds.includes(m.groupId)
+  );
+
+  console.log(data.metrics);
+
+  const finalMetrics = [
+    ...sketchMetrics,
+    ...toPercentMetric(
+      sketchMetrics,
+      precalcMetrics,
+      project.getMetricGroupPercId(mg)
+    ),
+  ];
+
+  const aggMetrics = nestMetrics(finalMetrics, [
+    "groupId",
+    "classId",
+    "metricId",
+  ]);
+
+  // Use group ID for each table row, index into aggMetrics
+  const rows = Object.keys(aggMetrics).map((groupId) => ({
+    groupId,
+  }));
+
+  const columns: Column<{ groupId: string }>[] = mg.classes.map(
+    (curClass, index) => {
+      /* i18next-extract-disable-next-line */
+      const transString = t(curClass.display);
+      return {
+        Header: " ",
+        id: "zoneTableHeader",
+        style: { color: "#777" },
+        columns: [
+          {
+            Header: "Zone Types:",
+            accessor: (row) => {
+              return (
+                <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
+                  {row.groupId}
+                </GroupPill>
+              );
+            },
+          },
+          {
+            Header: t("% Value") + " ".repeat(index),
+            accessor: (row) => {
+              const value = aggMetrics[row.groupId][curClass.classId as string][
+                project.getMetricGroupPercId(mg)
+              ].reduce((value: number, curMetric: Metric) => {
+                const curValue =
+                  curMetric.extra && curMetric.extra.isCollection === true
+                    ? 0
+                    : curMetric.value;
+                return value + curValue;
+              }, 0);
+              return (
+                <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
+                  {percentWithEdge(value)}
+                </GroupPill>
+              );
+            },
+          },
+        ],
+      };
+    }
+  );
+
+  return (
+    <SmallReportTableStyled>
+      <Table columns={columns} data={rows} />
+    </SmallReportTableStyled>
   );
 };

@@ -13,9 +13,31 @@
     },
     {
       "metricId": "fishingValueOverlap",
+      "sketchId": "21337",
+      "classId": "fishing_value",
+      "groupId": "No-Take",
+      "geographyId": null,
+      "value": 9680.756849050522,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "metricId": "fishingValueOverlap",
       "sketchId": "21338",
       "classId": "fishing_value",
       "groupId": null,
+      "geographyId": null,
+      "value": 3237.906126141548,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "metricId": "fishingValueOverlap",
+      "sketchId": "21338",
+      "classId": "fishing_value",
+      "groupId": "Partial-Take",
       "geographyId": null,
       "value": 3237.906126141548,
       "extra": {
@@ -36,9 +58,31 @@
     },
     {
       "metricId": "fishingValueOverlap",
+      "sketchId": "21339",
+      "classId": "fishing_value",
+      "geographyId": null,
+      "value": 12346.146966218948,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "fishingValueOverlap",
       "sketchId": "21568",
       "classId": "fishing_value",
       "groupId": null,
+      "geographyId": null,
+      "value": 2315.73761177063,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "metricId": "fishingValueOverlap",
+      "sketchId": "21568",
+      "classId": "fishing_value",
+      "groupId": "No-Take",
       "geographyId": null,
       "value": 2315.73761177063,
       "extra": {
