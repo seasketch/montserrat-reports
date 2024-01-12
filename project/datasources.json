@@ -62,25 +62,91 @@
     "src": "data/src/Montserrat_Blue_Halo/next_reports/Fishing_Value_170717.tif"
   },
   {
-    "src": "data/src/diving_value.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "diving_value",
-    "formats": [
-      "tif"
-    ],
-    "created": "2024-01-11T23:47:16.399Z",
-    "lastUpdated": "2024-01-11T23:47:16.399Z",
+    "geo_type": "raster",
     "keyStats": {
       "total": {
         "total": {
-          "sum": 448577,
           "count": null,
+          "sum": 448577,
           "area": null
         }
       }
     },
+    "formats": [
+      "tif"
+    ],
+    "measurementType": "quantitative",
+    "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative"
+    "created": "2024-01-11T23:47:16.399Z",
+    "lastUpdated": "2024-01-11T23:47:16.399Z",
+    "src": "data/src/diving_value.tif"
+  },
+  {
+    "datasourceId": "acropora_palmata",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 8,
+          "sum": null,
+          "area": 0
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "iucn-coral-acropora-palmata",
+    "classKeys": [],
+    "created": "2024-01-12T18:27:03.699Z",
+    "lastUpdated": "2024-01-12T18:27:03.699Z",
+    "src": "data/src/iucn-coral-acropora-palmata.geojson",
+    "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "orbicella_annularis",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 16,
+          "sum": null,
+          "area": 0
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "iucn-coral-orbicella-annularis",
+    "classKeys": [],
+    "created": "2024-01-12T18:28:43.116Z",
+    "lastUpdated": "2024-01-12T18:28:43.116Z",
+    "src": "data/src/iucn-coral-orbicella-annularis.geojson",
+    "propertiesToKeep": []
+  },
+  {
+    "src": "data/src/iucn-coral-orbicella-faveolata.geojson",
+    "layerName": "iucn-coral-orbicella-faveolata",
+    "geo_type": "vector",
+    "datasourceId": "orbicella_faveolata",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2024-01-12T18:29:38.371Z",
+    "lastUpdated": "2024-01-12T18:29:38.371Z",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 67,
+          "sum": null,
+          "area": 0
+        }
+      }
+    },
+    "propertiesToKeep": []
   }
 ]

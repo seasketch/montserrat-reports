@@ -37,5 +37,32 @@
                 "layerId": ""
             }
         ]
+    },
+    {
+        "metricId": "coralOverlap",
+        "type": "countOverlap",
+        "classes": [
+            {
+                "classId": "orbicella_annularis",
+                "display": "Orbicella annularis",
+                "datasourceId": "orbicella_annularis",
+                "objectiveId": "orbicella_annularis",
+                "layerId": ""
+            },
+            {
+                "classId": "orbicella_faveolata",
+                "display": "Orbicella faveolata",
+                "datasourceId": "orbicella_faveolata",
+                "objectiveId": "orbicella_faveolata",
+                "layerId": ""
+            },
+            {
+                "classId": "acropora_palmata",
+                "display": "Acropora palmata",
+                "datasourceId": "acropora_palmata",
+                "objectiveId": "acropora_palmata",
+                "layerId": ""
+            }
+        ]
     }
 ]

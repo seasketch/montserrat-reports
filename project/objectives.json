@@ -1,8 +1,34 @@
-[{
-  "objectiveId": "eez",
-  "shortDesc": "EEZ Objective",
-  "target": 0.2,
-  "countsToward": {
-      "Fully Protected Area": "yes"
-  }
-}]
+[
+    {
+        "objectiveId": "eez",
+        "shortDesc": "EEZ Objective",
+        "target": 0.2,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+      "objectiveId": "orbicella_annularis",
+      "shortDesc": "Total Orbicella annularis observations",
+      "target": 16,
+      "countsToward": {
+          "Fully Protected Area": "yes"
+      }
+  },
+  {
+    "objectiveId": "orbicella_faveolata",
+    "shortDesc": "Total Orbicella faveolata observations",
+    "target": 67,
+    "countsToward": {
+        "Fully Protected Area": "yes"
+    }
+},
+{
+    "objectiveId": "acropora_palmata",
+    "shortDesc": "Total Acropora palmata observations",
+    "target": 8,
+    "countsToward": {
+        "Fully Protected Area": "yes"
+    }
+}
+]
