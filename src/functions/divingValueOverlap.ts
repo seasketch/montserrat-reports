@@ -19,11 +19,11 @@ import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
 
-const metricGroup = project.getMetricGroup("fishingValueOverlap");
+const metricGroup = project.getMetricGroup("divingValueOverlap");
 
 const groupIds = ["No-Take", "Partial-Take"];
 
-export async function fishingValueOverlap(
+export async function divingValueOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
   const box = sketch.bbox || bbox(sketch);
@@ -99,8 +99,8 @@ export function getZoneType(
   return zoneTypes;
 }
 
-export default new GeoprocessingHandler(fishingValueOverlap, {
-  title: "fishingValueOverlap",
+export default new GeoprocessingHandler(divingValueOverlap, {
+  title: "divingValueOverlap",
   description: "ocean use metrics",
   timeout: 520, // seconds
   executionMode: "async",

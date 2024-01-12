@@ -1,26 +1,41 @@
-[{
-  "metricId": "boundaryAreaOverlap",
-  "type": "areaOverlap",
-  "classes": [
-      {
-          "classId": "3nm_jurisdiction",
-          "display": "3 nautical miles",
-          "datasourceId": "3nm_jurisdiction",
-          "objectiveId": "eez",
-          "layerId": ""
-      }
-  ]
-},
-{
-  "metricId": "fishingValueOverlap",
-  "type": "valueOverlap",
-  "classes": [
-      {
-          "classId": "fishing_value",
-          "display": "Fishing Value",
-          "datasourceId": "fishing_value",
-          "objectiveId": "",
-          "layerId": ""
-      }
-  ]
-}]
+[
+    {
+        "metricId": "boundaryAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "3nm_jurisdiction",
+                "display": "3 nautical miles",
+                "datasourceId": "3nm_jurisdiction",
+                "objectiveId": "eez",
+                "layerId": ""
+            }
+        ]
+    },
+    {
+        "metricId": "fishingValueOverlap",
+        "type": "valueOverlap",
+        "classes": [
+            {
+                "classId": "fishing_value",
+                "display": "Fishing Value",
+                "datasourceId": "fishing_value",
+                "objectiveId": "",
+                "layerId": ""
+            }
+        ]
+    },
+    {
+        "metricId": "divingValueOverlap",
+        "type": "valueOverlap",
+        "classes": [
+            {
+                "classId": "diving_value",
+                "display": "Diving Value",
+                "datasourceId": "diving_value",
+                "objectiveId": "",
+                "layerId": ""
+            }
+        ]
+    }
+]

@@ -85,7 +85,7 @@ const groupColorMap: Record<string, string> = {
   "Partial-Take": "#FFE1A3",
 };
 
-const metricGroup = project.getMetricGroup("fishingValueOverlap");
+const metricGroup = project.getMetricGroup("divingValueOverlap");
 const precalcMetrics = project.getPrecalcMetrics(
   metricGroup,
   "sum",
@@ -94,7 +94,7 @@ const precalcMetrics = project.getPrecalcMetrics(
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-export const FishingCard = () => {
+export const DivingCard = () => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
 
@@ -106,8 +106,8 @@ export const FishingCard = () => {
   return (
     <>
       <ResultsCard
-        title={t("Fishing Value")}
-        functionName="fishingValueOverlap"
+        title={t("Diving Value")}
+        functionName="divingValueOverlap"
         useChildCard
       >
         {(data: ReportResult) => {
@@ -126,7 +126,7 @@ export const FishingCard = () => {
 
           return (
             <ToolbarCard
-              title={t("Fishing Value")}
+              title={t("Diving Value")}
               items={
                 <LayerToggle
                   label={mapLabel}
@@ -199,10 +199,10 @@ export const FishingCard = () => {
                 <Trans i18nKey="Fishing Value Card - learn more">
                   <p>
                     {" "}
-                    This report summarizes the amount of fishing value overlap
-                    within this plan. Fishing value was estimated via an Ocean
-                    Use Survey which asked local fishers to identify the areas
-                    they value most for fishing.
+                    This report summarizes the amount of diving value overlap
+                    within this plan. Diving value was estimated via an Ocean
+                    Use Survey which asked local divers to identify the areas
+                    they value most for diving.
                   </p>
                 </Trans>
               </Collapse>

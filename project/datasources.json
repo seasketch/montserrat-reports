@@ -40,19 +40,41 @@
     "propertiesToKeep": []
   },
   {
-    "src": "data/src/Montserrat_Blue_Halo/next_reports/Fishing_Value_170717.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "fishing_value",
-    "formats": [
-      "tif"
-    ],
-    "created": "2023-11-09T04:08:04.195Z",
-    "lastUpdated": "2023-11-09T04:08:04.195Z",
+    "geo_type": "raster",
     "keyStats": {
       "total": {
         "total": {
+          "count": null,
           "sum": 1123449.1637171507,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2023-11-09T04:08:04.195Z",
+    "lastUpdated": "2023-11-09T04:08:04.195Z",
+    "src": "data/src/Montserrat_Blue_Halo/next_reports/Fishing_Value_170717.tif"
+  },
+  {
+    "src": "data/src/diving_value.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "diving_value",
+    "formats": [
+      "tif"
+    ],
+    "created": "2024-01-11T23:47:16.399Z",
+    "lastUpdated": "2024-01-11T23:47:16.399Z",
+    "keyStats": {
+      "total": {
+        "total": {
+          "sum": 448577,
           "count": null,
           "area": null
         }
