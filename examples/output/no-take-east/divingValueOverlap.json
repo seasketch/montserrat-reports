@@ -21,6 +21,17 @@
       "extra": {
         "sketchName": "no-take-east"
       }
+    },
+    {
+      "metricId": "divingValueOverlap",
+      "sketchId": "21364",
+      "classId": "diving_value",
+      "groupId": "Partial-Take",
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
     }
   ],
   "sketch": {

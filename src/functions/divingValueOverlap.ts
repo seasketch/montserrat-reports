@@ -14,14 +14,17 @@ import {
   NullSketch,
   getSketchFeatures,
   getUserAttribute,
+  Georaster,
 } from "@seasketch/geoprocessing";
 import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
+import { overlapRasterGroupMetrics } from "../../scripts/overlapRasterGroupMetrics";
 
 const metricGroup = project.getMetricGroup("divingValueOverlap");
+const featuresByClass: Record<string, Georaster> = {};
 
-const groupIds = ["No-Take", "Partial-Take"];
+const protectionLevels = ["No-Take", "Partial-Take"];
 
 export async function divingValueOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -39,6 +42,8 @@ export async function divingValueOverlap(
         const raster = await loadCogWindow(url, {
           windowBox: box,
         });
+        featuresByClass[curClass.classId] = raster;
+
         // start analysis as soon as source load done
         const overlapResult = await overlapRaster(
           metricGroup.metricId,
@@ -46,20 +51,7 @@ export async function divingValueOverlap(
           sketch
         );
 
-        const sketchToZoneType = getZoneType(sketch);
-        const metricToZoneType = (sketchMetric: Metric) => {
-          return sketchToZoneType[sketchMetric.sketchId!];
-        };
-
-        // add respective groupId to each metric and combine with overlapResult
-        const overlapGroupResult = overlapResult.map((result) => ({
-          ...result,
-          groupId: metricToZoneType(result),
-        }));
-
-        const combinedResults = [...overlapResult, ...overlapGroupResult];
-
-        return combinedResults.map(
+        return overlapResult.map(
           (metrics): Metric => ({
             ...metrics,
             classId: curClass.classId,
@@ -73,8 +65,22 @@ export async function divingValueOverlap(
     []
   );
 
+  const sketchToZoneType = getZoneType(sketch);
+  const metricToZoneType = (sketchMetric: Metric) => {
+    return sketchToZoneType[sketchMetric.sketchId!];
+  };
+
+  const groupMetrics = await overlapRasterGroupMetrics({
+    metricId: metricGroup.metricId,
+    groupIds: protectionLevels,
+    sketch,
+    metricToGroup: metricToZoneType,
+    metrics: metrics,
+    featuresByClass,
+  });
+
   return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
+    metrics: sortMetrics(rekeyMetrics([...metrics, ...groupMetrics])),
     sketch: toNullSketch(sketch, true),
   };
 }
@@ -90,7 +96,11 @@ export function getZoneType(
   const sketchFeatures = getSketchFeatures(sketch);
   const zoneTypes = sketchFeatures.reduce<Record<string, string>>(
     (types, sketch) => {
-      const zoneType = getUserAttribute(sketch.properties, "zoneType", "")[0];
+      const zoneType = getUserAttribute(
+        sketch.properties,
+        "zoneType",
+        ""
+      ).toString();
       types[sketch.properties.id] = zoneType;
       return types;
     },
@@ -101,7 +111,7 @@ export function getZoneType(
 
 export default new GeoprocessingHandler(divingValueOverlap, {
   title: "divingValueOverlap",
-  description: "ocean use metrics",
+  description: "OUS diving value overlap",
   timeout: 520, // seconds
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required

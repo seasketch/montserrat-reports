@@ -60,6 +60,19 @@
       "metricId": "divingValueOverlap",
       "sketchId": "21339",
       "classId": "diving_value",
+      "groupId": "No-Take",
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "divingValueOverlap",
+      "sketchId": "21339",
+      "classId": "diving_value",
+      "groupId": "Partial-Take",
       "geographyId": null,
       "value": 0,
       "extra": {

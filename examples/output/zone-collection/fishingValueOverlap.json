@@ -60,8 +60,21 @@
       "metricId": "fishingValueOverlap",
       "sketchId": "21339",
       "classId": "fishing_value",
+      "groupId": "No-Take",
       "geographyId": null,
-      "value": 12346.146966218948,
+      "value": 11996.494460821152,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "fishingValueOverlap",
+      "sketchId": "21339",
+      "classId": "fishing_value",
+      "groupId": "Partial-Take",
+      "geographyId": null,
+      "value": 349.65250539779663,
       "extra": {
         "sketchName": "zone-collection",
         "isCollection": true
