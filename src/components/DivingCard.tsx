@@ -257,8 +257,6 @@ const genZoneTable = (data: ReportResult, mg: MetricGroup, t: TFunction) => {
     (m) => m.groupId && sketchGroupIds.includes(m.groupId)
   );
 
-  console.log(data.metrics);
-
   const finalMetrics = [
     ...sketchMetrics,
     ...toPercentMetric(

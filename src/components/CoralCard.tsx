@@ -128,8 +128,6 @@ export const CoralCard = () => {
               };
             }, {});
 
-          console.log("classGroupMetricValues", classGroupMetricValues);
-
           return (
             <ToolbarCard
               title={t("Coral Species")}
@@ -150,12 +148,10 @@ export const CoralCard = () => {
                         rows: [
                           classGroupMetricValues[curClass.classId].map(
                             (curGroup) => [
+                              // underlying values and targets are scaled out of 100 to make equal width bars
                               (curGroup.value /
-                                (curClass.objectiveId
-                                  ? project.getObjectiveById(
-                                      curClass.objectiveId
-                                    ).target
-                                  : 100)) *
+                                project.getObjectiveById(curClass.objectiveId!)
+                                  .target) *
                                 100,
                             ]
                           ),
@@ -170,23 +166,19 @@ export const CoralCard = () => {
                       }}
                       blockGroupNames={["No-Take", "Partial-Take"]}
                       blockGroupStyles={blockGroupStyles}
-                      showLegend={true}
+                      // legend is only shown for last class
+                      showLegend={
+                        index < metricGroup.classes.length - 1 ? false : true
+                      }
                       valueFormatter={(value: number) =>
                         (
-                          (value *
-                            (curClass.objectiveId
-                              ? project.getObjectiveById(curClass.objectiveId)
-                                  .target
-                              : 100)) /
-                          100
+                          project.getObjectiveById(curClass.objectiveId!)
+                            .target / 100
                         ).toFixed(0)
                       }
                       targetValueFormatter={(value: number) =>
                         "Of " +
-                        (curClass.objectiveId
-                          ? project.getObjectiveById(curClass.objectiveId)
-                              .target
-                          : 100) +
+                        project.getObjectiveById(curClass.objectiveId!).target +
                         " observations"
                       }
                     />
