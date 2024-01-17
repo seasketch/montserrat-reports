@@ -10,7 +10,6 @@ import {
   sortMetricsDisplayOrder,
   isSketchCollection,
   MetricGroup,
-  getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
 import {
   ClassTable,
@@ -21,20 +20,13 @@ import {
   Table,
   useSketchProperties,
   ToolbarCard,
-  DataDownload,
   InfoStatus,
-  KeySection,
   GroupCircleRow,
   GroupPill,
 } from "@seasketch/geoprocessing/client-ui";
 import styled from "styled-components";
 import project from "../../project";
-import {
-  GroupMetricAgg,
-  Metric,
-  dataClassSchema,
-  squareMeterToKilometer,
-} from "@seasketch/geoprocessing";
+import { Metric, squareMeterToKilometer } from "@seasketch/geoprocessing";
 import Translator from "../components/TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
 import { TFunction } from "i18next";
@@ -428,10 +420,11 @@ const genZoneSizeTable = (
                 mg.metricId
                 // sum all area values for each zone type, excluding the collection itself
               ].reduce((value: number, curMetric: Metric) => {
-                const curValue =
-                  curMetric.extra && curMetric.extra.isCollection === true
-                    ? 0
-                    : curMetric.value;
+                const curValue = isSketchCollection(data.sketch)
+                  ? curMetric.extra && curMetric.extra.isCollection === true
+                    ? curMetric.value
+                    : 0
+                  : curMetric.value;
                 return value + curValue;
               }, 0);
               return (
@@ -447,10 +440,12 @@ const genZoneSizeTable = (
               const value = aggMetrics[row.groupId][curClass.classId as string][
                 project.getMetricGroupPercId(mg)
               ].reduce((value: number, curMetric: Metric) => {
-                const curValue =
-                  curMetric.extra && curMetric.extra.isCollection === true
-                    ? 0
-                    : curMetric.value;
+                // if sketch is a collection, only add the total collection value - else, just get the single value
+                const curValue = isSketchCollection(data.sketch)
+                  ? curMetric.extra && curMetric.extra.isCollection === true
+                    ? curMetric.value
+                    : 0
+                  : curMetric.value;
                 return value + curValue;
               }, 0);
               return (

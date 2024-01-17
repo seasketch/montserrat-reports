@@ -23,6 +23,7 @@ import {
   MetricGroup,
   percentWithEdge,
   Metric,
+  isSketchCollection,
 } from "@seasketch/geoprocessing/client-core";
 
 import project from "../../project";
@@ -302,10 +303,12 @@ const genZoneTable = (data: ReportResult, mg: MetricGroup, t: TFunction) => {
               const value = aggMetrics[row.groupId][curClass.classId as string][
                 project.getMetricGroupPercId(mg)
               ].reduce((value: number, curMetric: Metric) => {
-                const curValue =
-                  curMetric.extra && curMetric.extra.isCollection === true
-                    ? 0
-                    : curMetric.value;
+                // if sketch is a collection, only add the total collection value - else, just get the single value
+                const curValue = isSketchCollection(data.sketch)
+                  ? curMetric.extra && curMetric.extra.isCollection === true
+                    ? curMetric.value
+                    : 0
+                  : curMetric.value;
                 return value + curValue;
               }, 0);
               return (
