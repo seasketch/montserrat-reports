@@ -128,16 +128,8 @@
     "propertiesToKeep": []
   },
   {
-    "src": "data/src/iucn-coral-orbicella-faveolata.geojson",
-    "layerName": "iucn-coral-orbicella-faveolata",
-    "geo_type": "vector",
     "datasourceId": "orbicella_faveolata",
-    "formats": [
-      "fgb"
-    ],
-    "classKeys": [],
-    "created": "2024-01-12T18:29:38.371Z",
-    "lastUpdated": "2024-01-12T18:29:38.371Z",
+    "geo_type": "vector",
     "keyStats": {
       "total": {
         "total": {
@@ -147,6 +139,78 @@
         }
       }
     },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "iucn-coral-orbicella-faveolata",
+    "classKeys": [],
+    "created": "2024-01-12T18:29:38.371Z",
+    "lastUpdated": "2024-01-12T18:29:38.371Z",
+    "src": "data/src/iucn-coral-orbicella-faveolata.geojson",
     "propertiesToKeep": []
+  },
+  {
+    "src": "data/src/benthic-habitats.geojson",
+    "layerName": "benthic-habitats",
+    "geo_type": "vector",
+    "datasourceId": "benthic_habitats",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [
+      "Habitat"
+    ],
+    "created": "2024-01-17T23:28:20.197Z",
+    "lastUpdated": "2024-01-17T23:28:20.197Z",
+    "keyStats": {
+      "Habitat": {
+        "Hard Bottom and Sand": {
+          "count": 4,
+          "area": 13480001.484592335
+        },
+        "Seagrass": {
+          "count": 12,
+          "area": 4515116.035468581
+        },
+        "Colonized Volcanic Boulders": {
+          "count": 14,
+          "area": 3525441.686198001
+        },
+        "Coral Reef": {
+          "count": 44,
+          "area": 8807291.000863079
+        },
+        "Artificial Reef": {
+          "count": 3,
+          "area": 144151.44105907693
+        },
+        "Sand": {
+          "count": 7,
+          "area": 46308773.1331222
+        },
+        "Algal Reef (Hard Bottom)": {
+          "count": 2,
+          "area": 41767095.283771075
+        },
+        "Algal Reef (Mixed Bottom)": {
+          "count": 4,
+          "area": 10497436.624930382
+        },
+        "Sargassum Forest": {
+          "count": 1,
+          "area": 14262.746867822563
+        }
+      },
+      "total": {
+        "total": {
+          "count": 91,
+          "sum": null,
+          "area": 129059569.43687256
+        }
+      }
+    },
+    "propertiesToKeep": [
+      "Habitat"
+    ]
   }
 ]

@@ -4,6 +4,7 @@ import { FishingCard } from "./FishingCard";
 import { SketchAttributesCard } from "@seasketch/geoprocessing/client-ui";
 import { DivingCard } from "./DivingCard";
 import { CoralCard } from "./CoralCard";
+import { BenthicCard } from "./BenthicCard";
 
 export const ViabilityPage = () => {
   return (
@@ -12,6 +13,7 @@ export const ViabilityPage = () => {
       <FishingCard />
       <DivingCard />
       <CoralCard />
+      <BenthicCard />
       <SketchAttributesCard autoHide />
     </>
   );

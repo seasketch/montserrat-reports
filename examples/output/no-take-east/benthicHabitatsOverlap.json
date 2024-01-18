@@ -1,0 +1,149 @@
+{
+  "metrics": [
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Algal Reef (Hard Bottom)",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2104727.1385467197,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Algal Reef (Mixed Bottom)",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Artificial Reef",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Colonized Volcanic Boulders",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Coral Reef",
+      "groupId": null,
+      "geographyId": null,
+      "value": 113860.90203517093,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Hard Bottom and Sand",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Sand",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Sargassum Forest",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "metricId": "benthicHabitatsOverlap",
+      "sketchId": "21364",
+      "classId": "Seagrass",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 21364,
+    "bbox": [
+      -62.141247,
+      16.728144,
+      -62.104885,
+      16.773823
+    ],
+    "type": "Feature",
+    "properties": {
+      "5203": "no-take-east",
+      "5204": [
+        "No-Take"
+      ],
+      "id": "21364",
+      "name": "no-take-east",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "zoneType": [
+        "No-Take"
+      ],
+      "createdAt": "2023-10-25T17:27:47.99718+00:00",
+      "updatedAt": "2023-10-25T17:27:47.99718+00:00",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "597",
+      "userAttributes": [
+        {
+          "label": "Zone Type",
+          "value": [
+            "No-Take"
+          ],
+          "exportId": "zoneType",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "No-Take"
+          ],
+          "formElementId": 5204,
+          "alternateLanguages": {}
+        }
+      ]
+    },
+    "geometry": null
+  }
+}

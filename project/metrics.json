@@ -64,5 +64,83 @@
                 "layerId": ""
             }
         ]
+    },
+    {
+        "metricId": "benthicHabitatsOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classKey": "Habitat",
+                "classId": "Algal Reef (Hard Bottom)",
+                "display": "Algal Reef (Hard Bottom)",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Algal Reef (Mixed Bottom)",
+                "display": "Algal Reef (Mixed Bottom)",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Artificial Reef",
+                "display": "Artificial Reef",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Colonized Volcanic Boulders",
+                "display": "Colonized Volcanic Boulders",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Coral Reef",
+                "display": "Coral Reef",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Hard Bottom and Sand",
+                "display": "Hard Bottom and Sand",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Sand",
+                "display": "Sand",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Sargassum Forest",
+                "display": "Sargassum Forest",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            },
+            {
+                "classKey": "Habitat",
+                "classId": "Seagrass",
+                "display": "Seagrass",
+                "datasourceId": "benthic_habitats",
+                "objectiveId": "benthic_habitats",
+                "layerId": ""
+            }
+        ]
     }
 ]
