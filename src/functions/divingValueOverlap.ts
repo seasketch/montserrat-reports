@@ -15,11 +15,11 @@ import {
   getSketchFeatures,
   getUserAttribute,
   Georaster,
+  overlapRasterGroupMetrics,
 } from "@seasketch/geoprocessing";
-import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
+import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
-import { overlapRasterGroupMetrics } from "../../scripts/overlapRasterGroupMetrics";
 
 const metricGroup = project.getMetricGroup("divingValueOverlap");
 const featuresByClass: Record<string, Georaster> = {};
@@ -37,11 +37,9 @@ export async function divingValueOverlap(
         if (!curClass.datasourceId)
           throw new Error(`Expected datasourceId for ${curClass}`);
         const url = `${project.dataBucketUrl()}${getCogFilename(
-          curClass.datasourceId
+          project.getInternalRasterDatasourceById(curClass.datasourceId)
         )}`;
-        const raster = await loadCogWindow(url, {
-          windowBox: box,
-        });
+        const raster = await loadCog(url);
         featuresByClass[curClass.classId] = raster;
 
         // start analysis as soon as source load done

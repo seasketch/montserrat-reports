@@ -1,66 +1,66 @@
 {
   "metrics": [
     {
+      "geographyId": null,
       "metricId": "coralOverlap",
-      "sketchId": "21364",
       "classId": "orbicella_annularis",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "coralOverlap",
-      "sketchId": "21364",
       "classId": "orbicella_annularis",
+      "sketchId": "21364",
       "groupId": "No-Take",
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "coralOverlap",
-      "sketchId": "21364",
       "classId": "orbicella_faveolata",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "coralOverlap",
-      "sketchId": "21364",
       "classId": "orbicella_faveolata",
+      "sketchId": "21364",
       "groupId": "No-Take",
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "coralOverlap",
-      "sketchId": "21364",
       "classId": "acropora_palmata",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
-      "metricId": "coralOverlap",
-      "sketchId": "21364",
-      "classId": "acropora_palmata",
-      "groupId": "No-Take",
       "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "acropora_palmata",
+      "sketchId": "21364",
+      "groupId": "No-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"

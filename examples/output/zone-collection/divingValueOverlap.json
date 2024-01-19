@@ -1,55 +1,55 @@
 {
   "metrics": [
     {
-      "metricId": "divingValueOverlap",
-      "sketchId": "21337",
-      "classId": "diving_value",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21337",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-south"
       }
     },
     {
-      "metricId": "divingValueOverlap",
-      "sketchId": "21337",
-      "classId": "diving_value",
-      "groupId": "No-Take",
       "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21337",
+      "groupId": "No-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-south"
       }
     },
     {
-      "metricId": "divingValueOverlap",
-      "sketchId": "21338",
-      "classId": "diving_value",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21338",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "partial-take-south"
       }
     },
     {
+      "geographyId": null,
       "metricId": "divingValueOverlap",
-      "sketchId": "21338",
       "classId": "diving_value",
+      "sketchId": "21338",
       "groupId": "Partial-Take",
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "partial-take-south"
       }
     },
     {
-      "metricId": "divingValueOverlap",
-      "sketchId": "21339",
-      "classId": "diving_value",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21339",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "zone-collection",
@@ -57,11 +57,11 @@
       }
     },
     {
+      "geographyId": null,
       "metricId": "divingValueOverlap",
-      "sketchId": "21339",
       "classId": "diving_value",
+      "sketchId": "21339",
       "groupId": "No-Take",
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "zone-collection",
@@ -69,11 +69,11 @@
       }
     },
     {
+      "geographyId": null,
       "metricId": "divingValueOverlap",
-      "sketchId": "21339",
       "classId": "diving_value",
+      "sketchId": "21339",
       "groupId": "Partial-Take",
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "zone-collection",
@@ -81,22 +81,22 @@
       }
     },
     {
+      "geographyId": null,
       "metricId": "divingValueOverlap",
+      "classId": "diving_value",
       "sketchId": "21568",
-      "classId": "diving_value",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-north"
       }
     },
     {
-      "metricId": "divingValueOverlap",
-      "sketchId": "21568",
-      "classId": "diving_value",
-      "groupId": "No-Take",
       "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21568",
+      "groupId": "No-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-north"

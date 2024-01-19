@@ -1,0 +1,178 @@
+[
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Algal Reef (Hard Bottom)",
+    "sketchId": null,
+    "groupId": null,
+    "value": 41660680.741230786
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Algal Reef (Mixed Bottom)",
+    "sketchId": null,
+    "groupId": null,
+    "value": 10497602.38302609
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Artificial Reef",
+    "sketchId": null,
+    "groupId": null,
+    "value": 144150.42875638572
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Colonized Volcanic Boulders",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3525375.782778565
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Coral Reef",
+    "sketchId": null,
+    "groupId": null,
+    "value": 8807340.577191845
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Hard Bottom and Sand",
+    "sketchId": null,
+    "groupId": null,
+    "value": 13479995.418940445
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Sand",
+    "sketchId": null,
+    "groupId": null,
+    "value": 46308521.36186544
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Sargassum Forest",
+    "sketchId": null,
+    "groupId": null,
+    "value": 14262.167628870726
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-Seagrass",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4515130.1370918695
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "benthic_habitats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 128953058.99851032
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Algal Reef (Hard Bottom)",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Algal Reef (Mixed Bottom)",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Artificial Reef",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Colonized Volcanic Boulders",
+    "sketchId": null,
+    "groupId": null,
+    "value": 13
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Coral Reef",
+    "sketchId": null,
+    "groupId": null,
+    "value": 40
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Hard Bottom and Sand",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Sand",
+    "sketchId": null,
+    "groupId": null,
+    "value": 5
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Sargassum Forest",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-Seagrass",
+    "sketchId": null,
+    "groupId": null,
+    "value": 11
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "benthic_habitats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 80
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "sum",
+    "classId": "diving_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 372666
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "sum",
+    "classId": "fishing_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1120461.4250735044
+  }
+]

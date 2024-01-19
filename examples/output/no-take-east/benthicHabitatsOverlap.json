@@ -1,99 +1,99 @@
 {
   "metrics": [
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Algal Reef (Hard Bottom)",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
-      "value": 2104727.1385467197,
+      "value": 2104649.836417,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Algal Reef (Mixed Bottom)",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Artificial Reef",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Colonized Volcanic Boulders",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Coral Reef",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
-      "value": 113860.90203517093,
+      "value": 113836.037044,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Hard Bottom and Sand",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Sand",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
       "classId": "Sargassum Forest",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
-      "metricId": "benthicHabitatsOverlap",
-      "sketchId": "21364",
-      "classId": "Seagrass",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Seagrass",
+      "sketchId": "21364",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
