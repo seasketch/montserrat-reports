@@ -1,0 +1,28 @@
+{
+  "metrics": [
+    {
+      "metricId": "coralOverlap",
+      "value": 16,
+      "classId": "orbicella_annularis",
+      "groupId": null,
+      "geographyId": null,
+      "sketchId": null
+    },
+    {
+      "metricId": "coralOverlap",
+      "value": 67,
+      "classId": "orbicella_faveolata",
+      "groupId": null,
+      "geographyId": null,
+      "sketchId": null
+    },
+    {
+      "metricId": "coralOverlap",
+      "value": 8,
+      "classId": "acropora_palmata",
+      "groupId": null,
+      "geographyId": null,
+      "sketchId": null
+    }
+  ]
+}

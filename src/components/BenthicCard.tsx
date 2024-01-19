@@ -23,11 +23,9 @@ import Translator from "./TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
 
 const metricGroup = project.getMetricGroup("benthicHabitatsOverlap");
-const precalcMetrics = project.getPrecalcMetrics(
-  metricGroup,
-  "area",
-  metricGroup.classKey
-);
+const precalcMetrics = project.getPrecalcMetrics(metricGroup, "area", "3nm");
+
+console.log(precalcMetrics);
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -58,7 +56,8 @@ export const BenthicCard = () => {
             ...toPercentMetric(
               singleMetrics,
               precalcMetrics,
-              project.getMetricGroupPercId(metricGroup)
+              { metricIdOverride: project.getMetricGroupPercId(metricGroup) }
+              // project.getMetricGroupPercId(metricGroup)
             ),
           ];
 
