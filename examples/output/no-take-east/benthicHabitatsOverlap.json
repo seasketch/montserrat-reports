@@ -14,9 +14,53 @@
     {
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Hard Bottom)",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 2104649.836417,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Hard Bottom)",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Mixed Bottom)",
       "sketchId": "21364",
       "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Mixed Bottom)",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Mixed Bottom)",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
@@ -36,9 +80,53 @@
     {
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
+      "classId": "Artificial Reef",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Artificial Reef",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
       "classId": "Colonized Volcanic Boulders",
       "sketchId": "21364",
       "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Colonized Volcanic Boulders",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Colonized Volcanic Boulders",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
@@ -58,9 +146,53 @@
     {
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
+      "classId": "Coral Reef",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 113836.037044,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Coral Reef",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
       "classId": "Hard Bottom and Sand",
       "sketchId": "21364",
       "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Hard Bottom and Sand",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Hard Bottom and Sand",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
@@ -80,7 +212,62 @@
     {
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
+      "classId": "Sand",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sand",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
       "classId": "Sargassum Forest",
+      "sketchId": "21364",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sargassum Forest",
+      "sketchId": "21364",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sargassum Forest",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Seagrass",
       "sketchId": "21364",
       "groupId": null,
       "value": 0,
@@ -93,7 +280,18 @@
       "metricId": "benthicHabitatsOverlap",
       "classId": "Seagrass",
       "sketchId": "21364",
-      "groupId": null,
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Seagrass",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"
@@ -143,7 +341,6 @@
           "alternateLanguages": {}
         }
       ]
-    },
-    "geometry": null
+    }
   }
 }

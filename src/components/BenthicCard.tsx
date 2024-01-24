@@ -7,6 +7,7 @@ import {
   useSketchProperties,
   ToolbarCard,
   LayerToggle,
+  Pill,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -15,7 +16,6 @@ import {
   metricsWithSketchId,
   toPercentMetric,
   squareMeterToKilometer,
-  valueFormatter,
 } from "@seasketch/geoprocessing/client-core";
 
 import project from "../../project";
@@ -25,9 +25,13 @@ import { Trans, useTranslation } from "react-i18next";
 const metricGroup = project.getMetricGroup("benthicHabitatsOverlap");
 const precalcMetrics = project.getPrecalcMetrics(metricGroup, "area", "3nm");
 
-console.log(precalcMetrics);
-
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
+
+// Mapping groupIds to colors
+const groupColorMap: Record<string, string> = {
+  "No-Take": "#BEE4BE",
+  "Partial-Take": "#FFE1A3",
+};
 
 export const BenthicCard = () => {
   const [{ isCollection }] = useSketchProperties();
@@ -42,28 +46,52 @@ export const BenthicCard = () => {
   return (
     <>
       <ResultsCard
-        title={t("Bathymetric Classes")}
+        title={t("Benthic Habitats")}
         functionName="benthicHabitatsOverlap"
         useChildCard
       >
         {(data: ReportResult) => {
           let singleMetrics = data.metrics.filter(
-            (m) => m.sketchId === data.sketch.properties.id
+            (m) =>
+              m.sketchId === data.sketch.properties.id && m.groupId === null
           );
 
           const finalMetrics = [
             ...singleMetrics,
-            ...toPercentMetric(
-              singleMetrics,
-              precalcMetrics,
-              { metricIdOverride: project.getMetricGroupPercId(metricGroup) }
-              // project.getMetricGroupPercId(metricGroup)
-            ),
+            ...toPercentMetric(singleMetrics, precalcMetrics, {
+              metricIdOverride: project.getMetricGroupPercId(metricGroup),
+            }),
+          ];
+
+          const noTakeMetrics = data.metrics.filter(
+            (m) =>
+              m.sketchId === data.sketch.properties.id &&
+              m.groupId === "No-Take"
+          );
+
+          const finalNoTakeMetrics = [
+            ...noTakeMetrics,
+            ...toPercentMetric(noTakeMetrics, precalcMetrics, {
+              metricIdOverride: project.getMetricGroupPercId(metricGroup),
+            }),
+          ];
+
+          const partialTakeeMetrics = data.metrics.filter(
+            (m) =>
+              m.sketchId === data.sketch.properties.id &&
+              m.groupId === "Partial-Take"
+          );
+
+          const finalPartialTakeMetrics = [
+            ...partialTakeeMetrics,
+            ...toPercentMetric(partialTakeeMetrics, precalcMetrics, {
+              metricIdOverride: project.getMetricGroupPercId(metricGroup),
+            }),
           ];
 
           return (
             <ToolbarCard
-              title={t("Bathymetric Classes")}
+              title={t("Benthic Habitats")}
               items={
                 <LayerToggle
                   label={mapLabel}
@@ -73,8 +101,92 @@ export const BenthicCard = () => {
               }
             >
               <Translator>
+                <br />
+                <Pill color={"lightblue"}>All Reserves</Pill>
                 <ClassTable
                   rows={finalMetrics}
+                  metricGroup={metricGroup}
+                  columnConfig={[
+                    {
+                      columnLabel: classLabel,
+                      type: "class",
+                      width: 30,
+                    },
+                    {
+                      columnLabel: areaWithin,
+                      type: "metricValue",
+                      metricId: metricGroup.metricId,
+                      valueFormatter: (val: string | number) =>
+                        Number.format(
+                          squareMeterToKilometer(
+                            typeof val === "string" ? parseInt(val) : val
+                          )
+                        ),
+                      valueLabel: sqKmLabel,
+                      width: 30,
+                    },
+                    {
+                      columnLabel: percAreaWithin,
+                      type: "metricChart",
+                      metricId: project.getMetricGroupPercId(metricGroup),
+                      valueFormatter: "percent",
+                      chartOptions: {
+                        showTitle: true,
+                        targetLabelPosition: "bottom",
+                        targetLabelStyle: "tight",
+                        barHeight: 11,
+                        target: 30,
+                      },
+                      width: 30,
+                    },
+                  ]}
+                />
+                <br />
+                <Pill color={groupColorMap["No-Take"]}>No-Take Reserves</Pill>
+                <ClassTable
+                  rows={finalNoTakeMetrics}
+                  metricGroup={metricGroup}
+                  columnConfig={[
+                    {
+                      columnLabel: classLabel,
+                      type: "class",
+                      width: 30,
+                    },
+                    {
+                      columnLabel: areaWithin,
+                      type: "metricValue",
+                      metricId: metricGroup.metricId,
+                      valueFormatter: (val: string | number) =>
+                        Number.format(
+                          squareMeterToKilometer(
+                            typeof val === "string" ? parseInt(val) : val
+                          )
+                        ),
+                      valueLabel: sqKmLabel,
+                      width: 30,
+                    },
+                    {
+                      columnLabel: percAreaWithin,
+                      type: "metricChart",
+                      metricId: project.getMetricGroupPercId(metricGroup),
+                      valueFormatter: "percent",
+                      chartOptions: {
+                        showTitle: true,
+                        targetLabelPosition: "bottom",
+                        targetLabelStyle: "tight",
+                        barHeight: 11,
+                        target: 30,
+                      },
+                      width: 30,
+                    },
+                  ]}
+                />
+                <br />
+                <Pill color={groupColorMap["Partial-Take"]}>
+                  Partial-Take Reserves
+                </Pill>
+                <ClassTable
+                  rows={finalPartialTakeMetrics}
                   metricGroup={metricGroup}
                   columnConfig={[
                     {
@@ -123,12 +235,15 @@ export const BenthicCard = () => {
                 <Trans i18nKey="Bathy Classes Card - learn more">
                   <p>
                     {" "}
-                    This report summarizes bathymetric class overlap within this
-                    plan.
+                    This report summarizes benthic habitats overlap within this
+                    plan, broken down by zone protection level.
                   </p>
                   <p>
                     If zone boundaries overlap with each other, the overlap is
-                    only counted once.
+                    only counted once. If a zone with a higher protection level
+                    overlaps a zone with a lower protection level, the higher
+                    level takes precedence and the overlap is counted only
+                    towards the higher level.
                   </p>
                 </Trans>
               </Collapse>
