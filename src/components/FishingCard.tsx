@@ -87,11 +87,9 @@ const groupColorMap: Record<string, string> = {
 };
 
 const metricGroup = project.getMetricGroup("fishingValueOverlap");
-const precalcMetrics = project.getPrecalcMetrics(
-  metricGroup,
-  "sum",
-  metricGroup.classKey
-);
+const precalcMetrics = project.getPrecalcMetrics(metricGroup, "sum", "3nm");
+
+console.log("precalcMetrics", precalcMetrics);
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -118,11 +116,9 @@ export const FishingCard = () => {
 
           const finalMetrics = [
             ...singleMetrics,
-            ...toPercentMetric(
-              singleMetrics,
-              precalcMetrics,
-              project.getMetricGroupPercId(metricGroup)
-            ),
+            ...toPercentMetric(singleMetrics, precalcMetrics, {
+              metricIdOverride: project.getMetricGroupPercId(metricGroup),
+            }),
           ];
 
           return (
@@ -260,11 +256,9 @@ const genZoneTable = (data: ReportResult, mg: MetricGroup, t: TFunction) => {
 
   const finalMetrics = [
     ...sketchMetrics,
-    ...toPercentMetric(
-      sketchMetrics,
-      precalcMetrics,
-      project.getMetricGroupPercId(mg)
-    ),
+    ...toPercentMetric(sketchMetrics, precalcMetrics, {
+      metricIdOverride: project.getMetricGroupPercId(mg),
+    }),
   ];
 
   const aggMetrics = nestMetrics(finalMetrics, [

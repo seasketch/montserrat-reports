@@ -1,0 +1,8 @@
+[{
+  "geographyId": "3nm",
+  "datasourceId": "3nm_jurisdiction",
+  "display": "3nm Boundary",
+  "layerId":"KuHfKUzj6",
+  "groups": ["default-boundary"],
+  "precalc": true
+}]

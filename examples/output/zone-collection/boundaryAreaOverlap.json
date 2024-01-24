@@ -1,55 +1,55 @@
 {
   "metrics": [
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21337",
-      "classId": "3nm_jurisdiction",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21337",
+      "groupId": null,
       "value": 23201406.583954666,
       "extra": {
         "sketchName": "no-take-south"
       }
     },
     {
+      "geographyId": null,
       "metricId": "boundaryAreaOverlap",
-      "sketchId": "21337",
       "classId": "3nm_jurisdiction",
+      "sketchId": "21337",
       "groupId": "No-Take",
-      "geographyId": null,
       "value": 23201406.583954666,
       "extra": {
         "sketchName": "no-take-south"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21338",
-      "classId": "3nm_jurisdiction",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21338",
+      "groupId": null,
       "value": 8239912.644738134,
       "extra": {
         "sketchName": "partial-take-south"
       }
     },
     {
+      "geographyId": null,
       "metricId": "boundaryAreaOverlap",
-      "sketchId": "21338",
       "classId": "3nm_jurisdiction",
+      "sketchId": "21338",
       "groupId": "Partial-Take",
-      "geographyId": null,
       "value": 8239912.644738134,
       "extra": {
         "sketchName": "partial-take-south"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21339",
-      "classId": "3nm_jurisdiction",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21339",
+      "groupId": null,
       "value": 35874001.5093876,
       "extra": {
         "sketchName": "zone-collection",
@@ -57,11 +57,11 @@
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21339",
-      "classId": "3nm_jurisdiction",
-      "groupId": "No-Take",
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21339",
+      "groupId": "No-Take",
       "value": 34752510.281501465,
       "extra": {
         "sketchName": "zone-collection",
@@ -69,11 +69,11 @@
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21339",
-      "classId": "3nm_jurisdiction",
-      "groupId": "Partial-Take",
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21339",
+      "groupId": "Partial-Take",
       "value": 1121488.2032876497,
       "extra": {
         "sketchName": "zone-collection",
@@ -81,22 +81,22 @@
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21568",
-      "classId": "3nm_jurisdiction",
-      "groupId": null,
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21568",
+      "groupId": null,
       "value": 11551103.697546799,
       "extra": {
         "sketchName": "no-take-north"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21568",
-      "classId": "3nm_jurisdiction",
-      "groupId": "No-Take",
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21568",
+      "groupId": "No-Take",
       "value": 11551103.697546799,
       "extra": {
         "sketchName": "no-take-north"

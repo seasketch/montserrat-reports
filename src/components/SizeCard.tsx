@@ -179,11 +179,9 @@ const genSingleSizeTable = (
   const finalMetrics = sortMetricsDisplayOrder(
     [
       ...singleMetrics,
-      ...toPercentMetric(
-        singleMetrics,
-        boundaryTotalMetrics,
-        project.getMetricGroupPercId(mg)
-      ),
+      ...toPercentMetric(singleMetrics, boundaryTotalMetrics, {
+        metricIdOverride: project.getMetricGroupPercId(mg),
+      }),
     ],
     "classId",
     ["eez", "offshore", "contiguous"]
@@ -266,11 +264,9 @@ const genNetworkSizeTable = (
   );
   const finalMetrics = [
     ...sketchMetrics,
-    ...toPercentMetric(
-      sketchMetrics,
-      boundaryTotalMetrics,
-      project.getMetricGroupPercId(mg)
-    ),
+    ...toPercentMetric(sketchMetrics, boundaryTotalMetrics, {
+      metricIdOverride: project.getMetricGroupPercId(mg),
+    }),
   ];
 
   const aggMetrics = nestMetrics(finalMetrics, [
@@ -369,11 +365,9 @@ const genZoneSizeTable = (
 
   const finalMetrics = [
     ...sketchMetrics,
-    ...toPercentMetric(
-      sketchMetrics,
-      boundaryTotalMetrics,
-      project.getMetricGroupPercId(mg)
-    ),
+    ...toPercentMetric(sketchMetrics, boundaryTotalMetrics, {
+      metricIdOverride: project.getMetricGroupPercId(mg),
+    }),
   ];
 
   const aggMetrics = nestMetrics(finalMetrics, [

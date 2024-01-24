@@ -24,13 +24,11 @@ import {
 import project from "../../project";
 import Translator from "./TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
+import coralTotalMetrics from "../../data/bin/coral.json";
 
 const metricGroup = project.getMetricGroup("coralOverlap");
-const precalcMetrics = project.getPrecalcMetrics(
-  metricGroup,
-  "count",
-  metricGroup.classKey
-);
+// const precalcMetrics = project.getPrecalcMetrics(metricGroup, "count");
+const precalcMetrics = coralTotalMetrics.metrics;
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -92,11 +90,9 @@ export const CoralCard = () => {
 
           const finalMetrics = [
             ...singleMetrics,
-            ...toPercentMetric(
-              singleMetrics,
-              precalcMetrics,
-              project.getMetricGroupPercId(metricGroup)
-            ),
+            ...toPercentMetric(singleMetrics, precalcMetrics, {
+              metricIdOverride: project.getMetricGroupPercId(metricGroup),
+            }),
           ];
 
           // get just metrics with groupId, excluding collection

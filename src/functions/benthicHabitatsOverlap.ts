@@ -11,10 +11,19 @@ import {
   rekeyMetrics,
   getFlatGeobufFilename,
   isInternalVectorDatasource,
+  sortMetrics,
+  NullSketchCollection,
+  NullSketch,
+  getSketchFeatures,
+  getUserAttribute,
+  overlapFeaturesGroupMetrics,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
+
+const boundaryArea = 373298362.032;
+const featuresByClass: Record<string, Feature<Polygon>[]> = {};
 
 export async function benthicHabitatsOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -43,8 +52,7 @@ export async function benthicHabitatsOverlap(
           // If this is a sub-class, filter by class name, exclude null geometry too
           // ToDo: should do deeper match to classKey
           const finalFeatures =
-            ds.classKeys.length > 0 &&
-            curClass.classId !== `${ds.datasourceId}_all`
+            ds.classKeys.length > 0
               ? dsFeatures.filter((feat) => {
                   return (
                     feat.geometry &&
@@ -52,6 +60,7 @@ export async function benthicHabitatsOverlap(
                   );
                 }, [])
               : dsFeatures;
+          featuresByClass[curClass.classId] = finalFeatures;
 
           return finalFeatures;
         }
@@ -87,9 +96,23 @@ export async function benthicHabitatsOverlap(
     []
   );
 
+  const sketchToZoneType = getZoneType(sketch);
+  const metricToZoneType = (sketchMetric: Metric) => {
+    return sketchToZoneType[sketchMetric.sketchId!];
+  };
+
+  const levelMetrics = await overlapFeaturesGroupMetrics({
+    metricId: metricGroup.metricId,
+    groupIds: ["No-Take", "Partial-Take"],
+    sketch: sketch,
+    metricToGroup: metricToZoneType,
+    metrics: metrics,
+    featuresByClass: featuresByClass,
+  });
+
   return {
-    metrics: rekeyMetrics(metrics),
-    sketch: toNullSketch(sketch, true),
+    metrics: sortMetrics(rekeyMetrics([...metrics, ...levelMetrics])),
+    sketch: toNullSketch(sketch),
   };
 }
 
@@ -100,3 +123,23 @@ export default new GeoprocessingHandler(benthicHabitatsOverlap, {
   timeout: 600,
   requiresProperties: [],
 });
+
+/**
+ * Gets zone type for all sketches in a sketch collection from user attributes
+ * @param sketch User-created Sketch | SketchCollection
+ * @returns <string, string> mapping of sketchId to zone type
+ */
+export function getZoneType(
+  sketch: Sketch | SketchCollection | NullSketchCollection | NullSketch
+): Record<string, string> {
+  const sketchFeatures = getSketchFeatures(sketch);
+  const zoneTypes = sketchFeatures.reduce<Record<string, string>>(
+    (types, sketch) => {
+      const zoneType = getUserAttribute(sketch.properties, "zoneType", "")[0];
+      types[sketch.properties.id] = zoneType;
+      return types;
+    },
+    {}
+  );
+  return zoneTypes;
+}
