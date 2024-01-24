@@ -11,12 +11,16 @@ import {
   getFlatGeobufFilename,
   isInternalVectorDatasource,
   Point,
+  sortMetrics,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
 import { overlapPoints } from "../../scripts/overlapPoints";
 import { getZoneType } from "../../scripts/getZoneType";
+import { overlapPointsGroupMetrics } from "../../scripts/overlapGroupMetrics";
+
+const featuresByClass: Record<string, Feature<Point>[]> = {};
 
 export async function coralOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -54,6 +58,7 @@ export async function coralOverlap(
                   );
                 }, [])
               : dsFeatures;
+          featuresByClass[curClass.classId] = finalFeatures;
 
           return finalFeatures;
         }
@@ -76,20 +81,7 @@ export async function coralOverlap(
           sketch
         );
 
-        const sketchToZoneType = getZoneType(sketch);
-        const metricToZoneType = (sketchMetric: Metric) => {
-          return sketchToZoneType[sketchMetric.sketchId!];
-        };
-
-        // add respective groupId to each metric and combine with overlapResult
-        const overlapGroupResult = overlapResult.map((result) => ({
-          ...result,
-          groupId: metricToZoneType(result),
-        }));
-
-        const combinedResults = [...overlapResult, ...overlapGroupResult];
-
-        return combinedResults.map(
+        return overlapResult.map(
           (metric): Metric => ({
             ...metric,
             classId: curClass.classId,
@@ -103,9 +95,23 @@ export async function coralOverlap(
     []
   );
 
+  const sketchToZoneType = getZoneType(sketch);
+  const metricToZoneType = (sketchMetric: Metric) => {
+    return sketchToZoneType[sketchMetric.sketchId!];
+  };
+
+  const levelMetrics = await overlapPointsGroupMetrics({
+    metricId: metricGroup.metricId,
+    groupIds: ["No-Take", "Partial-Take"],
+    sketch: sketch,
+    metricToGroup: metricToZoneType,
+    metrics: metrics,
+    featuresByClass: featuresByClass,
+  });
+
   return {
-    metrics: rekeyMetrics(metrics),
-    sketch: toNullSketch(sketch, true),
+    metrics: sortMetrics(rekeyMetrics([...metrics, ...levelMetrics])),
+    sketch: toNullSketch(sketch),
   };
 }
 

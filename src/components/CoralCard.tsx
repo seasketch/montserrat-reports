@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Collapse,
-  ClassTable,
   SketchClassTable,
   ResultsCard,
   useSketchProperties,
@@ -15,32 +14,19 @@ import {
   toNullSketchArray,
   flattenBySketchAllClass,
   metricsWithSketchId,
-  toPercentMetric,
-  squareMeterToKilometer,
-  valueFormatter,
-  percentWithEdge,
 } from "@seasketch/geoprocessing/client-core";
 
 import project from "../../project";
-import Translator from "./TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
 import coralTotalMetrics from "../../data/bin/coral.json";
 
 const metricGroup = project.getMetricGroup("coralOverlap");
-// const precalcMetrics = project.getPrecalcMetrics(metricGroup, "count");
-const precalcMetrics = coralTotalMetrics.metrics;
-
-const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 export const CoralCard = () => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
 
   const mapLabel = t("Map");
-  const typeLabel = t("Type");
-  const pointsWithin = t("Platforms Within Plan");
-  const percPointsWithin = `% ${t("Platforms Within Plan")}`;
-  const pointLabel = t("Platforms");
 
   interface ClassGroupMetricValues {
     [classId: string]: {
@@ -48,21 +34,6 @@ export const CoralCard = () => {
       value: number;
     }[];
   }
-
-  const config = {
-    rows: metricGroup.classes.map((curClass) => curClass),
-    target: metricGroup.classes.map((curClass) =>
-      curClass.objectiveId
-        ? project.getObjectiveById(curClass.objectiveId).target
-        : undefined
-    ),
-    rowConfigs: [
-      {
-        title: "",
-      },
-    ],
-    max: 100,
-  };
 
   // Mapping groupIds to colors
   const groupColorMap: Record<string, string> = {
@@ -79,26 +50,15 @@ export const CoralCard = () => {
   return (
     <>
       <ResultsCard
-        title={t("Oil Exploration Platforms")}
+        title={t("Coral Observation Overlap")}
         functionName="coralOverlap"
         useChildCard
       >
         {(data: ReportResult) => {
-          let singleMetrics = data.metrics.filter(
-            (m) => m.sketchId === data.sketch.properties.id
-          );
-
-          const finalMetrics = [
-            ...singleMetrics,
-            ...toPercentMetric(singleMetrics, precalcMetrics, {
-              metricIdOverride: project.getMetricGroupPercId(metricGroup),
-            }),
-          ];
-
-          // get just metrics with groupId, excluding collection
+          // get just collection metrics with groupIds
           const groupMetrics = data.metrics.filter(
             (m) =>
-              m.groupId !== null && m.sketchId !== data.sketch.properties.id
+              m.groupId !== null && m.sketchId === data.sketch.properties.id
           );
 
           // sum overlap counts for each class and group
@@ -108,10 +68,7 @@ export const CoralCard = () => {
                 const groupMetric = groupMetrics.filter(
                   (m) => m.groupId === groupId && m.classId === curClass.classId
                 );
-                const value = groupMetric.reduce(
-                  (acc, cur) => acc + cur.value,
-                  0
-                );
+                const value = groupMetric[0].value;
                 return {
                   groupId,
                   value,
@@ -135,52 +92,62 @@ export const CoralCard = () => {
                 />
               }
             >
-              <ReportChartFigure>
-                {metricGroup.classes.map((curClass, index) => (
-                  <div style={{ paddingBottom: "30px" }} key={index}>
-                    <HorizontalStackedBar
-                      key={index}
-                      {...{
-                        rows: [
-                          classGroupMetricValues[curClass.classId].map(
-                            (curGroup) => [
-                              // underlying values and targets are scaled out of 100 to make equal width bars
-                              (curGroup.value /
-                                project.getObjectiveById(curClass.objectiveId!)
-                                  .target) *
-                                100,
-                            ]
-                          ),
-                        ],
-                        target: 100,
-                        rowConfigs: [
-                          {
-                            title: curClass.display,
-                          },
-                        ],
-                        max: 100,
-                      }}
-                      blockGroupNames={["No-Take", "Partial-Take"]}
-                      blockGroupStyles={blockGroupStyles}
-                      // legend is only shown for last class
-                      showLegend={
-                        index < metricGroup.classes.length - 1 ? false : true
-                      }
-                      valueFormatter={(value: number) =>
-                        (
+              <div
+                style={{
+                  marginBottom: "-30px",
+                  marginTop: "40px",
+                  marginLeft: "-20px",
+                }}
+              >
+                <ReportChartFigure>
+                  {metricGroup.classes.map((curClass, index) => (
+                    <div style={{ paddingBottom: "30px" }} key={index}>
+                      <HorizontalStackedBar
+                        key={index}
+                        {...{
+                          rows: [
+                            classGroupMetricValues[curClass.classId].map(
+                              (curGroup) => [
+                                // underlying values and targets are scaled out of 100 to make equal width bars
+                                (curGroup.value /
+                                  project.getObjectiveById(
+                                    curClass.objectiveId!
+                                  ).target) *
+                                  100,
+                              ]
+                            ),
+                          ],
+                          target: 100,
+                          rowConfigs: [
+                            {
+                              title: curClass.display,
+                            },
+                          ],
+                          max: 100,
+                        }}
+                        blockGroupNames={["No-Take", "Partial-Take"]}
+                        blockGroupStyles={blockGroupStyles}
+                        // legend is only shown for last class
+                        showLegend={
+                          index < metricGroup.classes.length - 1 ? false : true
+                        }
+                        valueFormatter={(value: number) =>
+                          (
+                            project.getObjectiveById(curClass.objectiveId!)
+                              .target / 100
+                          ).toFixed(0)
+                        }
+                        targetValueFormatter={(value: number) =>
+                          "Of " +
                           project.getObjectiveById(curClass.objectiveId!)
-                            .target / 100
-                        ).toFixed(0)
-                      }
-                      targetValueFormatter={(value: number) =>
-                        "Of " +
-                        project.getObjectiveById(curClass.objectiveId!).target +
-                        " observations"
-                      }
-                    />
-                  </div>
-                ))}
-              </ReportChartFigure>
+                            .target +
+                          " observations"
+                        }
+                      />
+                    </div>
+                  ))}
+                </ReportChartFigure>
+              </div>
 
               {isCollection && (
                 <Collapse title={t("Show by MPA")}>

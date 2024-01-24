@@ -3,195 +3,6 @@
     {
       "geographyId": null,
       "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21338",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "partial-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21337",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "no-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21568",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "no-take-north"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21339",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "zone-collection",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21338",
-      "groupId": "Partial-Take",
-      "value": 0,
-      "extra": {
-        "sketchName": "partial-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21337",
-      "groupId": "No-Take",
-      "value": 0,
-      "extra": {
-        "sketchName": "no-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21568",
-      "groupId": "No-Take",
-      "value": 0,
-      "extra": {
-        "sketchName": "no-take-north"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_annularis",
-      "sketchId": "21339",
-      "value": 0,
-      "extra": {
-        "sketchName": "zone-collection",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21338",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "partial-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21337",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "no-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21568",
-      "groupId": null,
-      "value": 1,
-      "extra": {
-        "sketchName": "no-take-north"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21339",
-      "groupId": null,
-      "value": 1,
-      "extra": {
-        "sketchName": "zone-collection",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21338",
-      "groupId": "Partial-Take",
-      "value": 0,
-      "extra": {
-        "sketchName": "partial-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21337",
-      "groupId": "No-Take",
-      "value": 0,
-      "extra": {
-        "sketchName": "no-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21568",
-      "groupId": "No-Take",
-      "value": 1,
-      "extra": {
-        "sketchName": "no-take-north"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "orbicella_faveolata",
-      "sketchId": "21339",
-      "value": 1,
-      "extra": {
-        "sketchName": "zone-collection",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
-      "classId": "acropora_palmata",
-      "sketchId": "21338",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "partial-take-south"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "coralOverlap",
       "classId": "acropora_palmata",
       "sketchId": "21337",
       "groupId": null,
@@ -204,23 +15,22 @@
       "geographyId": null,
       "metricId": "coralOverlap",
       "classId": "acropora_palmata",
-      "sketchId": "21568",
-      "groupId": null,
+      "sketchId": "21337",
+      "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "no-take-north"
+        "sketchName": "no-take-south"
       }
     },
     {
       "geographyId": null,
       "metricId": "coralOverlap",
       "classId": "acropora_palmata",
-      "sketchId": "21339",
+      "sketchId": "21338",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
-        "isCollection": true
+        "sketchName": "partial-take-south"
       }
     },
     {
@@ -238,11 +48,47 @@
       "geographyId": null,
       "metricId": "coralOverlap",
       "classId": "acropora_palmata",
-      "sketchId": "21337",
+      "sketchId": "21339",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "acropora_palmata",
+      "sketchId": "21339",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "no-take-south"
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "acropora_palmata",
+      "sketchId": "21339",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "acropora_palmata",
+      "sketchId": "21568",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-north"
       }
     },
     {
@@ -259,12 +105,205 @@
     {
       "geographyId": null,
       "metricId": "coralOverlap",
-      "classId": "acropora_palmata",
+      "classId": "orbicella_annularis",
+      "sketchId": "21337",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21337",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21338",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21338",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
       "sketchId": "21339",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "zone-collection",
         "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21339",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21339",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21568",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_annularis",
+      "sketchId": "21568",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21337",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21337",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21338",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21338",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21339",
+      "groupId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21339",
+      "groupId": "No-Take",
+      "value": 1,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21339",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "zone-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21568",
+      "groupId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "coralOverlap",
+      "classId": "orbicella_faveolata",
+      "sketchId": "21568",
+      "groupId": "No-Take",
+      "value": 1,
+      "extra": {
+        "sketchName": "no-take-north"
       }
     }
   ],
@@ -315,8 +354,7 @@
               "alternateLanguages": {}
             }
           ]
-        },
-        "geometry": null
+        }
       },
       {
         "id": 21337,
@@ -361,8 +399,7 @@
               "alternateLanguages": {}
             }
           ]
-        },
-        "geometry": null
+        }
       },
       {
         "id": 21568,
@@ -407,8 +444,7 @@
               "alternateLanguages": {}
             }
           ]
-        },
-        "geometry": null
+        }
       }
     ],
     "properties": {
