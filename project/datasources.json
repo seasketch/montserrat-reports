@@ -1,129 +1,145 @@
 [
-    {
-        "datasourceId": "global-clipping-osm-land",
-        "geo_type": "vector",
-        "formats": [
-            "subdivided"
-        ],
-        "precalc": false,
-        "classKeys": [],
-        "url": "https://d3p1dsef9f0gjr.cloudfront.net/"
-    },
-    {
-        "datasourceId": "global-clipping-eez-land-union",
-        "geo_type": "vector",
-        "formats": [
-            "subdivided"
-        ],
-        "precalc": false,
-        "classKeys": [],
-        "url": "https://d3muy0hbwp5qkl.cloudfront.net"
-    },
-    {
-        "datasourceId": "3nm_jurisdiction",
-        "geo_type": "vector",
-        "formats": [
-            "fgb"
-        ],
-        "precalc": false,
-        "layerName": "3nm-jurisdiction",
-        "classKeys": [],
-        "created": "2023-10-20T20:40:19.162Z",
-        "lastUpdated": "2024-01-18T23:16:55.900Z",
-        "src": "data/src/3nm-jurisdiction.geojson",
-        "propertiesToKeep": [],
-        "explodeMulti": true
-    },
-    {
-        "datasourceId": "fishing_value",
-        "geo_type": "raster",
-        "formats": [
-            "tif"
-        ],
-        "precalc": true,
-        "measurementType": "quantitative",
-        "band": 1,
-        "noDataValue": 0,
-        "created": "2023-11-09T04:08:04.195Z",
-        "lastUpdated": "2024-01-18T23:16:56.120Z",
-        "src": "data/src/fishing_value.tif"
-    },
-    {
-        "datasourceId": "diving_value",
-        "geo_type": "raster",
-        "formats": [
-            "tif"
-        ],
-        "precalc": true,
-        "measurementType": "quantitative",
-        "band": 1,
-        "noDataValue": 0,
-        "created": "2024-01-11T23:47:16.399Z",
-        "lastUpdated": "2024-01-18T23:16:56.458Z",
-        "src": "data/src/diving_value.tif"
-    },
-    {
-        "datasourceId": "acropora_palmata",
-        "geo_type": "vector",
-        "formats": [
-            "fgb"
-        ],
-        "precalc": false,
-        "layerName": "iucn-coral-acropora-palmata",
-        "classKeys": [],
-        "created": "2024-01-12T18:27:03.699Z",
-        "lastUpdated": "2024-01-18T23:16:56.496Z",
-        "src": "data/src/iucn-coral-acropora-palmata.geojson",
-        "propertiesToKeep": [],
-        "explodeMulti": true
-    },
-    {
-        "datasourceId": "orbicella_annularis",
-        "geo_type": "vector",
-        "formats": [
-            "fgb"
-        ],
-        "precalc": false,
-        "layerName": "iucn-coral-orbicella-annularis",
-        "classKeys": [],
-        "created": "2024-01-12T18:28:43.116Z",
-        "lastUpdated": "2024-01-18T23:16:56.533Z",
-        "src": "data/src/iucn-coral-orbicella-annularis.geojson",
-        "propertiesToKeep": [],
-        "explodeMulti": true
-    },
-    {
-        "datasourceId": "orbicella_faveolata",
-        "geo_type": "vector",
-        "formats": [
-            "fgb"
-        ],
-        "precalc": false,
-        "layerName": "iucn-coral-orbicella-faveolata",
-        "classKeys": [],
-        "created": "2024-01-12T18:29:38.371Z",
-        "lastUpdated": "2024-01-18T23:16:56.571Z",
-        "src": "data/src/iucn-coral-orbicella-faveolata.geojson",
-        "propertiesToKeep": [],
-        "explodeMulti": true
-    },
-    {
-        "datasourceId": "benthic_habitats",
-        "geo_type": "vector",
-        "formats": [
-            "fgb"
-        ],
-        "precalc": true,
-        "layerName": "benthic-habitats",
-        "classKeys": [
-            "Habitat"
-        ],
-        "created": "2024-01-17T23:28:20.197Z",
-        "lastUpdated": "2024-01-18T23:16:56.636Z",
-        "src": "data/src/benthic-habitats.geojson",
-        "propertiesToKeep": [
-            "Habitat"
-        ],
-        "explodeMulti": true
-    }
+  {
+    "datasourceId": "global-clipping-osm-land",
+    "geo_type": "vector",
+    "formats": [
+      "subdivided"
+    ],
+    "precalc": false,
+    "classKeys": [],
+    "url": "https://d3p1dsef9f0gjr.cloudfront.net/"
+  },
+  {
+    "datasourceId": "global-clipping-eez-land-union",
+    "geo_type": "vector",
+    "formats": [
+      "subdivided"
+    ],
+    "precalc": false,
+    "classKeys": [],
+    "url": "https://d3muy0hbwp5qkl.cloudfront.net"
+  },
+  {
+    "datasourceId": "3nm_jurisdiction",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "3nm-jurisdiction",
+    "classKeys": [],
+    "created": "2023-10-20T20:40:19.162Z",
+    "lastUpdated": "2024-01-18T23:16:55.900Z",
+    "src": "data/src/3nm-jurisdiction.geojson",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "fishing_value",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2023-11-09T04:08:04.195Z",
+    "lastUpdated": "2024-01-18T23:16:56.120Z",
+    "src": "data/src/fishing_value.tif"
+  },
+  {
+    "datasourceId": "diving_value",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2024-01-11T23:47:16.399Z",
+    "lastUpdated": "2024-01-18T23:16:56.458Z",
+    "src": "data/src/diving_value.tif"
+  },
+  {
+    "datasourceId": "acropora_palmata",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "iucn-coral-acropora-palmata",
+    "classKeys": [],
+    "created": "2024-01-12T18:27:03.699Z",
+    "lastUpdated": "2024-01-18T23:16:56.496Z",
+    "src": "data/src/iucn-coral-acropora-palmata.geojson",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "orbicella_annularis",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "iucn-coral-orbicella-annularis",
+    "classKeys": [],
+    "created": "2024-01-12T18:28:43.116Z",
+    "lastUpdated": "2024-01-18T23:16:56.533Z",
+    "src": "data/src/iucn-coral-orbicella-annularis.geojson",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "orbicella_faveolata",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "iucn-coral-orbicella-faveolata",
+    "classKeys": [],
+    "created": "2024-01-12T18:29:38.371Z",
+    "lastUpdated": "2024-01-18T23:16:56.571Z",
+    "src": "data/src/iucn-coral-orbicella-faveolata.geojson",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "benthic_habitats",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "benthic-habitats",
+    "classKeys": [
+      "Habitat"
+    ],
+    "created": "2024-01-17T23:28:20.197Z",
+    "lastUpdated": "2024-01-18T23:16:56.636Z",
+    "src": "data/src/benthic-habitats.geojson",
+    "propertiesToKeep": [
+      "Habitat"
+    ],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "fish_pots",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "fish-pots",
+    "classKeys": [],
+    "created": "2024-01-24T23:22:38.424Z",
+    "lastUpdated": "2024-01-24T23:22:38.424Z",
+    "src": "data/src/fish-pots.geojson",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  }
 ]

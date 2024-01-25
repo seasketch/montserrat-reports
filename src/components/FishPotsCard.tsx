@@ -19,9 +19,9 @@ import {
 import project from "../../project";
 import { Trans, useTranslation } from "react-i18next";
 
-const metricGroup = project.getMetricGroup("coralOverlap");
+const metricGroup = project.getMetricGroup("fishPotsOverlap");
 
-export const CoralCard = () => {
+export const FishPotsCard = () => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
 
@@ -49,8 +49,8 @@ export const CoralCard = () => {
   return (
     <>
       <ResultsCard
-        title={t("Coral Observation Overlap")}
-        functionName="coralOverlap"
+        title={t("Fish Pots")}
+        functionName="fishPotsOverlap"
         useChildCard
       >
         {(data: ReportResult) => {
@@ -82,7 +82,7 @@ export const CoralCard = () => {
 
           return (
             <ToolbarCard
-              title={t("Coral Species")}
+              title={t("Fish Pots")}
               items={
                 <LayerToggle
                   label={mapLabel}
@@ -95,7 +95,7 @@ export const CoralCard = () => {
                 style={{
                   marginBottom: "-30px",
                   marginTop: "40px",
-                  marginLeft: "-20px",
+                  marginLeft: "-50px",
                 }}
               >
                 <ReportChartFigure>
@@ -108,11 +108,7 @@ export const CoralCard = () => {
                             classGroupMetricValues[curClass.classId].map(
                               (curGroup) => [
                                 // underlying values and targets are scaled out of 100 to make equal width bars
-                                (curGroup.value /
-                                  project.getObjectiveById(
-                                    curClass.objectiveId!
-                                  ).target) *
-                                  100,
+                                curGroup.value,
                               ]
                             ),
                           ],
@@ -132,10 +128,8 @@ export const CoralCard = () => {
                         }
                         valueFormatter={(value: number) => value.toFixed(0)}
                         targetValueFormatter={() =>
-                          "Of " +
-                          project.getObjectiveById(curClass.objectiveId!)
-                            .target +
-                          " observations"
+                          "Out Of " +
+                          project.getObjectiveById(curClass.objectiveId!).target
                         }
                       />
                     </div>
@@ -150,12 +144,8 @@ export const CoralCard = () => {
               )}
 
               <Collapse title={t("Learn more")}>
-                <Trans i18nKey="Coral Species - learn more">
-                  <p>
-                    {" "}
-                    This report summarizes overlap with coral species
-                    observation data collected by IUCN.
-                  </p>
+                <Trans i18nKey="Fish Pots - learn more">
+                  <p> This report summarizes overlap with fish pots.</p>
                 </Trans>
               </Collapse>
             </ToolbarCard>

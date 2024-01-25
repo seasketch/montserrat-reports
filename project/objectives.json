@@ -39,5 +39,14 @@
         "No-Take": "yes",
         "Partial-Take": "yes"
     }
+},
+{
+    "objectiveId": "fish_pots",
+    "shortDesc": "Total number of fish pots",
+    "target": 158,
+    "countsToward": {
+        "No-Take": "yes",
+        "Partial-Take": "yes"
+    }
 }
 ]

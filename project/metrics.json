@@ -142,5 +142,18 @@
                 "layerId": ""
             }
         ]
+    },
+    {
+        "metricId": "fishPotsOverlap",
+        "type": "countOverlap",
+        "classes": [
+            {
+                "classId": "fish_pots",
+                "display": "Fish Pots",
+                "datasourceId": "fish_pots",
+                "objectiveId": "fish_pots",
+                "layerId": ""
+            }
+        ]
     }
 ]
