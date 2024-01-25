@@ -1,0 +1,12 @@
+{
+  "metrics": [
+    {
+      "metricId": "fishPotsOverlap",
+      "value": 158,
+      "classId": "fish_pots",
+      "groupId": null,
+      "geographyId": null,
+      "sketchId": null
+    }
+  ]
+}
