@@ -133,7 +133,7 @@
       "fgb",
       "json"
     ],
-    "precalc": true,
+    "precalc": false,
     "layerName": "fish-pots",
     "classKeys": [],
     "created": "2024-01-24T23:22:38.424Z",
@@ -141,5 +141,21 @@
     "src": "data/src/fish-pots.geojson",
     "propertiesToKeep": [],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/priority-conservation-areas.geojson",
+    "layerName": "priority-conservation-areas",
+    "geo_type": "vector",
+    "datasourceId": "priority_areas",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "classKeys": [],
+    "created": "2024-01-25T17:54:31.286Z",
+    "lastUpdated": "2024-01-25T17:54:31.286Z",
+    "propertiesToKeep": [],
+    "explodeMulti": true,
+    "precalc": true
   }
 ]

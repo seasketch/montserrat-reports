@@ -81,6 +81,30 @@
   },
   {
     "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "diving_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 310837203.911144
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "fishing_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 309815282.75561
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "area",
+    "classId": "priority_areas-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 45957056.434944354
+  },
+  {
+    "geographyId": "3nm",
     "metricId": "count",
     "classId": "benthic_habitats-Algal Reef (Hard Bottom)",
     "sketchId": null,
@@ -161,11 +185,35 @@
   },
   {
     "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "diving_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 127221
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "fishing_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 139855
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "count",
+    "classId": "priority_areas-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 22
+  },
+  {
+    "geographyId": "3nm",
     "metricId": "sum",
     "classId": "diving_value-total",
     "sketchId": null,
     "groupId": null,
-    "value": 372666
+    "value": 342904
   },
   {
     "geographyId": "3nm",
@@ -173,6 +221,22 @@
     "classId": "fishing_value-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1120461.4250735044
+    "value": 1044321.963282
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "valid",
+    "classId": "diving_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 116168
+  },
+  {
+    "geographyId": "3nm",
+    "metricId": "valid",
+    "classId": "fishing_value-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 127282
   }
 ]

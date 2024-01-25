@@ -155,5 +155,18 @@
                 "layerId": ""
             }
         ]
+    },
+    {
+        "metricId": "priorityAreasOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "priority_areas",
+                "display": "Priority Conservation Areas",
+                "datasourceId": "priority_areas",
+                "objectiveId": "priority_areas",
+                "layerId": ""
+            }
+        ]
     }
 ]
