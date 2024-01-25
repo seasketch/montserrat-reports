@@ -156,6 +156,13 @@ export const CoralCard = () => {
                     This report summarizes overlap with coral species
                     observation data collected by IUCN.
                   </p>
+                  <p>
+                    If zone boundaries overlap with each other, the overlap is
+                    only counted once. If a zone with a higher protection level
+                    overlaps a zone with a lower protection level, the higher
+                    level takes precedence and the overlap is counted only
+                    towards the higher level.
+                  </p>
                 </Trans>
               </Collapse>
             </ToolbarCard>

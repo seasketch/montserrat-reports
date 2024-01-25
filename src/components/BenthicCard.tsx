@@ -38,7 +38,7 @@ export const BenthicCard = () => {
   const { t } = useTranslation();
 
   const mapLabel = t("Map");
-  const classLabel = t("Depth");
+  const classLabel = t("Class");
   const areaWithin = t("Area Within Plan");
   const percAreaWithin = `% ${t("Area Within Plan")}`;
   const sqKmLabel = t("km²");
@@ -76,15 +76,15 @@ export const BenthicCard = () => {
             }),
           ];
 
-          const partialTakeeMetrics = data.metrics.filter(
+          const partialTakeMetrics = data.metrics.filter(
             (m) =>
               m.sketchId === data.sketch.properties.id &&
               m.groupId === "Partial-Take"
           );
 
           const finalPartialTakeMetrics = [
-            ...partialTakeeMetrics,
-            ...toPercentMetric(partialTakeeMetrics, precalcMetrics, {
+            ...partialTakeMetrics,
+            ...toPercentMetric(partialTakeMetrics, precalcMetrics, {
               metricIdOverride: project.getMetricGroupPercId(metricGroup),
             }),
           ];
@@ -232,7 +232,7 @@ export const BenthicCard = () => {
               )}
 
               <Collapse title={t("Learn more")}>
-                <Trans i18nKey="Bathy Classes Card - learn more">
+                <Trans i18nKey="Benthic Habitats Card - learn more">
                   <p>
                     {" "}
                     This report summarizes benthic habitats overlap within this

@@ -146,8 +146,11 @@ export const SizeCard = () => {
                     within these boundaries.
                   </p>
                   <p>
-                    If sketch boundaries within a plan overlap with each other,
-                    the overlap is only counted once.
+                    If zone boundaries overlap with each other, the overlap is
+                    only counted once. If a zone with a higher protection level
+                    overlaps a zone with a lower protection level, the higher
+                    level takes precedence and the overlap is counted only
+                    towards the higher level.
                   </p>
                 </Trans>
               </Collapse>

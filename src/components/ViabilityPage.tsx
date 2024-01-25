@@ -6,6 +6,7 @@ import { DivingCard } from "./DivingCard";
 import { CoralCard } from "./CoralCard";
 import { BenthicCard } from "./BenthicCard";
 import { FishPotsCard } from "./FishPotsCard";
+import { PriorityAreasCard } from "./PriorityAreasCard";
 
 export const ViabilityPage = () => {
   return (
@@ -16,6 +17,7 @@ export const ViabilityPage = () => {
       <CoralCard />
       <BenthicCard />
       <FishPotsCard />
+      <PriorityAreasCard />
       <SketchAttributesCard autoHide />
     </>
   );

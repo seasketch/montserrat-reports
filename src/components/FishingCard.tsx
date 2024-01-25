@@ -172,12 +172,12 @@ export const FishingCard = () => {
                         numRows: number
                       ) => {
                         if (row === 0) {
-                          return (value: number) =>
+                          return () =>
                             `${valueFormatter(value / 100, "percent0dig")} ${t(
                               "Target"
                             )}`;
                         } else {
-                          return (value: number) =>
+                          return () =>
                             `${valueFormatter(value / 100, "percent0dig")}`;
                         }
                       },
@@ -200,6 +200,13 @@ export const FishingCard = () => {
                     within this plan. Fishing value was estimated via an Ocean
                     Use Survey which asked local fishers to identify the areas
                     they value most for fishing.
+                  </p>
+                  <p>
+                    If zone boundaries overlap with each other, the overlap is
+                    only counted once. If a zone with a higher protection level
+                    overlaps a zone with a lower protection level, the higher
+                    level takes precedence and the overlap is counted only
+                    towards the higher level.
                   </p>
                 </Trans>
               </Collapse>
