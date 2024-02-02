@@ -168,5 +168,18 @@
                 "layerId": ""
             }
         ]
+    },
+    {
+        "metricId": "nurseryOverlap",
+        "type": "countOverlap",
+        "classes": [
+            {
+                "classId": "juvenile_fish_abundance",
+                "display": "Juvenile Fish Abundance",
+                "datasourceId": "juvenile_fish_abundance",
+                "objectiveId": "juvenile_fish_abundance",
+                "layerId": ""
+            }
+        ]
     }
 ]

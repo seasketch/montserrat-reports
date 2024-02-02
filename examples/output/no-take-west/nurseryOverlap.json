@@ -1,0 +1,42 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "nurseryOverlap",
+      "classId": "juvenile_fish_abundance",
+      "sketchId": "25013",
+      "groupId": null,
+      "value": 0.06794871794846155,
+      "extra": {
+        "sketchName": "no-take-west",
+        "minValue": 0.00833333333,
+        "maxValue": 0.275
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25013,
+    "bbox": [
+      -62.242516,
+      16.754772,
+      -62.2201,
+      16.78624
+    ],
+    "type": "Feature",
+    "properties": {
+      "5153": "no-take-west",
+      "id": "25013",
+      "name": "no-take-west",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "createdAt": "2024-02-01T22:47:10.623626+00:00",
+      "updatedAt": "2024-02-01T22:47:10.623626+00:00",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "582",
+      "userAttributes": null
+    }
+  }
+}

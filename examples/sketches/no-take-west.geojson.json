@@ -1,0 +1,56 @@
+{
+    "id": 25013,
+    "bbox": [
+        -62.242516,
+        16.754772,
+        -62.2201,
+        16.78624
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -62.242516351,
+                    16.75883216
+                ],
+                [
+                    -62.231914072,
+                    16.754771329
+                ],
+                [
+                    -62.224341015,
+                    16.766228449
+                ],
+                [
+                    -62.220100104,
+                    16.783195321
+                ],
+                [
+                    -62.231308227,
+                    16.786240497
+                ],
+                [
+                    -62.242516351,
+                    16.75883216
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "5153": "no-take-west",
+        "id": "25013",
+        "name": "no-take-west",
+        "postId": null,
+        "userId": "128",
+        "userSlug": "Peter",
+        "createdAt": "2024-02-01T22:47:10.623626+00:00",
+        "updatedAt": "2024-02-01T22:47:10.623626+00:00",
+        "collectionId": null,
+        "isCollection": false,
+        "sharedInForum": false,
+        "sketchClassId": "582",
+        "userAttributes": null
+    }
+}

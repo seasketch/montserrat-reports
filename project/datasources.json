@@ -143,19 +143,37 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/priority-conservation-areas.geojson",
-    "layerName": "priority-conservation-areas",
-    "geo_type": "vector",
     "datasourceId": "priority_areas",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "priority-conservation-areas",
+    "classKeys": [],
+    "created": "2024-01-25T17:54:31.286Z",
+    "lastUpdated": "2024-01-25T17:54:31.286Z",
+    "src": "data/src/priority-conservation-areas.geojson",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/juvenile-fish-abundance.geojson",
+    "layerName": "juvenile-fish-abundance",
+    "geo_type": "vector",
+    "datasourceId": "juvenile_fish_abundance",
     "formats": [
       "fgb",
       "json"
     ],
     "classKeys": [],
-    "created": "2024-01-25T17:54:31.286Z",
-    "lastUpdated": "2024-01-25T17:54:31.286Z",
-    "propertiesToKeep": [],
+    "created": "2024-02-01T18:51:26.072Z",
+    "lastUpdated": "2024-02-01T18:51:26.072Z",
+    "propertiesToKeep": [
+      "juvenile_fish_abundance"
+    ],
     "explodeMulti": true,
-    "precalc": true
+    "precalc": false
   }
 ]
