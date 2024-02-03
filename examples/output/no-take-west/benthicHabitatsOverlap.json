@@ -1,0 +1,346 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Hard Bottom)",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Hard Bottom)",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Hard Bottom)",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Mixed Bottom)",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Mixed Bottom)",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Algal Reef (Mixed Bottom)",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Artificial Reef",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Artificial Reef",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Artificial Reef",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Colonized Volcanic Boulders",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 52672.554352,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Colonized Volcanic Boulders",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 52672.554352,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Colonized Volcanic Boulders",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Coral Reef",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 507356.09531,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Coral Reef",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 507356.09531,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Coral Reef",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Hard Bottom and Sand",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 1372293.34457,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Hard Bottom and Sand",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 1372293.34457,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Hard Bottom and Sand",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sand",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 2480168.270542,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sand",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 2480168.270542,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sand",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sargassum Forest",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sargassum Forest",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Sargassum Forest",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Seagrass",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 249879.873229,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Seagrass",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 249879.873229,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "benthicHabitatsOverlap",
+      "classId": "Seagrass",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25018,
+    "bbox": [
+      -62.242516,
+      16.754772,
+      -62.219948,
+      16.786385
+    ],
+    "type": "Feature",
+    "properties": {
+      "5203": "no-take-west",
+      "5204": [
+        "No-Take"
+      ],
+      "id": "25018",
+      "name": "no-take-west",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "zoneType": [
+        "No-Take"
+      ],
+      "createdAt": "2024-02-02T17:46:14.597369+00:00",
+      "updatedAt": "2024-02-02T17:46:14.597369+00:00",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "597",
+      "userAttributes": [
+        {
+          "label": "Zone Type",
+          "value": [
+            "No-Take"
+          ],
+          "exportId": "zoneType",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "No-Take"
+          ],
+          "formElementId": 5204,
+          "alternateLanguages": {}
+        }
+      ]
+    }
+  }
+}

@@ -2,15 +2,35 @@
   "metrics": [
     {
       "geographyId": null,
-      "metricId": "nurseryOverlap",
-      "classId": "juvenile_fish_abundance",
+      "metricId": "fishPotsOverlap",
+      "classId": "fish_pots",
       "sketchId": "25018",
       "groupId": null,
-      "value": 0.06944444444400001,
+      "value": 17,
       "extra": {
-        "sketchName": "no-take-west",
-        "minValue": 0.00833333333,
-        "maxValue": 0.275
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "fishPotsOverlap",
+      "classId": "fish_pots",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 17,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "fishPotsOverlap",
+      "classId": "fish_pots",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
       }
     }
   ],

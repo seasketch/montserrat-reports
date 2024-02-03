@@ -2,15 +2,35 @@
   "metrics": [
     {
       "geographyId": null,
-      "metricId": "nurseryOverlap",
-      "classId": "juvenile_fish_abundance",
+      "metricId": "fishingValueOverlap",
+      "classId": "fishing_value",
       "sketchId": "25018",
       "groupId": null,
-      "value": 0.06944444444400001,
+      "value": 179856.168832,
       "extra": {
-        "sketchName": "no-take-west",
-        "minValue": 0.00833333333,
-        "maxValue": 0.275
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "fishingValueOverlap",
+      "classId": "fishing_value",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 179856.168832,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "fishingValueOverlap",
+      "classId": "fishing_value",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
       }
     }
   ],
@@ -57,6 +77,7 @@
           "alternateLanguages": {}
         }
       ]
-    }
+    },
+    "geometry": null
   }
 }
