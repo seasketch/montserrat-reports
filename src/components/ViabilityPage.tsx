@@ -8,6 +8,7 @@ import { BenthicCard } from "./BenthicCard";
 import { FishPotsCard } from "./FishPotsCard";
 import { PriorityAreasCard } from "./PriorityAreasCard";
 import { MinWidthCard } from "./MinWidthCard";
+import { NurseryCard } from "./NurseryCard";
 
 export const ViabilityPage = () => {
   return (
@@ -20,6 +21,7 @@ export const ViabilityPage = () => {
       <FishPotsCard />
       <PriorityAreasCard />
       <MinWidthCard />
+      <NurseryCard />
       <SketchAttributesCard autoHide />
     </>
   );
