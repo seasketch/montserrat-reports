@@ -102,7 +102,9 @@ export const BenthicCard = () => {
             >
               <Translator>
                 <br />
-                <Pill color={"lightblue"}>All Reserves</Pill>
+                {isCollection ? (
+                  <Pill color={"lightblue"}>All Reserves</Pill>
+                ) : null}
                 <ClassTable
                   rows={finalMetrics}
                   metricGroup={metricGroup}
@@ -141,88 +143,94 @@ export const BenthicCard = () => {
                     },
                   ]}
                 />
-                <br />
-                <Pill color={groupColorMap["No-Take"]}>No-Take Reserves</Pill>
-                <ClassTable
-                  rows={finalNoTakeMetrics}
-                  metricGroup={metricGroup}
-                  columnConfig={[
-                    {
-                      columnLabel: classLabel,
-                      type: "class",
-                      width: 30,
-                    },
-                    {
-                      columnLabel: areaWithin,
-                      type: "metricValue",
-                      metricId: metricGroup.metricId,
-                      valueFormatter: (val: string | number) =>
-                        Number.format(
-                          squareMeterToKilometer(
-                            typeof val === "string" ? parseInt(val) : val
-                          )
-                        ),
-                      valueLabel: sqKmLabel,
-                      width: 30,
-                    },
-                    {
-                      columnLabel: percAreaWithin,
-                      type: "metricChart",
-                      metricId: project.getMetricGroupPercId(metricGroup),
-                      valueFormatter: "percent",
-                      chartOptions: {
-                        showTitle: true,
-                        targetLabelPosition: "bottom",
-                        targetLabelStyle: "tight",
-                        barHeight: 11,
-                        target: 30,
-                      },
-                      width: 30,
-                    },
-                  ]}
-                />
-                <br />
-                <Pill color={groupColorMap["Partial-Take"]}>
-                  Partial-Take Reserves
-                </Pill>
-                <ClassTable
-                  rows={finalPartialTakeMetrics}
-                  metricGroup={metricGroup}
-                  columnConfig={[
-                    {
-                      columnLabel: classLabel,
-                      type: "class",
-                      width: 30,
-                    },
-                    {
-                      columnLabel: areaWithin,
-                      type: "metricValue",
-                      metricId: metricGroup.metricId,
-                      valueFormatter: (val: string | number) =>
-                        Number.format(
-                          squareMeterToKilometer(
-                            typeof val === "string" ? parseInt(val) : val
-                          )
-                        ),
-                      valueLabel: sqKmLabel,
-                      width: 30,
-                    },
-                    {
-                      columnLabel: percAreaWithin,
-                      type: "metricChart",
-                      metricId: project.getMetricGroupPercId(metricGroup),
-                      valueFormatter: "percent",
-                      chartOptions: {
-                        showTitle: true,
-                        targetLabelPosition: "bottom",
-                        targetLabelStyle: "tight",
-                        barHeight: 11,
-                        target: 30,
-                      },
-                      width: 30,
-                    },
-                  ]}
-                />
+                {isCollection ? (
+                  <div>
+                    <br />
+                    <Pill color={groupColorMap["No-Take"]}>
+                      No-Take Reserves
+                    </Pill>
+                    <ClassTable
+                      rows={finalNoTakeMetrics}
+                      metricGroup={metricGroup}
+                      columnConfig={[
+                        {
+                          columnLabel: classLabel,
+                          type: "class",
+                          width: 30,
+                        },
+                        {
+                          columnLabel: areaWithin,
+                          type: "metricValue",
+                          metricId: metricGroup.metricId,
+                          valueFormatter: (val: string | number) =>
+                            Number.format(
+                              squareMeterToKilometer(
+                                typeof val === "string" ? parseInt(val) : val
+                              )
+                            ),
+                          valueLabel: sqKmLabel,
+                          width: 30,
+                        },
+                        {
+                          columnLabel: percAreaWithin,
+                          type: "metricChart",
+                          metricId: project.getMetricGroupPercId(metricGroup),
+                          valueFormatter: "percent",
+                          chartOptions: {
+                            showTitle: true,
+                            targetLabelPosition: "bottom",
+                            targetLabelStyle: "tight",
+                            barHeight: 11,
+                            target: 30,
+                          },
+                          width: 30,
+                        },
+                      ]}
+                    />
+                    <br />
+                    <Pill color={groupColorMap["Partial-Take"]}>
+                      Partial-Take Reserves
+                    </Pill>
+                    <ClassTable
+                      rows={finalPartialTakeMetrics}
+                      metricGroup={metricGroup}
+                      columnConfig={[
+                        {
+                          columnLabel: classLabel,
+                          type: "class",
+                          width: 30,
+                        },
+                        {
+                          columnLabel: areaWithin,
+                          type: "metricValue",
+                          metricId: metricGroup.metricId,
+                          valueFormatter: (val: string | number) =>
+                            Number.format(
+                              squareMeterToKilometer(
+                                typeof val === "string" ? parseInt(val) : val
+                              )
+                            ),
+                          valueLabel: sqKmLabel,
+                          width: 30,
+                        },
+                        {
+                          columnLabel: percAreaWithin,
+                          type: "metricChart",
+                          metricId: project.getMetricGroupPercId(metricGroup),
+                          valueFormatter: "percent",
+                          chartOptions: {
+                            showTitle: true,
+                            targetLabelPosition: "bottom",
+                            targetLabelStyle: "tight",
+                            barHeight: 11,
+                            target: 30,
+                          },
+                          width: 30,
+                        },
+                      ]}
+                    />
+                  </div>
+                ) : null}
               </Translator>
 
               {isCollection && (

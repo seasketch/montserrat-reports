@@ -40,8 +40,8 @@ export const FishPotsCard = () => {
     "Partial-Take": "#FFE1A3",
   };
   const groupColors = Object.values(groupColorMap);
-  const blockGroupStyles = groupColors.map((curBlue) => ({
-    backgroundColor: curBlue,
+  const blockGroupStyles = groupColors.map((curGroup) => ({
+    backgroundColor: curGroup,
   }));
 
   const groupIds = ["No-Take", "Partial-Take"];
