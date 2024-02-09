@@ -103,7 +103,7 @@ export const BenthicCard = () => {
               <Translator>
                 <br />
                 {isCollection ? (
-                  <Pill color={"lightblue"}>All Reserves</Pill>
+                  <Pill color={"#ACD0DE"}>All Reserves</Pill>
                 ) : null}
                 <ClassTable
                   rows={finalMetrics}
@@ -177,6 +177,7 @@ export const BenthicCard = () => {
                           metricId: project.getMetricGroupPercId(metricGroup),
                           valueFormatter: "percent",
                           chartOptions: {
+                            blockGroupStyles: [{ backgroundColor: "#BEE4BE" }],
                             showTitle: true,
                             targetLabelPosition: "bottom",
                             targetLabelStyle: "tight",
@@ -219,6 +220,7 @@ export const BenthicCard = () => {
                           metricId: project.getMetricGroupPercId(metricGroup),
                           valueFormatter: "percent",
                           chartOptions: {
+                            blockGroupStyles: [{ backgroundColor: "#FFE1A3" }],
                             showTitle: true,
                             targetLabelPosition: "bottom",
                             targetLabelStyle: "tight",
