@@ -76,8 +76,6 @@ const groupColorMap: Record<string, string> = {
 const metricGroup = project.getMetricGroup("fishingValueOverlap");
 const precalcMetrics = project.getPrecalcMetrics(metricGroup, "sum", "3nm");
 
-console.log("precalcMetrics", precalcMetrics);
-
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 export const FishingCard = () => {
@@ -135,7 +133,9 @@ export const FishingCard = () => {
                 <div style={{ fontSize: 14 }}>
                   Percent value within plan:{" "}
                   <span style={{ fontWeight: "bold", fontSize: 15 }}>
-                    {(totalPercMetrics[0].value * 100).toFixed(2)}
+                    {totalPercMetrics[0].value !== 0
+                      ? (totalPercMetrics[0].value * 100).toFixed(2)
+                      : 0}
                     {"%"}
                   </span>
                 </div>
