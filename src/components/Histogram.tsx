@@ -90,7 +90,7 @@ export const Histogram = ({
           svgElement
             .append("line")
             .attr("x1", xScale(line.value))
-            .attr("y1", -20)
+            .attr("y1", -25)
             .attr("x2", xScale(line.value))
             .attr("y2", boundsHeight)
             .attr("stroke", "black");
@@ -98,15 +98,15 @@ export const Histogram = ({
           svgElement
             .append("text")
             .attr("x", xScale(line.value))
-            .attr("y", -25)
+            .attr("y", -30)
             .text(line.label)
             .attr("text-anchor", "middle")
             .attr("font-size", "12px");
-        } else {
+        } else if (index === 1) {
           svgElement
             .append("line")
             .attr("x1", xScale(line.value))
-            .attr("y1", 0)
+            .attr("y1", -10)
             .attr("x2", xScale(line.value))
             .attr("y2", boundsHeight)
             .attr("stroke", "black")
@@ -114,8 +114,25 @@ export const Histogram = ({
 
           svgElement
             .append("text")
-            .attr("x", xScale(line.value))
-            .attr("y", -5)
+            .attr("x", xScale(line.value) - 21)
+            .attr("y", -15)
+            .text(line.label)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "12px");
+        } else if (index === 2) {
+          svgElement
+            .append("line")
+            .attr("x1", xScale(line.value))
+            .attr("y1", -10)
+            .attr("x2", xScale(line.value))
+            .attr("y2", boundsHeight)
+            .attr("stroke", "black")
+            .attr("stroke-dasharray", "2,2");
+
+          svgElement
+            .append("text")
+            .attr("x", xScale(line.value) + 25)
+            .attr("y", -15)
             .text(line.label)
             .attr("text-anchor", "middle")
             .attr("font-size", "12px");

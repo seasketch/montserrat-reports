@@ -12,9 +12,11 @@ import { ReportResult } from "@seasketch/geoprocessing/client-core";
 import project from "../../project";
 import { useTranslation } from "react-i18next";
 import { Histogram } from "./Histogram";
-import { firstMatchingMetric } from "@seasketch/geoprocessing";
+import { firstMatchingMetric, sketchToId } from "@seasketch/geoprocessing";
 
 const metricGroup = project.getMetricGroup("nurseryOverlap");
+
+console.log(metricGroup.metricId);
 
 const abundanceValues = [
   0.375, 0.008333333, 0.008333333, 0.025, 0.016666667, 0.008333333, 0.008333333,
@@ -76,7 +78,7 @@ export const NurseryCard = () => {
                     ? data.metrics[0].value
                     : firstMatchingMetric(
                         data.metrics,
-                        (m) => m.metricId === metricGroup.metricId
+                        (m) => m.sketchId === data.sketch.properties.id
                       ).value
                 }
                 min={
@@ -84,7 +86,7 @@ export const NurseryCard = () => {
                     ? (data.metrics[0].extra!.minValue as number)
                     : (firstMatchingMetric(
                         data.metrics,
-                        (m) => m.metricId === metricGroup.metricId
+                        (m) => m.sketchId === data.sketch.properties.id
                       ).extra!.minValue as number)
                 }
                 max={
@@ -92,7 +94,7 @@ export const NurseryCard = () => {
                     ? (data.metrics[0].extra!.maxValue as number)
                     : (firstMatchingMetric(
                         data.metrics,
-                        (m) => m.metricId === metricGroup.metricId
+                        (m) => m.sketchId === data.sketch.properties.id
                       ).extra!.maxValue as number)
                 }
               ></Histogram>

@@ -17,12 +17,12 @@ import {
   getSketchFeatures,
   getUserAttribute,
   overlapFeaturesGroupMetrics,
+  isSketchCollection,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
 
-const boundaryArea = 373298362.032;
 const featuresByClass: Record<string, Feature<Polygon>[]> = {};
 
 export async function benthicHabitatsOverlap(
@@ -30,6 +30,16 @@ export async function benthicHabitatsOverlap(
 ): Promise<ReportResult> {
   const box = sketch.bbox || bbox(sketch);
   const metricGroup = project.getMetricGroup("benthicHabitatsOverlap");
+
+  const protectionGroups = ["No-Take", "Partial-Take"];
+  const isCollection = isSketchCollection(sketch);
+
+  // if collection, remove any sketches that are not protection zones
+  if (isCollection) {
+    sketch.features = sketch.features.filter((f) => {
+      return protectionGroups.includes(f.properties.zoneType);
+    });
+  }
 
   let cachedFeatures: Record<string, Feature<Polygon>[]> = {};
 

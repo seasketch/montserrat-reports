@@ -17,6 +17,7 @@ import {
   flattenBySketchAllClass,
   metricsWithSketchId,
   toPercentMetric,
+  isNullSketchCollection,
 } from "@seasketch/geoprocessing/client-core";
 
 import project from "../../project";
@@ -65,9 +66,9 @@ export const NetworkTableStyled = styled(ReportTableStyled)`
   }
 `;
 
-const groupIds = ["No-Take", "Partial-Take"];
+const protectionGroups = ["No-Take", "Partial-Take"];
 
-// Mapping groupIds to colors
+// Mapping protectionGroups to colors
 const groupColorMap: Record<string, string> = {
   "No-Take": "#BEE4BE",
   "Partial-Take": "#FFE1A3",
@@ -121,6 +122,19 @@ export const DivingCard = () => {
               m.metricId === project.getMetricGroupPercId(metricGroup)
           );
 
+          // check for protection type sketches
+          const features = isNullSketchCollection(data.sketch)
+            ? data.sketch.features
+            : [data.sketch];
+
+          const includedGroups = features.map((f) => f.properties.zoneType[0]);
+
+          const groupOverlap = includedGroups.filter((g) =>
+            protectionGroups.includes(g)
+          );
+
+          const noProtectedSketches = groupOverlap.length === 0;
+
           return (
             <ToolbarCard
               title={t("Diving Value")}
@@ -137,7 +151,7 @@ export const DivingCard = () => {
                 <div style={{ fontSize: 14 }}>
                   Percent value within plan:{" "}
                   <span style={{ fontWeight: "bold", fontSize: 15 }}>
-                    {totalPercMetrics[0].value !== 0
+                    {totalPercMetrics[0].value !== 0 && !noProtectedSketches
                       ? (totalPercMetrics[0].value * 100).toFixed(2)
                       : 0}
                     {"%"}
@@ -146,7 +160,7 @@ export const DivingCard = () => {
               </Translator>
               <VerticalSpacer></VerticalSpacer>
               <ReportChartFigure>
-                {groupIds.map((curGroup, index) => (
+                {protectionGroups.map((curGroup, index) => (
                   <div
                     style={{ paddingBottom: "10px", paddingLeft: "40px" }}
                     key={index}
