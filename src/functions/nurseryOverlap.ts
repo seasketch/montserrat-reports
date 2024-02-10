@@ -12,6 +12,7 @@ import {
   isInternalVectorDatasource,
   Point,
   sortMetrics,
+  isSketchCollection,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
@@ -29,6 +30,16 @@ export async function nurseryOverlap(
   const metricGroup = project.getMetricGroup("nurseryOverlap");
 
   let cachedFeatures: Record<string, Feature<Point>[]> = {};
+
+  const protectionGroups = ["No-Take", "Partial-Take"];
+  const isCollection = isSketchCollection(sketch);
+
+  // if collection, remove any sketches that are not protection zones
+  if (isCollection) {
+    sketch.features = sketch.features.filter((f) => {
+      return protectionGroups.includes(f.properties.zoneType);
+    });
+  }
 
   // features within bounding box of sketch
   const pointsByBoundary = (

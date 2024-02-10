@@ -11,8 +11,6 @@ import {
   createMetric,
 } from "@seasketch/geoprocessing";
 import { featureCollection, MultiPolygon, Point } from "@turf/helpers";
-import { featureEach } from "@turf/meta";
-import area from "@turf/area";
 import flatten from "@turf/flatten";
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 
@@ -44,98 +42,59 @@ export async function overlapPointValues(
     chunkSize: 5000,
     ...(options || {}),
   };
-  const { includeChildMetrics } = newOptions;
-  let meanValue: number = 0;
-  let minValue: number = 0;
-  let minValueList: number[] = [];
-  let maxValueList: number[] = [];
-  let maxValue: number = 0;
-  let isOverlap = false;
+
   const sketches = Array.isArray(sketch) ? sketch : toSketchArray(sketch);
 
-  if (sketches.length > 0) {
-    const sketchColl = flatten(featureCollection(sketches));
-    const sketchArea = area(sketchColl);
+  const sketchId = (
+    isSketchCollection(sketch)
+      ? sketch.properties.id
+      : sketches[0].properties.id
+  ).toString();
 
-    // If sketch overlap, use union
-    const sketchUnion = clip(sketchColl, "union");
-    if (!sketchUnion) throw new Error("overlapFeatures - something went wrong");
-    const sketchUnionArea = area(sketchUnion);
-    isOverlap = sketchUnionArea < sketchArea;
+  const sketchName = isSketchCollection(sketch)
+    ? sketch.properties.name
+    : sketches[0].properties.name;
 
-    const finalSketches =
-      sketches.length > 1 && isOverlap ? flatten(sketchUnion) : sketchColl;
-
-    if (isOverlap) {
-      featureEach(finalSketches, (feat) => {
-        const curValues = doIntersect(
-          feat,
-          features as Feature<Point>[],
-          newOptions
-        );
-        meanValue += curValues.mean;
-        minValueList.push(curValues.min);
-        maxValueList.push(curValues.max);
-      });
-      meanValue = meanValue / finalSketches.features.length;
-      minValue = Math.min(...minValueList);
-      maxValue = Math.max(...maxValueList);
-    }
+  if (sketches.length === 0) {
+    return [
+      createMetric({
+        metricId,
+        sketchId: sketchId,
+        value: 0,
+        extra: {
+          sketchName: sketchName,
+          minValue: 0,
+          maxValue: 0,
+        },
+      }),
+    ];
   }
 
-  let sketchMetrics: Metric[] = sketches.map((curSketch) => {
-    let sketchValue = doIntersect(
-      curSketch as Feature<Polygon | MultiPolygon>,
-      features as Feature<Point>[],
-      newOptions
-    );
-    return createMetric({
-      metricId,
-      sketchId: curSketch.properties.id,
-      value: sketchValue.mean,
-      extra: {
-        sketchName: curSketch.properties.name,
-        minValue: sketchValue.min,
-        maxValue: sketchValue.max,
-      },
-    });
+  const sketchColl = flatten(featureCollection(sketches));
+
+  // If sketch overlap, use union
+  const sketchUnion = clip(sketchColl, "union");
+  if (!sketchUnion)
+    throw new Error("overlapPointValues - something went wrong");
+
+  const overlapValues = doIntersect(
+    sketchUnion,
+    features as Feature<Point>[],
+    newOptions
+  );
+
+  const metrics = createMetric({
+    metricId,
+    sketchId: sketchId,
+    value: overlapValues.mean,
+    extra: {
+      sketchName: sketchName,
+      minValue: overlapValues.min,
+      maxValue: overlapValues.max,
+    },
   });
 
-  if (!isOverlap) {
-    meanValue = sketchMetrics.reduce((sumSoFar, sm) => sumSoFar + sm.value, 0);
-    meanValue = meanValue / sketches.length;
-
-    const allMinValues = sketchMetrics.map((sm) =>
-      sm.extra && typeof sm.extra.minValue == "number" ? sm.extra.minValue : 0
-    );
-    minValue = Math.min(...allMinValues);
-
-    const allMaxValues = sketchMetrics.map((sm) =>
-      sm.extra && typeof sm.extra.minValue == "number" ? sm.extra.minValue : 0
-    );
-    maxValue = Math.min(...allMaxValues);
-  }
-
-  const collMetrics: Metric[] = (() => {
-    if (isSketchCollection(sketch)) {
-      // Push collection with accumulated meanValue
-      return [
-        createMetric({
-          metricId,
-          sketchId: sketch.properties.id,
-          value: meanValue,
-          extra: {
-            sketchName: sketch.properties.name,
-            isCollection: true,
-          },
-        }),
-      ];
-    } else {
-      return [];
-    }
-  })();
-
-  return [...(includeChildMetrics ? sketchMetrics : []), ...collMetrics];
+  return [metrics];
 }
 
 // invokes corresponding intersect function based on type of intersect
