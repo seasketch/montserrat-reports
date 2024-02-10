@@ -1,0 +1,436 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21337",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21337",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21338",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21338",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "partial-take-south"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21339",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "all-zones-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21339",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "all-zones-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21339",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "all-zones-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21568",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "21568",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "25176",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "utility-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "25177",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "multi-use-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "divingValueOverlap",
+      "classId": "diving_value",
+      "sketchId": "25178",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "volcanic-east"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 21339,
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": 21338,
+        "bbox": [
+          -62.16693,
+          16.638992,
+          -62.13357,
+          16.66424
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "partial-take-south",
+          "5204": [
+            "Partial-Take"
+          ],
+          "id": "21338",
+          "name": "partial-take-south",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Partial-Take"
+          ],
+          "createdAt": "2023-10-24T18:40:26.897142+00:00",
+          "updatedAt": "2023-10-24T18:40:42.464757+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Partial-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Partial-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        },
+        "geometry": null
+      },
+      {
+        "id": 25177,
+        "bbox": [
+          -62.195354,
+          16.845953,
+          -62.161457,
+          16.865122
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "multi-use-north",
+          "5204": [
+            "Multi-Use"
+          ],
+          "id": "25177",
+          "name": "multi-use-north",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Multi-Use"
+          ],
+          "createdAt": "2024-02-09T18:04:27.72483+00:00",
+          "updatedAt": "2024-02-09T18:05:12.823805+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Multi-Use"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Multi-Use"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        },
+        "geometry": null
+      },
+      {
+        "id": 21337,
+        "bbox": [
+          -62.2123,
+          16.638033,
+          -62.138245,
+          16.665838
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "no-take-south",
+          "5204": [
+            "No-Take"
+          ],
+          "id": "21337",
+          "name": "no-take-south",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "No-Take"
+          ],
+          "createdAt": "2023-10-24T18:39:54.47259+00:00",
+          "updatedAt": "2023-10-24T20:28:06.35355+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "No-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "No-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        },
+        "geometry": null
+      },
+      {
+        "id": 25178,
+        "bbox": [
+          -62.141045,
+          16.707657,
+          -62.10599,
+          16.778847
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "volcanic-east",
+          "5204": [
+            "Volcanic Exclusion"
+          ],
+          "id": "25178",
+          "name": "volcanic-east",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Volcanic Exclusion"
+          ],
+          "createdAt": "2024-02-09T18:04:53.523+00:00",
+          "updatedAt": "2024-02-09T18:05:10.018021+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Volcanic Exclusion"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Volcanic Exclusion"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        },
+        "geometry": null
+      },
+      {
+        "id": 25176,
+        "bbox": [
+          -62.282406,
+          16.698803,
+          -62.247738,
+          16.732374
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "utility-west",
+          "5204": [
+            "Utility"
+          ],
+          "id": "25176",
+          "name": "utility-west",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Utility"
+          ],
+          "createdAt": "2024-02-09T18:04:04.255561+00:00",
+          "updatedAt": "2024-02-09T18:05:11.246631+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Utility"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Utility"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        },
+        "geometry": null
+      },
+      {
+        "id": 21568,
+        "bbox": [
+          -62.216652,
+          16.829824,
+          -62.171997,
+          16.852596
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "no-take-north",
+          "5204": [
+            "No-Take"
+          ],
+          "id": "21568",
+          "name": "no-take-north",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "No-Take"
+          ],
+          "createdAt": "2023-10-26T17:42:29.683258+00:00",
+          "updatedAt": "2023-10-26T17:44:55.197083+00:00",
+          "collectionId": "21339",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "No-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "No-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        },
+        "geometry": null
+      }
+    ],
+    "properties": {
+      "5155": "all-zones-collection",
+      "id": "21339",
+      "name": "all-zones-collection",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "createdAt": "2023-10-24T18:40:40.51977+00:00",
+      "updatedAt": "2024-02-09T18:05:12.823805+00:00",
+      "collectionId": null,
+      "isCollection": true,
+      "sharedInForum": false,
+      "sketchClassId": "584",
+      "userAttributes": null
+    }
+  }
+}

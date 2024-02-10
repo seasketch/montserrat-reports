@@ -4,29 +4,29 @@
       "geographyId": null,
       "metricId": "nurseryOverlap",
       "classId": "juvenile_fish_abundance",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "minValue": 0,
         "maxValue": 0
       }
     }
   ],
   "sketch": {
-    "id": 21339,
+    "id": 25188,
     "type": "FeatureCollection",
     "features": [],
     "properties": {
-      "5155": "zone-collection",
-      "id": "21339",
-      "name": "zone-collection",
+      "5155": "collection-test",
+      "id": "25188",
+      "name": "collection-test",
       "postId": null,
       "userId": "128",
       "userSlug": "Peter",
-      "createdAt": "2023-10-24T18:40:40.51977+00:00",
-      "updatedAt": "2023-10-26T17:44:55.197083+00:00",
+      "createdAt": "2024-02-09T19:26:29.61709+00:00",
+      "updatedAt": "2024-02-09T19:27:47.176457+00:00",
       "collectionId": null,
       "isCollection": true,
       "sharedInForum": false,

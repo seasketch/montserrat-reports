@@ -1,0 +1,32 @@
+[
+  {
+    "sketchId": "21338",
+    "sketchName": "partial-take-south",
+    "value": 2612.144719692802
+  },
+  {
+    "sketchId": "25177",
+    "sketchName": "multi-use-north",
+    "value": 1964.1619935980345
+  },
+  {
+    "sketchId": "21337",
+    "sketchName": "no-take-south",
+    "value": 3057.161299711876
+  },
+  {
+    "sketchId": "25178",
+    "sketchName": "volcanic-east",
+    "value": 3606.9070809505415
+  },
+  {
+    "sketchId": "25176",
+    "sketchName": "utility-west",
+    "value": 3692.1826069069484
+  },
+  {
+    "sketchId": "21568",
+    "sketchName": "no-take-north",
+    "value": 2494.0666434533596
+  }
+]

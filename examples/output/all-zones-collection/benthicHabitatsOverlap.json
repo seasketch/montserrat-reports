@@ -8,7 +8,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -20,7 +20,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -32,7 +32,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -44,7 +44,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -56,7 +56,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -68,7 +68,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -80,7 +80,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -92,7 +92,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -104,7 +104,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -116,7 +116,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -128,7 +128,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -140,7 +140,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -152,7 +152,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -164,7 +164,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -176,7 +176,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -188,7 +188,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -200,7 +200,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -212,7 +212,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -224,7 +224,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -236,7 +236,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -248,7 +248,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -260,7 +260,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -272,7 +272,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -284,7 +284,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -296,7 +296,7 @@
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -308,7 +308,7 @@
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     },
@@ -320,7 +320,7 @@
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "all-zones-collection",
         "isCollection": true
       }
     }
@@ -330,14 +330,14 @@
     "type": "FeatureCollection",
     "features": [],
     "properties": {
-      "5155": "zone-collection",
+      "5155": "all-zones-collection",
       "id": "21339",
-      "name": "zone-collection",
+      "name": "all-zones-collection",
       "postId": null,
       "userId": "128",
       "userSlug": "Peter",
       "createdAt": "2023-10-24T18:40:40.51977+00:00",
-      "updatedAt": "2023-10-26T17:44:55.197083+00:00",
+      "updatedAt": "2024-02-09T18:05:12.823805+00:00",
       "collectionId": null,
       "isCollection": true,
       "sharedInForum": false,

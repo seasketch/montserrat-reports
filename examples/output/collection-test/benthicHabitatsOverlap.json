@@ -4,11 +4,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Hard Bottom)",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -16,11 +16,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Hard Bottom)",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -28,11 +28,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Hard Bottom)",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -40,11 +40,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Mixed Bottom)",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -52,11 +52,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Mixed Bottom)",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -64,11 +64,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Algal Reef (Mixed Bottom)",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -76,11 +76,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Artificial Reef",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -88,11 +88,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Artificial Reef",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -100,11 +100,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Artificial Reef",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -112,11 +112,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Colonized Volcanic Boulders",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -124,11 +124,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Colonized Volcanic Boulders",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -136,11 +136,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Colonized Volcanic Boulders",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -148,11 +148,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Coral Reef",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -160,11 +160,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Coral Reef",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -172,11 +172,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Coral Reef",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -184,11 +184,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Hard Bottom and Sand",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -196,11 +196,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Hard Bottom and Sand",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -208,11 +208,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Hard Bottom and Sand",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -220,11 +220,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Sand",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -232,11 +232,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Sand",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -244,11 +244,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Sand",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -256,11 +256,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Sargassum Forest",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -268,11 +268,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Sargassum Forest",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -280,11 +280,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Sargassum Forest",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -292,11 +292,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Seagrass",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -304,11 +304,11 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Seagrass",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "No-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     },
@@ -316,28 +316,28 @@
       "geographyId": null,
       "metricId": "benthicHabitatsOverlap",
       "classId": "Seagrass",
-      "sketchId": "21339",
+      "sketchId": "25188",
       "groupId": "Partial-Take",
       "value": 0,
       "extra": {
-        "sketchName": "zone-collection",
+        "sketchName": "collection-test",
         "isCollection": true
       }
     }
   ],
   "sketch": {
-    "id": 21339,
+    "id": 25188,
     "type": "FeatureCollection",
     "features": [],
     "properties": {
-      "5155": "zone-collection",
-      "id": "21339",
-      "name": "zone-collection",
+      "5155": "collection-test",
+      "id": "25188",
+      "name": "collection-test",
       "postId": null,
       "userId": "128",
       "userSlug": "Peter",
-      "createdAt": "2023-10-24T18:40:40.51977+00:00",
-      "updatedAt": "2023-10-26T17:44:55.197083+00:00",
+      "createdAt": "2024-02-09T19:26:29.61709+00:00",
+      "updatedAt": "2024-02-09T19:27:47.176457+00:00",
       "collectionId": null,
       "isCollection": true,
       "sharedInForum": false,
