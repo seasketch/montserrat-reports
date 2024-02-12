@@ -16,8 +16,6 @@ import { firstMatchingMetric, sketchToId } from "@seasketch/geoprocessing";
 
 const metricGroup = project.getMetricGroup("nurseryOverlap");
 
-console.log(metricGroup.metricId);
-
 const abundanceValues = [
   0.375, 0.008333333, 0.008333333, 0.025, 0.016666667, 0.008333333, 0.008333333,
   0.033333333, 0.016666667, 0.008333333, 0.016666667, 0.033333333, 0.041666667,

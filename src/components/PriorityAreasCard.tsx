@@ -13,6 +13,7 @@ import {
   // SmallReportTableStyled,
   Table,
   ReportTableStyled,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -131,6 +132,7 @@ export const PriorityAreasCard = () => {
                 />
               }
             >
+              <VerticalSpacer />
               <Translator>
                 <ClassTable
                   rows={finalMetrics}

@@ -23,6 +23,7 @@ import {
   InfoStatus,
   GroupCircleRow,
   GroupPill,
+  LayerToggle,
 } from "@seasketch/geoprocessing/client-ui";
 import styled from "styled-components";
 import project from "../../project";
@@ -107,6 +108,8 @@ export const SizeCard = () => {
   const { t } = useTranslation();
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
 
+  console.log("metricGroup", metricGroup);
+
   const notFoundString = t("Results not found");
 
   /* i18next-extract-disable-next-line */
@@ -123,21 +126,13 @@ export const SizeCard = () => {
         return (
           <>
             <ToolbarCard
-              title={t(" ")}
+              title={t("Size")}
               items={
                 <>
-                  <InfoStatus
-                    size={30}
-                    msg={
-                      <span>
-                        <Trans i18nKey="Report info status">
-                          These are <b>draft</b> reports. Further changes or
-                          corrections may be made. Please report any issues.
-                          <br></br>
-                          <br></br>
-                        </Trans>
-                      </span>
-                    }
+                  <LayerToggle
+                    label={"Map"}
+                    layerId={metricGroup.layerId}
+                    simple
                   />
                 </>
               }
