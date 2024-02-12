@@ -37,7 +37,7 @@ export async function nurseryOverlap(
   // if collection, remove any sketches that are not protection zones
   if (isCollection) {
     sketch.features = sketch.features.filter((f) => {
-      return protectionGroups.includes(f.properties.zoneType);
+      return protectionGroups.includes(f.properties.zoneType[0]);
     });
   }
 

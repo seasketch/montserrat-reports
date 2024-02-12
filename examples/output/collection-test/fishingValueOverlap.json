@@ -6,7 +6,7 @@
       "classId": "fishing_value",
       "sketchId": "25188",
       "groupId": null,
-      "value": 28059.233789,
+      "value": 0,
       "extra": {
         "sketchName": "collection-test",
         "isCollection": true
@@ -35,127 +35,12 @@
         "sketchName": "collection-test",
         "isCollection": true
       }
-    },
-    {
-      "geographyId": null,
-      "metricId": "fishingValueOverlap",
-      "classId": "fishing_value",
-      "sketchId": "25189",
-      "groupId": null,
-      "value": 6943.79915,
-      "extra": {
-        "sketchName": "multi-use-test"
-      }
-    },
-    {
-      "geographyId": null,
-      "metricId": "fishingValueOverlap",
-      "classId": "fishing_value",
-      "sketchId": "25190",
-      "groupId": null,
-      "value": 21115.434639,
-      "extra": {
-        "sketchName": "volcanic-test"
-      }
     }
   ],
   "sketch": {
     "id": 25188,
     "type": "FeatureCollection",
-    "features": [
-      {
-        "id": 25189,
-        "bbox": [
-          -62.214615,
-          16.638288,
-          -62.139076,
-          16.663763
-        ],
-        "type": "Feature",
-        "properties": {
-          "5203": "multi-use-test",
-          "5204": [
-            "Multi-Use"
-          ],
-          "id": "25189",
-          "name": "multi-use-test",
-          "postId": null,
-          "userId": "128",
-          "userSlug": "Peter",
-          "zoneType": [
-            "Multi-Use"
-          ],
-          "createdAt": "2024-02-09T19:26:55.421942+00:00",
-          "updatedAt": "2024-02-09T19:27:22.862214+00:00",
-          "collectionId": "25188",
-          "isCollection": false,
-          "sharedInForum": false,
-          "sketchClassId": "597",
-          "userAttributes": [
-            {
-              "label": "Zone Type",
-              "value": [
-                "Multi-Use"
-              ],
-              "exportId": "zoneType",
-              "fieldType": "MultipleChoice",
-              "valueLabel": [
-                "Multi-Use"
-              ],
-              "formElementId": 5204,
-              "alternateLanguages": {}
-            }
-          ]
-        },
-        "geometry": null
-      },
-      {
-        "id": 25190,
-        "bbox": [
-          -62.270424,
-          16.732756,
-          -62.24924,
-          16.771484
-        ],
-        "type": "Feature",
-        "properties": {
-          "5203": "volcanic-test",
-          "5204": [
-            "Volcanic Exclusion"
-          ],
-          "id": "25190",
-          "name": "volcanic-test",
-          "postId": null,
-          "userId": "128",
-          "userSlug": "Peter",
-          "zoneType": [
-            "Volcanic Exclusion"
-          ],
-          "createdAt": "2024-02-09T19:27:44.994081+00:00",
-          "updatedAt": "2024-02-09T19:27:47.176457+00:00",
-          "collectionId": "25188",
-          "isCollection": false,
-          "sharedInForum": false,
-          "sketchClassId": "597",
-          "userAttributes": [
-            {
-              "label": "Zone Type",
-              "value": [
-                "Volcanic Exclusion"
-              ],
-              "exportId": "zoneType",
-              "fieldType": "MultipleChoice",
-              "valueLabel": [
-                "Volcanic Exclusion"
-              ],
-              "formElementId": 5204,
-              "alternateLanguages": {}
-            }
-          ]
-        },
-        "geometry": null
-      }
-    ],
+    "features": [],
     "properties": {
       "5155": "collection-test",
       "id": "25188",

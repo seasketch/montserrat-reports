@@ -37,7 +37,7 @@ export async function fishingValueOverlap(
   // if collection, remove any sketches that are not protection zones
   if (isCollection) {
     sketch.features = sketch.features.filter((f) => {
-      return protectionLevels.includes(f.properties.zoneType);
+      return protectionLevels.includes(f.properties.zoneType[0]);
     });
   }
 

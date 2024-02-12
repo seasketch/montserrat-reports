@@ -37,7 +37,7 @@ export async function benthicHabitatsOverlap(
   // if collection, remove any sketches that are not protection zones
   if (isCollection) {
     sketch.features = sketch.features.filter((f) => {
-      return protectionGroups.includes(f.properties.zoneType);
+      return protectionGroups.includes(f.properties.zoneType[0]);
     });
   }
 
@@ -105,6 +105,18 @@ export async function benthicHabitatsOverlap(
     (metricsSoFar, curClassMetrics) => [...metricsSoFar, ...curClassMetrics],
     []
   );
+
+  const test = "test";
+
+  // if single sketch not of a protection zone type, set all metrics to 0
+  if (
+    !isCollection &&
+    !protectionGroups.includes(sketch.properties.zoneType[0])
+  ) {
+    metrics.forEach((metric) => {
+      metric.value = 0;
+    });
+  }
 
   const sketchToZoneType = getZoneType(sketch);
   const metricToZoneType = (sketchMetric: Metric) => {

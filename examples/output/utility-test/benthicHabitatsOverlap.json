@@ -6,7 +6,7 @@
       "classId": "Algal Reef (Hard Bottom)",
       "sketchId": "25187",
       "groupId": null,
-      "value": 6032716.695686,
+      "value": 0,
       "extra": {
         "sketchName": "utility-test"
       }
@@ -39,7 +39,7 @@
       "classId": "Algal Reef (Mixed Bottom)",
       "sketchId": "25187",
       "groupId": null,
-      "value": 8830335.518818,
+      "value": 0,
       "extra": {
         "sketchName": "utility-test"
       }
@@ -138,7 +138,7 @@
       "classId": "Coral Reef",
       "sketchId": "25187",
       "groupId": null,
-      "value": 718387.466761,
+      "value": 0,
       "extra": {
         "sketchName": "utility-test"
       }
@@ -204,7 +204,7 @@
       "classId": "Sand",
       "sketchId": "25187",
       "groupId": null,
-      "value": 2895892.473679,
+      "value": 0,
       "extra": {
         "sketchName": "utility-test"
       }
@@ -270,7 +270,7 @@
       "classId": "Seagrass",
       "sketchId": "25187",
       "groupId": null,
-      "value": 8101.176048,
+      "value": 0,
       "extra": {
         "sketchName": "utility-test"
       }

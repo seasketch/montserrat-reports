@@ -8,13 +8,13 @@ import { EnvironmentPage } from "../components/EnvironmentPage";
 const enableAllTabs = false;
 const TabReport = () => {
   const { t } = useTranslation();
-  const viabilityId = "viability";
+  const overviewId = "overview";
   const environmentId = "environment";
   const segments = [
-    { id: viabilityId, label: t("Viability") },
+    { id: overviewId, label: t("Overview") },
     { id: environmentId, label: t("Environment") },
   ];
-  const [tab, setTab] = useState<string>(viabilityId);
+  const [tab, setTab] = useState<string>(overviewId);
 
   return (
     <>
@@ -25,7 +25,7 @@ const TabReport = () => {
           segments={segments}
         />
       </div>
-      <ReportPage hidden={!enableAllTabs && tab === viabilityId}>
+      <ReportPage hidden={!enableAllTabs && tab === overviewId}>
         <OverviewPage />
       </ReportPage>
       <ReportPage hidden={!enableAllTabs && tab === environmentId}>
