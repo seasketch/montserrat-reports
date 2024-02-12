@@ -45,10 +45,21 @@ const boundaryTotalMetrics: Metric[] = [
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
+const groupIds = [
+  "No-Take",
+  "Partial-Take",
+  "Utility",
+  "Multi-Use",
+  "Volcanic Exclusion",
+];
+
 // Mapping groupIds to colors
 const groupColorMap: Record<string, string> = {
   "No-Take": "#BEE4BE",
   "Partial-Take": "#FFE1A3",
+  Utility: "#B3D7F0",
+  "Multi-Use": "#C8B0DE",
+  "Volcanic Exclusion": "#FFD3D3",
 };
 
 export const SmallReportTableStyled = styled(ReportTableStyled)`
@@ -195,8 +206,6 @@ const genSingleSizeTable = (
       <ClassTable
         rows={finalMetrics}
         metricGroup={mg}
-        objective={project.getMetricGroupObjectives(mg, t)}
-        // objective={null}
         columnConfig={[
           {
             columnLabel: boundaryLabel,
@@ -231,11 +240,7 @@ const genSingleSizeTable = (
               barHeight: 11,
             },
             width: 40,
-            targetValueFormatter: (
-              value: number,
-              row: number,
-              numRows: number
-            ) => {
+            targetValueFormatter: (row: number) => {
               if (row === 0) {
                 return (value: number) =>
                   `${valueFormatter(value / 100, "percent0dig")} ${t(
@@ -277,10 +282,20 @@ const genNetworkSizeTable = (
     "classId",
     "metricId",
   ]);
-  // Use sketch ID for each table row, index into aggMetrics
-  const rows = Object.keys(aggMetrics).map((sketchId) => ({
-    sketchId,
-  }));
+
+  // Order rows by zone type
+  const sketchZoneOrder = groupIds.map((groupId) => {
+    const includedSketches = sketchMetrics.filter((sketch) => {
+      return sketch.groupId && sketch.groupId === groupId;
+    });
+    const includedSketchIds = includedSketches.map((sketch) => sketch.sketchId);
+    return includedSketchIds;
+  });
+
+  // Use sketch ID for each table row
+  const rows = sketchZoneOrder.flat().map((sketchId) => {
+    return { sketchId: sketchId };
+  });
 
   const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
     (curClass, index) => {

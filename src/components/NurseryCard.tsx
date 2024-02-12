@@ -66,8 +66,8 @@ export const NurseryCard = () => {
               <VerticalSpacer />
               This chart show the minimum, mean, and maximum abundance
               measurements of nursery areas that were taken within this
-              collection, in relation to the distribution of abundance within
-              Montserrat waters.
+              collection {"(reserves only)"}, overlaid on the distribution of
+              abundance within Montserrat waters.
               <VerticalSpacer height="2rem" />
               <Histogram
                 data={abundanceValues}

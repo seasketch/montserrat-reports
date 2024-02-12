@@ -7,7 +7,7 @@
                 "classId": "3nm_jurisdiction",
                 "display": "3 nautical miles",
                 "datasourceId": "3nm_jurisdiction",
-                "objectiveId": "eez",
+                "objectiveId": "",
                 "layerId": ""
             }
         ]

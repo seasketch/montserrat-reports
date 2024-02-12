@@ -77,8 +77,6 @@ const groupColorMap: Record<string, string> = {
 const metricGroup = project.getMetricGroup("divingValueOverlap");
 const precalcMetrics = project.getPrecalcMetrics(metricGroup, "sum", "3nm");
 
-console.log(precalcMetrics);
-
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 export const DivingCard = () => {
@@ -105,8 +103,6 @@ export const DivingCard = () => {
               metricIdOverride: project.getMetricGroupPercId(metricGroup),
             }),
           ];
-
-          console.log("finalMetrics", finalMetrics);
 
           const totalPercMetrics = finalMetrics.filter(
             (m) =>

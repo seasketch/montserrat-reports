@@ -84,6 +84,42 @@
       "geographyId": null,
       "metricId": "boundaryAreaOverlap",
       "classId": "3nm_jurisdiction",
+      "sketchId": "21339",
+      "groupId": "Utility",
+      "value": 13508536.933893768,
+      "extra": {
+        "sketchName": "all-zones-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21339",
+      "groupId": "Multi-Use",
+      "value": 5475434.645069009,
+      "extra": {
+        "sketchName": "all-zones-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21339",
+      "groupId": "Volcanic Exclusion",
+      "value": 27686223.46637202,
+      "extra": {
+        "sketchName": "all-zones-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
       "sketchId": "21568",
       "groupId": null,
       "value": 11551103.697546799,
@@ -117,6 +153,17 @@
       "geographyId": null,
       "metricId": "boundaryAreaOverlap",
       "classId": "3nm_jurisdiction",
+      "sketchId": "25176",
+      "groupId": "Utility",
+      "value": 13508536.933893768,
+      "extra": {
+        "sketchName": "utility-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
       "sketchId": "25177",
       "groupId": null,
       "value": 6907681.300441245,
@@ -128,8 +175,30 @@
       "geographyId": null,
       "metricId": "boundaryAreaOverlap",
       "classId": "3nm_jurisdiction",
+      "sketchId": "25177",
+      "groupId": "Multi-Use",
+      "value": 6907681.300441245,
+      "extra": {
+        "sketchName": "multi-use-north"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
       "sketchId": "25178",
       "groupId": null,
+      "value": 27686223.46637202,
+      "extra": {
+        "sketchName": "volcanic-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25178",
+      "groupId": "Volcanic Exclusion",
       "value": 27686223.46637202,
       "extra": {
         "sketchName": "volcanic-east"
