@@ -1,0 +1,241 @@
+{
+    "id": 25545,
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": 25543,
+            "bbox": [
+                -62.263493,
+                16.755255,
+                -62.21226,
+                16.812416
+            ],
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -62.212261406,
+                            16.798035164
+                        ],
+                        [
+                            -62.232290932,
+                            16.755255671
+                        ],
+                        [
+                            -62.263490772,
+                            16.769270703
+                        ],
+                        [
+                            -62.23922423,
+                            16.81241576
+                        ],
+                        [
+                            -62.212261406,
+                            16.798035164
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "5203": "no-take-test",
+                "5204": [
+                    "No-Take"
+                ],
+                "id": "25543",
+                "name": "no-take-test",
+                "postId": null,
+                "userId": "128",
+                "userSlug": "Peter",
+                "zoneType": [
+                    "No-Take"
+                ],
+                "createdAt": "2024-02-12T23:57:18.371551+00:00",
+                "updatedAt": "2024-02-13T00:02:29.009144+00:00",
+                "collectionId": "25545",
+                "isCollection": false,
+                "sharedInForum": false,
+                "sketchClassId": "597",
+                "userAttributes": [
+                    {
+                        "label": "Zone Type",
+                        "value": [
+                            "No-Take"
+                        ],
+                        "exportId": "zoneType",
+                        "fieldType": "MultipleChoice",
+                        "valueLabel": [
+                            "No-Take"
+                        ],
+                        "formElementId": 5204,
+                        "alternateLanguages": {}
+                    }
+                ]
+            }
+        },
+        {
+            "id": 25544,
+            "bbox": [
+                -62.20281,
+                16.633226,
+                -62.131626,
+                16.678675
+            ],
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -62.202806749,
+                            16.661303266
+                        ],
+                        [
+                            -62.201863491,
+                            16.633225576
+                        ],
+                        [
+                            -62.131627217,
+                            16.639719071
+                        ],
+                        [
+                            -62.135323863,
+                            16.678675419
+                        ],
+                        [
+                            -62.202806749,
+                            16.661303266
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "5203": "partial-take-test",
+                "5204": [
+                    "Partial-Take"
+                ],
+                "id": "25544",
+                "name": "partial-take-test",
+                "postId": null,
+                "userId": "128",
+                "userSlug": "Peter",
+                "zoneType": [
+                    "Partial-Take"
+                ],
+                "createdAt": "2024-02-13T00:02:12.891191+00:00",
+                "updatedAt": "2024-02-13T00:02:30.096917+00:00",
+                "collectionId": "25545",
+                "isCollection": false,
+                "sharedInForum": false,
+                "sketchClassId": "597",
+                "userAttributes": [
+                    {
+                        "label": "Zone Type",
+                        "value": [
+                            "Partial-Take"
+                        ],
+                        "exportId": "zoneType",
+                        "fieldType": "MultipleChoice",
+                        "valueLabel": [
+                            "Partial-Take"
+                        ],
+                        "formElementId": 5204,
+                        "alternateLanguages": {}
+                    }
+                ]
+            }
+        },
+        {
+            "id": 25575,
+            "bbox": [
+                -62.227806,
+                16.790342,
+                -62.145836,
+                16.851496
+            ],
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -62.227804687,
+                            16.822363126
+                        ],
+                        [
+                            -62.209422173,
+                            16.800727632
+                        ],
+                        [
+                            -62.166027385,
+                            16.790341719
+                        ],
+                        [
+                            -62.145836754,
+                            16.828420622
+                        ],
+                        [
+                            -62.207312704,
+                            16.851495021
+                        ],
+                        [
+                            -62.227804687,
+                            16.822363126
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "5203": "coral",
+                "5204": [
+                    "No-Take"
+                ],
+                "id": "25575",
+                "name": "coral",
+                "postId": null,
+                "userId": "128",
+                "userSlug": "Peter",
+                "zoneType": [
+                    "No-Take"
+                ],
+                "createdAt": "2024-02-13T17:56:17.501787+00:00",
+                "updatedAt": "2024-02-13T17:56:19.85738+00:00",
+                "collectionId": "25545",
+                "isCollection": false,
+                "sharedInForum": false,
+                "sketchClassId": "597",
+                "userAttributes": [
+                    {
+                        "label": "Zone Type",
+                        "value": [
+                            "No-Take"
+                        ],
+                        "exportId": "zoneType",
+                        "fieldType": "MultipleChoice",
+                        "valueLabel": [
+                            "No-Take"
+                        ],
+                        "formElementId": 5204,
+                        "alternateLanguages": {}
+                    }
+                ]
+            }
+        }
+    ],
+    "properties": {
+        "5155": "test-collection",
+        "id": "25545",
+        "name": "test-collection",
+        "postId": null,
+        "userId": "128",
+        "userSlug": "Peter",
+        "createdAt": "2024-02-13T00:02:24.32084+00:00",
+        "updatedAt": "2024-02-13T17:56:19.85738+00:00",
+        "collectionId": null,
+        "isCollection": true,
+        "sharedInForum": false,
+        "sketchClassId": "584",
+        "userAttributes": null
+    }
+}

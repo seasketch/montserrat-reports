@@ -1,0 +1,298 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25543",
+      "groupId": null,
+      "value": 18553782.983426433,
+      "extra": {
+        "sketchName": "no-take-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25543",
+      "groupId": "No-Take",
+      "value": 18553782.983426433,
+      "extra": {
+        "sketchName": "no-take-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25544",
+      "groupId": null,
+      "value": 27729325.07531385,
+      "extra": {
+        "sketchName": "partial-take-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25544",
+      "groupId": "Partial-Take",
+      "value": 27729325.07531385,
+      "extra": {
+        "sketchName": "partial-take-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25545",
+      "groupId": null,
+      "value": 81931791.06984308,
+      "extra": {
+        "sketchName": "test-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25545",
+      "groupId": "No-Take",
+      "value": 54202465.99452923,
+      "extra": {
+        "sketchName": "test-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25545",
+      "groupId": "Partial-Take",
+      "value": 27729325.07531385,
+      "extra": {
+        "sketchName": "test-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25545",
+      "groupId": "Utility",
+      "value": 0,
+      "extra": {
+        "sketchName": "test-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25545",
+      "groupId": "Multi-Use",
+      "value": 0,
+      "extra": {
+        "sketchName": "test-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25545",
+      "groupId": "Volcanic Exclusion",
+      "value": 0,
+      "extra": {
+        "sketchName": "test-collection",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25575",
+      "groupId": null,
+      "value": 35648683.01110252,
+      "extra": {
+        "sketchName": "coral"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25575",
+      "groupId": "No-Take",
+      "value": 35648683.01110252,
+      "extra": {
+        "sketchName": "coral"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25545,
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": 25543,
+        "bbox": [
+          -62.263493,
+          16.755255,
+          -62.21226,
+          16.812416
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "no-take-test",
+          "5204": [
+            "No-Take"
+          ],
+          "id": "25543",
+          "name": "no-take-test",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "No-Take"
+          ],
+          "createdAt": "2024-02-12T23:57:18.371551+00:00",
+          "updatedAt": "2024-02-13T00:02:29.009144+00:00",
+          "collectionId": "25545",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "No-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "No-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      },
+      {
+        "id": 25544,
+        "bbox": [
+          -62.20281,
+          16.633226,
+          -62.131626,
+          16.678675
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "partial-take-test",
+          "5204": [
+            "Partial-Take"
+          ],
+          "id": "25544",
+          "name": "partial-take-test",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Partial-Take"
+          ],
+          "createdAt": "2024-02-13T00:02:12.891191+00:00",
+          "updatedAt": "2024-02-13T00:02:30.096917+00:00",
+          "collectionId": "25545",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Partial-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Partial-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      },
+      {
+        "id": 25575,
+        "bbox": [
+          -62.227806,
+          16.790342,
+          -62.145836,
+          16.851496
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "coral",
+          "5204": [
+            "No-Take"
+          ],
+          "id": "25575",
+          "name": "coral",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "No-Take"
+          ],
+          "createdAt": "2024-02-13T17:56:17.501787+00:00",
+          "updatedAt": "2024-02-13T17:56:19.85738+00:00",
+          "collectionId": "25545",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "No-Take"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "No-Take"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      }
+    ],
+    "properties": {
+      "5155": "test-collection",
+      "id": "25545",
+      "name": "test-collection",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "createdAt": "2024-02-13T00:02:24.32084+00:00",
+      "updatedAt": "2024-02-13T17:56:19.85738+00:00",
+      "collectionId": null,
+      "isCollection": true,
+      "sharedInForum": false,
+      "sketchClassId": "584",
+      "userAttributes": null
+    }
+  }
+}
