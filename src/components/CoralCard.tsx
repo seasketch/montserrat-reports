@@ -130,7 +130,13 @@ export const CoralCard = () => {
                         showLegend={
                           index < metricGroup.classes.length - 1 ? false : true
                         }
-                        valueFormatter={(value: number) => value.toFixed(0)}
+                        valueFormatter={(value: number) =>
+                          (
+                            (value / 100) *
+                            project.getObjectiveById(curClass.objectiveId!)
+                              .target
+                          ).toFixed(0)
+                        }
                         targetValueFormatter={() =>
                           "Of " +
                           project.getObjectiveById(curClass.objectiveId!)

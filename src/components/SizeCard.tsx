@@ -108,8 +108,6 @@ export const SizeCard = () => {
   const { t } = useTranslation();
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
 
-  console.log("metricGroup", metricGroup);
-
   const notFoundString = t("Results not found");
 
   /* i18next-extract-disable-next-line */

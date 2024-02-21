@@ -125,5 +125,5 @@ export default new GeoprocessingHandler(fishingValueOverlap, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
-  memory: 10240,
+  memory: 256,
 });

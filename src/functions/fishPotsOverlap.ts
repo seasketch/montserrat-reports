@@ -131,5 +131,6 @@ export default new GeoprocessingHandler(fishPotsOverlap, {
   description: "Calculate sketch overlap with fish pots",
   executionMode: "async",
   timeout: 600,
+  memory: 256,
   requiresProperties: [],
 });

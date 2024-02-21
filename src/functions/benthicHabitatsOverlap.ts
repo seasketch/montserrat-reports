@@ -143,6 +143,7 @@ export default new GeoprocessingHandler(benthicHabitatsOverlap, {
   description: "Calculate sketch overlap with benthic habitat classes",
   executionMode: "async",
   timeout: 600,
+  memory: 256,
   requiresProperties: [],
 });
 

@@ -1,5 +1,10 @@
 import React, { useEffect, useMemo, useRef } from "react";
-import * as d3 from "d3";
+import { scaleLinear } from "d3-scale";
+import { histogram } from "d3-array";
+import { max as d3Max } from "d3-array";
+import { select } from "d3-selection";
+import { axisBottom } from "d3-axis";
+import { axisLeft } from "d3-axis";
 
 const MARGIN = { top: 40, right: 20, bottom: 50, left: 50 };
 const BUCKET_PADDING = 1;
@@ -33,35 +38,34 @@ export const Histogram = ({
 
   const xScale = useMemo(() => {
     const max = Math.max(...data);
-    return d3.scaleLinear().domain([0, 0.4]).range([10, boundsWidth]);
+    return scaleLinear().domain([0, 0.4]).range([10, boundsWidth]);
   }, [data, width]);
 
   const buckets = useMemo(() => {
-    const bucketGenerator = d3
-      .bin()
+    const bucketGenerator = histogram()
       .value((d) => d)
-      .domain([0, d3.max(data) as number])
+      .domain([0, d3Max(data) as number])
       .thresholds([0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4]);
     return bucketGenerator(data);
   }, [xScale]);
 
   const yScale = useMemo(() => {
     const max = Math.max(...buckets.map((bucket) => bucket?.length));
-    return d3.scaleLinear().range([boundsHeight, 0]).domain([0, max]).nice();
+    return scaleLinear().range([boundsHeight, 0]).domain([0, max]).nice();
   }, [data, height]);
 
   // Render the X axis using d3.js, not react
   useEffect(() => {
-    const svgElement = d3.select(axesRef.current);
+    const svgElement = select(axesRef.current);
     svgElement.selectAll("*").remove();
 
-    const xAxisGenerator = d3.axisBottom(xScale);
+    const xAxisGenerator = axisBottom(xScale);
     svgElement
       .append("g")
       .attr("transform", "translate(0," + boundsHeight + ")")
       .call(xAxisGenerator);
 
-    const yAxisGenerator = d3.axisLeft(yScale);
+    const yAxisGenerator = axisLeft(yScale);
     svgElement.append("g").call(yAxisGenerator);
 
     // Add x-axis label

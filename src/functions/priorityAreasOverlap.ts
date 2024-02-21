@@ -131,6 +131,7 @@ export default new GeoprocessingHandler(priorityAreasOverlap, {
   description: "Calculate sketch overlap with priority conservation areas",
   executionMode: "async",
   timeout: 600,
+  memory: 256,
   requiresProperties: [],
 });
 

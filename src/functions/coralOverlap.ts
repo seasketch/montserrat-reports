@@ -131,5 +131,6 @@ export default new GeoprocessingHandler(coralOverlap, {
   description: "Calculate sketch overlap with IUCN coral species observations",
   executionMode: "async",
   timeout: 600,
+  memory: 256,
   requiresProperties: [],
 });
