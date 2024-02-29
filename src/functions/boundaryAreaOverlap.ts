@@ -20,7 +20,6 @@ import {
 import {
   firstMatchingMetric,
   getUserAttribute,
-  isSketchCollection,
 } from "@seasketch/geoprocessing/client-core";
 
 const metricGroup = project.getMetricGroup("boundaryAreaOverlap");
@@ -63,7 +62,13 @@ export async function boundaryAreaOverlap(
 
   const levelMetrics = await overlapAreaGroupMetrics({
     metricId: metricGroup.metricId,
-    groupIds: ["No-Take", "Partial-Take"],
+    groupIds: [
+      "No-Take",
+      "Partial-Take",
+      "Utility",
+      "Multi-Use",
+      "Volcanic Exclusion",
+    ],
     sketch: sketch,
     metricToGroup: metricToZoneType,
     metrics: areaMetrics,
@@ -103,5 +108,5 @@ export default new GeoprocessingHandler(boundaryAreaOverlap, {
   executionMode: "async",
   timeout: 40,
   requiresProperties: [],
-  memory: 10240,
+  memory: 256,
 });

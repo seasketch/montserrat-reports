@@ -17,12 +17,12 @@ import {
   getSketchFeatures,
   getUserAttribute,
   overlapFeaturesGroupMetrics,
+  isSketchCollection,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
 
-const boundaryArea = 373298362.032;
 const featuresByClass: Record<string, Feature<Polygon>[]> = {};
 
 export async function benthicHabitatsOverlap(
@@ -30,6 +30,16 @@ export async function benthicHabitatsOverlap(
 ): Promise<ReportResult> {
   const box = sketch.bbox || bbox(sketch);
   const metricGroup = project.getMetricGroup("benthicHabitatsOverlap");
+
+  const protectionGroups = ["No-Take", "Partial-Take"];
+  const isCollection = isSketchCollection(sketch);
+
+  // if collection, remove any sketches that are not protection zones
+  if (isCollection) {
+    sketch.features = sketch.features.filter((f) => {
+      return protectionGroups.includes(f.properties.zoneType[0]);
+    });
+  }
 
   let cachedFeatures: Record<string, Feature<Polygon>[]> = {};
 
@@ -96,6 +106,18 @@ export async function benthicHabitatsOverlap(
     []
   );
 
+  const test = "test";
+
+  // if single sketch not of a protection zone type, set all metrics to 0
+  if (
+    !isCollection &&
+    !protectionGroups.includes(sketch.properties.zoneType[0])
+  ) {
+    metrics.forEach((metric) => {
+      metric.value = 0;
+    });
+  }
+
   const sketchToZoneType = getZoneType(sketch);
   const metricToZoneType = (sketchMetric: Metric) => {
     return sketchToZoneType[sketchMetric.sketchId!];
@@ -121,6 +143,7 @@ export default new GeoprocessingHandler(benthicHabitatsOverlap, {
   description: "Calculate sketch overlap with benthic habitat classes",
   executionMode: "async",
   timeout: 600,
+  memory: 256,
   requiresProperties: [],
 });
 

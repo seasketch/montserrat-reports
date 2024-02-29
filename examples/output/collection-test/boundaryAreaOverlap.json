@@ -1,0 +1,231 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25188",
+      "groupId": null,
+      "value": 30048672.204262305,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25188",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25188",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25188",
+      "groupId": "Utility",
+      "value": 0,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25188",
+      "groupId": "Multi-Use",
+      "value": 21900240.06959525,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25188",
+      "groupId": "Volcanic Exclusion",
+      "value": 8148432.134667053,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25189",
+      "groupId": null,
+      "value": 21900240.06959525,
+      "extra": {
+        "sketchName": "multi-use-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25189",
+      "groupId": "Multi-Use",
+      "value": 21900240.06959525,
+      "extra": {
+        "sketchName": "multi-use-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25190",
+      "groupId": null,
+      "value": 8148432.134666776,
+      "extra": {
+        "sketchName": "volcanic-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25190",
+      "groupId": "Volcanic Exclusion",
+      "value": 8148432.134666776,
+      "extra": {
+        "sketchName": "volcanic-test"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25188,
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": 25189,
+        "bbox": [
+          -62.214615,
+          16.638288,
+          -62.139076,
+          16.663763
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "multi-use-test",
+          "5204": [
+            "Multi-Use"
+          ],
+          "id": "25189",
+          "name": "multi-use-test",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Multi-Use"
+          ],
+          "createdAt": "2024-02-09T19:26:55.421942+00:00",
+          "updatedAt": "2024-02-09T19:27:22.862214+00:00",
+          "collectionId": "25188",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Multi-Use"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Multi-Use"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      },
+      {
+        "id": 25190,
+        "bbox": [
+          -62.270424,
+          16.732756,
+          -62.24924,
+          16.771484
+        ],
+        "type": "Feature",
+        "properties": {
+          "5203": "volcanic-test",
+          "5204": [
+            "Volcanic Exclusion"
+          ],
+          "id": "25190",
+          "name": "volcanic-test",
+          "postId": null,
+          "userId": "128",
+          "userSlug": "Peter",
+          "zoneType": [
+            "Volcanic Exclusion"
+          ],
+          "createdAt": "2024-02-09T19:27:44.994081+00:00",
+          "updatedAt": "2024-02-09T19:27:47.176457+00:00",
+          "collectionId": "25188",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "597",
+          "userAttributes": [
+            {
+              "label": "Zone Type",
+              "value": [
+                "Volcanic Exclusion"
+              ],
+              "exportId": "zoneType",
+              "fieldType": "MultipleChoice",
+              "valueLabel": [
+                "Volcanic Exclusion"
+              ],
+              "formElementId": 5204,
+              "alternateLanguages": {}
+            }
+          ]
+        }
+      }
+    ],
+    "properties": {
+      "5155": "collection-test",
+      "id": "25188",
+      "name": "collection-test",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "createdAt": "2024-02-09T19:26:29.61709+00:00",
+      "updatedAt": "2024-02-09T19:27:47.176457+00:00",
+      "collectionId": null,
+      "isCollection": true,
+      "sharedInForum": false,
+      "sketchClassId": "584",
+      "userAttributes": null
+    }
+  }
+}

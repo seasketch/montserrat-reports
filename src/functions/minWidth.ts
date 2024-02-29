@@ -28,7 +28,7 @@ export async function minWidth(
 export default new GeoprocessingHandler(minWidth, {
   title: "minWidth",
   description: "Function description",
-  timeout: 2, // seconds
+  timeout: 600, // seconds
   memory: 256, // megabytes
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required

@@ -13,7 +13,7 @@ describe("Basic smoke tests", () => {
     expect(typeof boundaryAreaOverlap).toBe("function");
   });
   test("boundaryAreaOverlapSmoke - tests run against all examples", async () => {
-    const examples = await getExamplePolygonSketchAll("zone-collection");
+    const examples = await getExamplePolygonSketchAll();
     for (const example of examples) {
       const result = await boundaryAreaOverlap(example);
       expect(result).toBeTruthy();

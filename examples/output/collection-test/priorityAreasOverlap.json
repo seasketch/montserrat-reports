@@ -1,0 +1,60 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "priorityAreasOverlap",
+      "classId": "priority_areas",
+      "sketchId": "25188",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "priorityAreasOverlap",
+      "classId": "priority_areas",
+      "sketchId": "25188",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "priorityAreasOverlap",
+      "classId": "priority_areas",
+      "sketchId": "25188",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "collection-test",
+        "isCollection": true
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25188,
+    "type": "FeatureCollection",
+    "features": [],
+    "properties": {
+      "5155": "collection-test",
+      "id": "25188",
+      "name": "collection-test",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "createdAt": "2024-02-09T19:26:29.61709+00:00",
+      "updatedAt": "2024-02-09T19:27:47.176457+00:00",
+      "collectionId": null,
+      "isCollection": true,
+      "sharedInForum": false,
+      "sketchClassId": "584",
+      "userAttributes": null
+    }
+  }
+}

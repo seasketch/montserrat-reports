@@ -19,6 +19,14 @@
     "src/functions/clipToOcean.ts"
   ],
   "geoprocessingFunctions": [
-    "src/functions/area.ts"
+    "src/functions/boundaryAreaOverlap.ts",
+    "src/functions/benthicHabitatsOverlap.ts",
+    "src/functions/coralOverlap.ts",
+    "src/functions/divingValueOverlap.ts",
+    "src/functions/fishingValueOverlap.ts",
+    "src/functions/fishPotsOverlap.ts",
+    "src/functions/minWidth.ts",
+    "src/functions/nurseryOverlap.ts",
+    "src/functions/priorityAreasOverlap.ts"
   ]
 }

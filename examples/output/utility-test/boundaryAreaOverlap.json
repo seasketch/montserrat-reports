@@ -1,0 +1,115 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25187",
+      "groupId": null,
+      "value": 18485404.96368897,
+      "extra": {
+        "sketchName": "utility-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25187",
+      "groupId": "No-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "utility-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25187",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "utility-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25187",
+      "groupId": "Utility",
+      "value": 18485404.96368897,
+      "extra": {
+        "sketchName": "utility-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25187",
+      "groupId": "Multi-Use",
+      "value": 0,
+      "extra": {
+        "sketchName": "utility-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "25187",
+      "groupId": "Volcanic Exclusion",
+      "value": 0,
+      "extra": {
+        "sketchName": "utility-test"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25187,
+    "bbox": [
+      -62.23156,
+      16.831207,
+      -62.17186,
+      16.858856
+    ],
+    "type": "Feature",
+    "properties": {
+      "5203": "utility-test",
+      "5204": [
+        "Utility"
+      ],
+      "id": "25187",
+      "name": "utility-test",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "zoneType": [
+        "Utility"
+      ],
+      "createdAt": "2024-02-09T19:26:13.161389+00:00",
+      "updatedAt": "2024-02-09T19:26:13.161389+00:00",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "597",
+      "userAttributes": [
+        {
+          "label": "Zone Type",
+          "value": [
+            "Utility"
+          ],
+          "exportId": "zoneType",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "Utility"
+          ],
+          "formElementId": 5204,
+          "alternateLanguages": {}
+        }
+      ]
+    }
+  }
+}

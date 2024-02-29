@@ -13,6 +13,7 @@ import {
   // SmallReportTableStyled,
   Table,
   ReportTableStyled,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -33,11 +34,14 @@ import Translator from "./TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
 import { TFunction } from "i18next";
 import styled from "styled-components";
+import { isNullSketchCollection } from "@seasketch/geoprocessing";
 
 const metricGroup = project.getMetricGroup("priorityAreasOverlap");
 const precalcMetrics = project.getPrecalcMetrics(metricGroup, "area", "3nm");
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
+
+const protectionGroups = ["No-Take", "Partial-Take"];
 
 // Mapping groupIds to colors
 const groupColorMap: Record<string, string> = {
@@ -94,35 +98,25 @@ export const PriorityAreasCard = () => {
               m.sketchId === data.sketch.properties.id && m.groupId === null
           );
 
+          const features = isNullSketchCollection(data.sketch)
+            ? data.sketch.features
+            : [data.sketch];
+
+          const includedGroups = features.map((f) => f.properties.zoneType[0]);
+
+          const groupOverlap = includedGroups.filter((g) =>
+            protectionGroups.includes(g)
+          );
+
+          const noProtectedSketches = groupOverlap.length === 0;
+
+          singleMetrics[0].value = noProtectedSketches
+            ? 0
+            : singleMetrics[0].value;
+
           const finalMetrics = [
             ...singleMetrics,
             ...toPercentMetric(singleMetrics, precalcMetrics, {
-              metricIdOverride: project.getMetricGroupPercId(metricGroup),
-            }),
-          ];
-
-          const noTakeMetrics = data.metrics.filter(
-            (m) =>
-              m.sketchId === data.sketch.properties.id &&
-              m.groupId === "No-Take"
-          );
-
-          const finalNoTakeMetrics = [
-            ...noTakeMetrics,
-            ...toPercentMetric(noTakeMetrics, precalcMetrics, {
-              metricIdOverride: project.getMetricGroupPercId(metricGroup),
-            }),
-          ];
-
-          const partialTakeeMetrics = data.metrics.filter(
-            (m) =>
-              m.sketchId === data.sketch.properties.id &&
-              m.groupId === "Partial-Take"
-          );
-
-          const finalPartialTakeMetrics = [
-            ...partialTakeeMetrics,
-            ...toPercentMetric(partialTakeeMetrics, precalcMetrics, {
               metricIdOverride: project.getMetricGroupPercId(metricGroup),
             }),
           ];
@@ -138,6 +132,7 @@ export const PriorityAreasCard = () => {
                 />
               }
             >
+              <VerticalSpacer />
               <Translator>
                 <ClassTable
                   rows={finalMetrics}

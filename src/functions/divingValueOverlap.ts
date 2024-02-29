@@ -16,6 +16,7 @@ import {
   getUserAttribute,
   Georaster,
   overlapRasterGroupMetrics,
+  isSketchCollection,
 } from "@seasketch/geoprocessing";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
@@ -30,6 +31,16 @@ export async function divingValueOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
   const box = sketch.bbox || bbox(sketch);
+
+  const isCollection = isSketchCollection(sketch);
+
+  // if collection, remove any sketches that are not protection zones
+  if (isCollection) {
+    sketch.features = sketch.features.filter((f) => {
+      return protectionLevels.includes(f.properties.zoneType[0]);
+    });
+  }
+
   const metrics: Metric[] = (
     await Promise.all(
       metricGroup.classes.map(async (curClass) => {
@@ -114,5 +125,5 @@ export default new GeoprocessingHandler(divingValueOverlap, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
-  memory: 10240,
+  memory: 256,
 });

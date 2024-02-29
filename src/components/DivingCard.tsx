@@ -1,16 +1,15 @@
 import React from "react";
 import {
   Collapse,
-  ClassTable,
   SketchClassTable,
   ResultsCard,
   useSketchProperties,
   ToolbarCard,
   LayerToggle,
-  Column,
-  GroupPill,
   ReportTableStyled,
-  Table,
+  ReportChartFigure,
+  HorizontalStackedBar,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -18,18 +17,12 @@ import {
   flattenBySketchAllClass,
   metricsWithSketchId,
   toPercentMetric,
-  valueFormatter,
-  nestMetrics,
-  MetricGroup,
-  percentWithEdge,
-  Metric,
-  isSketchCollection,
+  isNullSketchCollection,
 } from "@seasketch/geoprocessing/client-core";
 
 import project from "../../project";
 import Translator from "./TranslatorAsync";
 import { Trans, useTranslation } from "react-i18next";
-import { TFunction } from "i18next";
 import styled from "styled-components";
 
 export const SmallReportTableStyled = styled(ReportTableStyled)`
@@ -41,18 +34,11 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
 
   th:first-child {
     text-align: left;
-  }
-
-  th:nth-child(2) {
-    text-align: center;
+    width: 150px !important;
   }
 
   td {
     text-align: left;
-  }
-
-  td:nth-child(2) {
-    text-align: center;
   }
 `;
 
@@ -80,7 +66,9 @@ export const NetworkTableStyled = styled(ReportTableStyled)`
   }
 `;
 
-// Mapping groupIds to colors
+const protectionGroups = ["No-Take", "Partial-Take"];
+
+// Mapping protectionGroups to colors
 const groupColorMap: Record<string, string> = {
   "No-Take": "#BEE4BE",
   "Partial-Take": "#FFE1A3",
@@ -96,9 +84,6 @@ export const DivingCard = () => {
   const { t } = useTranslation();
 
   const mapLabel = t("Map");
-  const classLabel = t("Value");
-  const valueLabel = t("Value within plan");
-  const percAreaWithin = `% ${t("Value Within Plan")}`;
 
   return (
     <>
@@ -119,6 +104,33 @@ export const DivingCard = () => {
             }),
           ];
 
+          const totalPercMetrics = finalMetrics.filter(
+            (m) =>
+              m.sketchId === data.sketch.properties.id &&
+              m.groupId === null &&
+              m.metricId === project.getMetricGroupPercId(metricGroup)
+          );
+
+          const groupTotalPercMetrics = finalMetrics.filter(
+            (m) =>
+              m.sketchId === data.sketch.properties.id &&
+              m.groupId !== null &&
+              m.metricId === project.getMetricGroupPercId(metricGroup)
+          );
+
+          // check for protection type sketches
+          const features = isNullSketchCollection(data.sketch)
+            ? data.sketch.features
+            : [data.sketch];
+
+          const includedGroups = features.map((f) => f.properties.zoneType[0]);
+
+          const groupOverlap = includedGroups.filter((g) =>
+            protectionGroups.includes(g)
+          );
+
+          const noProtectedSketches = groupOverlap.length === 0;
+
           return (
             <ToolbarCard
               title={t("Diving Value")}
@@ -131,67 +143,61 @@ export const DivingCard = () => {
               }
             >
               <Translator>
-                <ClassTable
-                  rows={finalMetrics}
-                  metricGroup={metricGroup}
-                  columnConfig={[
-                    {
-                      columnLabel: classLabel,
-                      type: "class",
-                      width: 30,
-                    },
-                    {
-                      columnLabel: valueLabel,
-                      type: "metricValue",
-                      metricId: metricGroup.metricId,
-                      valueFormatter: (val: string | number) =>
-                        Number.format(
-                          Math.round(
-                            typeof val === "string" ? parseInt(val) : val
-                          )
-                        ),
-                      width: 30,
-                    },
-                    {
-                      columnLabel: percAreaWithin,
-                      type: "metricChart",
-                      metricId: project.getMetricGroupPercId(metricGroup),
-                      valueFormatter: "percent",
-                      chartOptions: {
-                        showTitle: true,
-                        targetLabelPosition: "bottom",
-                        targetLabelStyle: "tight",
-                        barHeight: 11,
-                      },
-                      width: 30,
-                      targetValueFormatter: (
-                        value: number,
-                        row: number,
-                        numRows: number
-                      ) => {
-                        if (row === 0) {
-                          return (value: number) =>
-                            `${valueFormatter(value / 100, "percent0dig")} ${t(
-                              "Target"
-                            )}`;
-                        } else {
-                          return (value: number) =>
-                            `${valueFormatter(value / 100, "percent0dig")}`;
-                        }
-                      },
-                    },
-                  ]}
-                />
+                <br />
+                <div style={{ fontSize: 14 }}>
+                  Percent value within plan:{" "}
+                  <span style={{ fontWeight: "bold", fontSize: 15 }}>
+                    {totalPercMetrics[0].value !== 0 && !noProtectedSketches
+                      ? (totalPercMetrics[0].value * 100).toFixed(2)
+                      : 0}
+                    {"%"}
+                  </span>
+                </div>
               </Translator>
-              {genZoneTable(data, metricGroup, t)}
+              <VerticalSpacer></VerticalSpacer>
+              <ReportChartFigure>
+                {protectionGroups.map((curGroup, index) => (
+                  <div
+                    style={{ paddingBottom: "10px", paddingLeft: "40px" }}
+                    key={index}
+                  >
+                    <HorizontalStackedBar
+                      key={index}
+                      {...{
+                        rows: [
+                          groupTotalPercMetrics
+                            .filter((m) => m.groupId === curGroup)
+                            .map((curMetric) => [curMetric.value * 100]),
+                        ],
+                        rowConfigs: [
+                          {
+                            title: curGroup,
+                          },
+                        ],
+                        max: 100,
+                      }}
+                      blockGroupNames={["No-Take", "Partial-Take"]}
+                      blockGroupStyles={
+                        curGroup === "No-Take"
+                          ? [{ backgroundColor: "#BEE4BE" }]
+                          : [{ backgroundColor: "#FFE1A3" }]
+                      }
+                      // legend is only shown for last class
+                      showLegend={false}
+                      valueFormatter={(value: number) =>
+                        value !== 0 ? value.toFixed(2) + "%" : "0%"
+                      }
+                    />
+                  </div>
+                ))}
+              </ReportChartFigure>
               {isCollection && (
                 <Collapse title={t("Show by MPA")}>
                   {genSketchTable(data)}
                 </Collapse>
               )}
-
               <Collapse title={t("Learn more")}>
-                <Trans i18nKey="Fishing Value Card - learn more">
+                <Trans i18nKey="Diving Value Card - learn more">
                   <p>
                     {" "}
                     This report summarizes the amount of diving value overlap
@@ -234,97 +240,5 @@ const genSketchTable = (data: ReportResult) => {
   );
   return (
     <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
-  );
-};
-
-const genZoneTable = (data: ReportResult, mg: MetricGroup, t: TFunction) => {
-  const sketches = toNullSketchArray(data.sketch);
-  const numSketches = sketches.reduce(
-    (groupCounts: Record<string, number>, curSketch) => {
-      const zoneType: string = curSketch.properties.zoneType;
-      if (groupCounts[zoneType]) {
-        groupCounts[zoneType] += 1;
-      } else {
-        groupCounts[zoneType] = 1;
-      }
-      return groupCounts;
-    },
-    {}
-  );
-  const sketchGroupIds = sketches.reduce((groupIds: string[], curSketch) => {
-    const zoneType: string = curSketch.properties.zoneType;
-    return [...groupIds, ...zoneType];
-  }, []);
-  const sketchMetrics = data.metrics.filter(
-    (m) => m.groupId && sketchGroupIds.includes(m.groupId)
-  );
-
-  const finalMetrics = [
-    ...sketchMetrics,
-    ...toPercentMetric(sketchMetrics, precalcMetrics, {
-      metricIdOverride: project.getMetricGroupPercId(mg),
-    }),
-  ];
-
-  const aggMetrics = nestMetrics(finalMetrics, [
-    "groupId",
-    "classId",
-    "metricId",
-  ]);
-
-  // Use group ID for each table row, index into aggMetrics
-  const rows = Object.keys(aggMetrics).map((groupId) => ({
-    groupId,
-  }));
-
-  const columns: Column<{ groupId: string }>[] = mg.classes.map(
-    (curClass, index) => {
-      /* i18next-extract-disable-next-line */
-      const transString = t(curClass.display);
-      return {
-        Header: " ",
-        id: "zoneTableHeader",
-        style: { color: "#777" },
-        columns: [
-          {
-            Header: "Zone Types:",
-            accessor: (row) => {
-              return (
-                <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
-                  {row.groupId}
-                </GroupPill>
-              );
-            },
-          },
-          {
-            Header: t("% Value") + " ".repeat(index),
-            accessor: (row) => {
-              const value = aggMetrics[row.groupId][curClass.classId as string][
-                project.getMetricGroupPercId(mg)
-              ].reduce((value: number, curMetric: Metric) => {
-                // if sketch is a collection, only add the total collection value - else, just get the single value
-                const curValue = isSketchCollection(data.sketch)
-                  ? curMetric.extra && curMetric.extra.isCollection === true
-                    ? curMetric.value
-                    : 0
-                  : curMetric.value;
-                return value + curValue;
-              }, 0);
-              return (
-                <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
-                  {percentWithEdge(value)}
-                </GroupPill>
-              );
-            },
-          },
-        ],
-      };
-    }
-  );
-
-  return (
-    <SmallReportTableStyled>
-      <Table columns={columns} data={rows} />
-    </SmallReportTableStyled>
   );
 };

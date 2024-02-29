@@ -17,13 +17,14 @@ import {
   getSketchFeatures,
   getUserAttribute,
   overlapFeaturesGroupMetrics,
+  isSketchCollection,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
 
 const featuresByClass: Record<string, Feature<Polygon>[]> = {};
-const groupIds = ["No-Take", "Partial-Take"];
+const protectionGroups = ["No-Take", "Partial-Take"];
 
 export async function priorityAreasOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -31,7 +32,16 @@ export async function priorityAreasOverlap(
   const box = sketch.bbox || bbox(sketch);
   const metricGroup = project.getMetricGroup("priorityAreasOverlap");
 
+  const isCollection = isSketchCollection(sketch);
+
   let cachedFeatures: Record<string, Feature<Polygon>[]> = {};
+
+  // if collection, remove any sketches that are not protection zones
+  if (isCollection) {
+    sketch.features = sketch.features.filter((f) => {
+      return protectionGroups.includes(f.properties.zoneType[0]);
+    });
+  }
 
   const polysByBoundary = (
     await Promise.all(
@@ -103,7 +113,7 @@ export async function priorityAreasOverlap(
 
   const levelMetrics = await overlapFeaturesGroupMetrics({
     metricId: metricGroup.metricId,
-    groupIds: groupIds,
+    groupIds: protectionGroups,
     sketch: sketch,
     metricToGroup: metricToZoneType,
     metrics: metrics,
@@ -121,6 +131,7 @@ export default new GeoprocessingHandler(priorityAreasOverlap, {
   description: "Calculate sketch overlap with priority conservation areas",
   executionMode: "async",
   timeout: 600,
+  memory: 256,
   requiresProperties: [],
 });
 

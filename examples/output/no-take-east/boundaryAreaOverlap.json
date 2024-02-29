@@ -1,33 +1,66 @@
 {
   "metrics": [
     {
+      "geographyId": null,
       "metricId": "boundaryAreaOverlap",
-      "sketchId": "21364",
       "classId": "3nm_jurisdiction",
+      "sketchId": "21364",
       "groupId": null,
-      "geographyId": null,
       "value": 16593505.829924753,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
+      "geographyId": null,
       "metricId": "boundaryAreaOverlap",
-      "sketchId": "21364",
       "classId": "3nm_jurisdiction",
+      "sketchId": "21364",
       "groupId": "No-Take",
-      "geographyId": null,
       "value": 16593505.829924753,
       "extra": {
         "sketchName": "no-take-east"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "21364",
-      "classId": "3nm_jurisdiction",
-      "groupId": "Partial-Take",
       "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21364",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21364",
+      "groupId": "Utility",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21364",
+      "groupId": "Multi-Use",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-east"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "3nm_jurisdiction",
+      "sketchId": "21364",
+      "groupId": "Volcanic Exclusion",
       "value": 0,
       "extra": {
         "sketchName": "no-take-east"

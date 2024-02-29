@@ -20,6 +20,7 @@ import project from "../../project";
 import { Trans, useTranslation } from "react-i18next";
 
 const metricGroup = project.getMetricGroup("fishPotsOverlap");
+const fishPotsTarget = project.getObjectiveById("fishPotsOverlap").target;
 
 export const FishPotsCard = () => {
   const [{ isCollection }] = useSketchProperties();
@@ -40,8 +41,8 @@ export const FishPotsCard = () => {
     "Partial-Take": "#FFE1A3",
   };
   const groupColors = Object.values(groupColorMap);
-  const blockGroupStyles = groupColors.map((curBlue) => ({
-    backgroundColor: curBlue,
+  const blockGroupStyles = groupColors.map((curGroup) => ({
+    backgroundColor: curGroup,
   }));
 
   const groupIds = ["No-Take", "Partial-Take"];
@@ -107,8 +108,7 @@ export const FishPotsCard = () => {
                           rows: [
                             classGroupMetricValues[curClass.classId].map(
                               (curGroup) => [
-                                // underlying values and targets are scaled out of 100 to make equal width bars
-                                curGroup.value,
+                                (curGroup.value / fishPotsTarget) * 100,
                               ]
                             ),
                           ],
@@ -126,7 +126,9 @@ export const FishPotsCard = () => {
                         showLegend={
                           index < metricGroup.classes.length - 1 ? false : true
                         }
-                        valueFormatter={(value: number) => value.toFixed(0)}
+                        valueFormatter={(value: number) =>
+                          ((value / 100) * fishPotsTarget).toFixed(0)
+                        }
                         targetValueFormatter={() =>
                           "Out Of " +
                           project.getObjectiveById(curClass.objectiveId!).target

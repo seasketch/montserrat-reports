@@ -1,0 +1,82 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "priorityAreasOverlap",
+      "classId": "priority_areas",
+      "sketchId": "25018",
+      "groupId": null,
+      "value": 381183.507511,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "priorityAreasOverlap",
+      "classId": "priority_areas",
+      "sketchId": "25018",
+      "groupId": "No-Take",
+      "value": 381183.507511,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "priorityAreasOverlap",
+      "classId": "priority_areas",
+      "sketchId": "25018",
+      "groupId": "Partial-Take",
+      "value": 0,
+      "extra": {
+        "sketchName": "no-take-west"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 25018,
+    "bbox": [
+      -62.242516,
+      16.754772,
+      -62.219948,
+      16.786385
+    ],
+    "type": "Feature",
+    "properties": {
+      "5203": "no-take-west",
+      "5204": [
+        "No-Take"
+      ],
+      "id": "25018",
+      "name": "no-take-west",
+      "postId": null,
+      "userId": "128",
+      "userSlug": "Peter",
+      "zoneType": [
+        "No-Take"
+      ],
+      "createdAt": "2024-02-02T17:46:14.597369+00:00",
+      "updatedAt": "2024-02-02T17:46:14.597369+00:00",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "597",
+      "userAttributes": [
+        {
+          "label": "Zone Type",
+          "value": [
+            "No-Take"
+          ],
+          "exportId": "zoneType",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "No-Take"
+          ],
+          "formElementId": 5204,
+          "alternateLanguages": {}
+        }
+      ]
+    }
+  }
+}

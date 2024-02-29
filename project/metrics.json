@@ -2,72 +2,71 @@
     {
         "metricId": "boundaryAreaOverlap",
         "type": "areaOverlap",
+        "layerId": "KuHfKUzj6",
         "classes": [
             {
                 "classId": "3nm_jurisdiction",
                 "display": "3 nautical miles",
                 "datasourceId": "3nm_jurisdiction",
-                "objectiveId": "eez",
-                "layerId": ""
+                "objectiveId": ""
             }
         ]
     },
     {
         "metricId": "fishingValueOverlap",
         "type": "valueOverlap",
+        "layerId": "DH41yTdKP",
         "classes": [
             {
                 "classId": "fishing_value",
                 "display": "Fishing Value",
                 "datasourceId": "fishing_value",
-                "objectiveId": "",
-                "layerId": ""
+                "objectiveId": ""
             }
         ]
     },
     {
         "metricId": "divingValueOverlap",
         "type": "valueOverlap",
+        "layerId": "Xu5hUWUtQ",
         "classes": [
             {
                 "classId": "diving_value",
                 "display": "Diving Value",
                 "datasourceId": "diving_value",
-                "objectiveId": "",
-                "layerId": ""
+                "objectiveId": ""
             }
         ]
     },
     {
         "metricId": "coralOverlap",
         "type": "countOverlap",
+        "layerId": "VPxZljuOs",
         "classes": [
             {
                 "classId": "orbicella_annularis",
                 "display": "Orbicella annularis",
                 "datasourceId": "orbicella_annularis",
-                "objectiveId": "orbicella_annularis",
-                "layerId": ""
+                "objectiveId": "orbicella_annularis"
             },
             {
                 "classId": "orbicella_faveolata",
                 "display": "Orbicella faveolata",
                 "datasourceId": "orbicella_faveolata",
-                "objectiveId": "orbicella_faveolata",
-                "layerId": ""
+                "objectiveId": "orbicella_faveolata"
             },
             {
                 "classId": "acropora_palmata",
                 "display": "Acropora palmata",
                 "datasourceId": "acropora_palmata",
-                "objectiveId": "acropora_palmata",
-                "layerId": ""
+                "objectiveId": "acropora_palmata"
             }
         ]
     },
     {
         "metricId": "benthicHabitatsOverlap",
         "type": "areaOverlap",
+        "layerId": "UzrntwP6D",
         "classes": [
             {
                 "classKey": "Habitat",
@@ -146,26 +145,39 @@
     {
         "metricId": "fishPotsOverlap",
         "type": "countOverlap",
+        "layerId": "eHoEwcgYy",
         "classes": [
             {
                 "classId": "fish_pots",
                 "display": "Fish Pots",
                 "datasourceId": "fish_pots",
-                "objectiveId": "fish_pots",
-                "layerId": ""
+                "objectiveId": "fish_pots"
             }
         ]
     },
     {
         "metricId": "priorityAreasOverlap",
         "type": "areaOverlap",
+        "layerId": "Tc5lRfjGk",
         "classes": [
             {
                 "classId": "priority_areas",
                 "display": "Priority Conservation Areas",
                 "datasourceId": "priority_areas",
-                "objectiveId": "priority_areas",
-                "layerId": ""
+                "objectiveId": "priority_areas"
+            }
+        ]
+    },
+    {
+        "metricId": "nurseryOverlap",
+        "type": "countOverlap",
+        "layerId": "XvruRlUwJ",
+        "classes": [
+            {
+                "classId": "juvenile_fish_abundance",
+                "display": "Juvenile Fish Abundance",
+                "datasourceId": "juvenile_fish_abundance",
+                "objectiveId": "juvenile_fish_abundance"
             }
         ]
     }
