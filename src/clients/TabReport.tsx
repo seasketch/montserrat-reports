@@ -25,10 +25,10 @@ const TabReport = () => {
           segments={segments}
         />
       </div>
-      <ReportPage hidden={!enableAllTabs && tab === overviewId}>
+      <ReportPage hidden={!enableAllTabs && tab !== overviewId}>
         <OverviewPage />
       </ReportPage>
-      <ReportPage hidden={!enableAllTabs && tab === environmentId}>
+      <ReportPage hidden={!enableAllTabs && tab !== environmentId}>
         <EnvironmentPage />
       </ReportPage>
     </>

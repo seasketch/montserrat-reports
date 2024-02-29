@@ -1,16 +1,22 @@
 import React from "react";
-import { CoralCard } from "./CoralCard";
-import { BenthicCard } from "./BenthicCard";
+import { SizeCard } from "./SizeCard";
+import { FishingCard } from "./FishingCard";
+import { SketchAttributesCard } from "@seasketch/geoprocessing/client-ui";
+import { DivingCard } from "./DivingCard";
 import { FishPotsCard } from "./FishPotsCard";
-import { NurseryCard } from "./NurseryCard";
+import { PriorityAreasCard } from "./PriorityAreasCard";
+import { MinWidthCard } from "./MinWidthCard";
 
 export const OverviewPage = () => {
   return (
     <>
-      <CoralCard />
-      <BenthicCard />
+      <SizeCard />
+      <FishingCard />
+      <DivingCard />
+      <PriorityAreasCard />
       <FishPotsCard />
-      <NurseryCard />
+      <MinWidthCard />
+      <SketchAttributesCard autoHide />
     </>
   );
 };

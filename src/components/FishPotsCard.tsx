@@ -20,7 +20,7 @@ import project from "../../project";
 import { Trans, useTranslation } from "react-i18next";
 
 const metricGroup = project.getMetricGroup("fishPotsOverlap");
-const fishPotsTarget = project.getObjectiveById("fishPotsOverlap").target;
+const fishPotsTarget = 158;
 
 export const FishPotsCard = () => {
   const [{ isCollection }] = useSketchProperties();
